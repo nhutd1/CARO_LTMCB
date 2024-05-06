@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using System.Runtime.InteropServices;
-using System.Data;
 using System.Data.SqlClient;
 using System.Net;
 using System.Net.Mail;
@@ -25,11 +24,19 @@ namespace CARO_LTMCB
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            if (EffectManager.IsEffectEnabled())
+            {
+                Effect.PlayEffect("effect");
+            }
             Application.Exit();
         }
 
         private void btnMinisize_Click(object sender, EventArgs e)
         {
+            if (EffectManager.IsEffectEnabled())
+            {
+                Effect.PlayEffect("effect");
+            }
             this.WindowState = FormWindowState.Minimized;
         }
 
@@ -108,8 +115,13 @@ namespace CARO_LTMCB
 
         private void btnForgotpass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            if (EffectManager.IsEffectEnabled())
+            {
+                Effect.PlayEffect("effect");
+            }
             LoginForm lgf = new LoginForm();
             lgf.Show();
+            lgf.Location = new Point(this.Location.X, this.Location.Y);
             this.Hide();
         }
 
@@ -132,7 +144,7 @@ namespace CARO_LTMCB
         }
         #endregion
 
-        SqlConnection connect = new SqlConnection(@"Data Source=LAPTOP-DAHF1F7B\SQLEXPRESS;Initial Catalog=CARO_LTMCB;Integrated Security=True");
+        SqlConnection connect = new SqlConnection(@"Data Source=34.87.92.114;Initial Catalog=CARO;User ID=sqlserver;Password=carogame123");
 
         #region Gửi code qua mail người dùng
         private bool IsUserAndMailExist()
@@ -157,9 +169,9 @@ namespace CARO_LTMCB
                         }
                     }
                 }
-                catch
+                catch(Exception ex)
                 {
-                    MessageBox.Show("Error connect to database!", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error connect to database: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 finally
                 {
@@ -173,7 +185,11 @@ namespace CARO_LTMCB
         
         private void btnGetcode_Click(object sender, EventArgs e)
         {
-            if(tbxMail.Text != "example@gmail.com" && tbxUsername.Text != "username")
+            if (EffectManager.IsEffectEnabled())
+            {
+                Effect.PlayEffect("effect");
+            }
+            if (tbxMail.Text != "example@gmail.com" && tbxUsername.Text != "username")
             {
                 if (IsUserAndMailExist())
                 {
@@ -187,26 +203,33 @@ namespace CARO_LTMCB
                     from = "carogameserver@gmail.com";
                     pass = "iotb mxrh byqb xizh";
                     messageBody = "Your code is: " + randomcode;
-
-                    message.To.Add(to);
-                    message.From = new MailAddress(from);
-                    message.Body = messageBody;
-                    message.Subject = "PASSWORD RESET CODE";
-
-                    SmtpClient smtp = new SmtpClient("smtp.gmail.com");
-                    smtp.EnableSsl = true;
-                    smtp.Port = 587;
-                    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                    smtp.Credentials = new NetworkCredential(from, pass);
-
                     try
                     {
-                        smtp.Send(message);
-                        MessageBox.Show("Code send successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        message.To.Add(to);
+                        message.From = new MailAddress(from);
+                        message.Body = messageBody;
+                        message.Subject = "Code Verification";
+
+                        SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+                        smtp.EnableSsl = true;
+                        smtp.Port = 587;
+                        smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                        smtp.Credentials = new NetworkCredential(from, pass);
+
+                        try
+                        {
+                            smtp.Send(message);
+                            MessageBox.Show("Code send successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            btnConfirmcode.Enabled = true;
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error to send code: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Error to send code: "+ ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -220,9 +243,14 @@ namespace CARO_LTMCB
             }
         }
         #endregion
+
         private void btnConfirmcode_Click_1(object sender, EventArgs e)
         {
-            if(tbxConfirmcode.Text == randomcode)
+            if (EffectManager.IsEffectEnabled())
+            {
+                Effect.PlayEffect("effect");
+            }
+            if (tbxConfirmcode.Text == randomcode)
             {
                 tbxNewpass.Enabled = true;
                 tbxConfirmpass.Enabled = true;
@@ -237,6 +265,10 @@ namespace CARO_LTMCB
 
         private void btnChangepass_Click(object sender, EventArgs e)
         {
+            if (EffectManager.IsEffectEnabled())
+            {
+                Effect.PlayEffect("effect");
+            }
             if (tbxNewpass.Text != "" && tbxConfirmpass.Text !="")
             {
                 if (tbxNewpass.Text == tbxConfirmpass.Text) 
@@ -254,12 +286,13 @@ namespace CARO_LTMCB
 
                                 LoginForm lgf = new LoginForm();
                                 lgf.Show();
+                                lgf.Location = new Point(this.Location.X, this.Location.Y);
                                 this.Hide();
                             }
                         }
-                        catch
+                        catch(Exception ex)
                         {
-                            MessageBox.Show("Error connect to database!", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Error connect to database: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         finally
                         {

@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using System.Runtime.InteropServices;
-using System.Data;
 using System.Data.SqlClient;
 
 namespace CARO_LTMCB
@@ -25,16 +24,25 @@ namespace CARO_LTMCB
         {
             LoginForm lgf = new LoginForm();
             lgf.Show();
+            lgf.Location = new Point(this.Location.X, this.Location.Y);
             this.Hide();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            if (EffectManager.IsEffectEnabled())
+            {
+                Effect.PlayEffect("effect");
+            }
             Application.Exit();
         }
 
         private void btnMinisize_Click(object sender, EventArgs e)
         {
+            if (EffectManager.IsEffectEnabled())
+            {
+                Effect.PlayEffect("effect");
+            }
             this.WindowState = FormWindowState.Minimized;
         }
 
@@ -165,10 +173,14 @@ namespace CARO_LTMCB
 
         #endregion
 
-        SqlConnection connect = new SqlConnection(@"Data Source=LAPTOP-DAHF1F7B\SQLEXPRESS;Initial Catalog=CARO_LTMCB;Integrated Security=True");
+        SqlConnection connect = new SqlConnection(@"Data Source=34.87.92.114;Initial Catalog=CARO;User ID=sqlserver;Password=carogame123");
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            if (EffectManager.IsEffectEnabled())
+            {
+                Effect.PlayEffect("effect");
+            }
             if (tbxMail.Text == "example@gmail.com" || tbxUsername.Text == "username" || tbxPass.Text == "password")
             {
                 MessageBox.Show("Please fill all the information!", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -196,8 +208,8 @@ namespace CARO_LTMCB
                             {
                                 if (tbxPass.Text == tbxConfirmpass.Text)
                                 {
-                                    DateTime date = DateTime.Today;
-                                    string adduser = $"INSERT INTO users VALUES ('{tbxUsername.Text}','{tbxPass.Text}','{tbxMail.Text}','100','{date}','1000')";
+                                    DateTime date = DateTime.Now;
+                                    string adduser = $"INSERT INTO users VALUES ('{tbxUsername.Text}','{tbxPass.Text}','{tbxMail.Text}','{date}','0','0','0')";
                                     using (SqlCommand insertcmd = new SqlCommand(adduser, connect))
                                     {
                                         insertcmd.ExecuteNonQuery();
@@ -205,6 +217,7 @@ namespace CARO_LTMCB
 
                                         LoginForm lgf = new LoginForm();
                                         lgf.Show();
+                                        lgf.Location = new Point(this.Location.X, this.Location.Y);
                                         this.Hide();
                                     }
                                 }
@@ -215,9 +228,9 @@ namespace CARO_LTMCB
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Error connect to database!", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     finally
                     {

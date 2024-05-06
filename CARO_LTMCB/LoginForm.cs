@@ -10,13 +10,13 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using FontAwesome.Sharp;
 using System.Runtime.InteropServices;
-using System.Data;
-using System.Data.SqlClient;
+
 
 namespace CARO_LTMCB
 {
     public partial class LoginForm : Form
     {
+        
         public LoginForm()
         {
             InitializeComponent();
@@ -24,24 +24,42 @@ namespace CARO_LTMCB
 
         private void btnSignup_Click(object sender, EventArgs e)
         {
+            if (EffectManager.IsEffectEnabled())
+            {
+                Effect.PlayEffect("effect");
+            }
             SignUpForm signf = new SignUpForm();
+            signf.Location = new Point(this.Location.X, this.Location.Y);
             signf.Show();
             this.Hide();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            if (EffectManager.IsEffectEnabled())
+            {
+                Effect.PlayEffect("effect");
+            }
             Application.Exit();
         }
 
         private void btnMinisize_Click(object sender, EventArgs e)
         {
+            if (EffectManager.IsEffectEnabled())
+            {
+                Effect.PlayEffect("effect");
+            }
             this.WindowState = FormWindowState.Minimized;
         }
 
         private void btnForgotpass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            if (EffectManager.IsEffectEnabled())
+            {
+                Effect.PlayEffect("effect");
+            }
             ForgotPasss fgf = new ForgotPasss();
+            fgf.Location = new Point(this.Location.X, this.Location.Y);
             fgf.Show();
             this.Hide();
         }
@@ -118,11 +136,15 @@ namespace CARO_LTMCB
         }
         #endregion
 
-        SqlConnection connect = new SqlConnection(@"Data Source=LAPTOP-DAHF1F7B\SQLEXPRESS;Initial Catalog=CARO_LTMCB;Integrated Security=True");
+        SqlConnection connect = new SqlConnection(@"Data Source=34.87.92.114;Initial Catalog=CARO;User ID=sqlserver;Password=carogame123");
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(tbxUsername.Text!="username" && tbxPass.Text != "password")
+            if (EffectManager.IsEffectEnabled())
+            {
+                Effect.PlayEffect("effect");
+            }
+            if (tbxUsername.Text!="username" && tbxPass.Text != "password")
             {
                 if(connect.State!= ConnectionState.Open)
                 {
@@ -140,6 +162,7 @@ namespace CARO_LTMCB
                             {
                                 MessageBox.Show("Login successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 MenuForm mnf = new MenuForm();
+                                mnf.Tag = tbxUsername.Text;
                                 mnf.Show();
                                 this.Hide();
                             }
@@ -157,9 +180,9 @@ namespace CARO_LTMCB
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Error connect to database!", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Error connect to database: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     finally
                     {
@@ -171,6 +194,7 @@ namespace CARO_LTMCB
             {
                 MessageBox.Show("Please fill all the information!", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }        
+        }
+
     }
 }

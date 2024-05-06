@@ -13,19 +13,263 @@ C:\Users\Admin\source\repos\CARO_LTMCB\CARO_LTMCB\bin\Debug\FontAwesome.Sharp.dl
 C:\Users\Admin\source\repos\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.MenuForm.resources
 C:\Users\Admin\source\repos\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.CopyComplete
 C:\Users\Admin\source\repos\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.LoginForm.resources
-Z:\Courses\2023-2024\HK4\NT106.O22.ANTT\CARO_LTMCB\CARO_LTMCB\bin\Debug\CARO_LTMCB.exe.config
-Z:\Courses\2023-2024\HK4\NT106.O22.ANTT\CARO_LTMCB\CARO_LTMCB\bin\Debug\CARO_LTMCB.exe
-Z:\Courses\2023-2024\HK4\NT106.O22.ANTT\CARO_LTMCB\CARO_LTMCB\bin\Debug\CARO_LTMCB.pdb
-Z:\Courses\2023-2024\HK4\NT106.O22.ANTT\CARO_LTMCB\CARO_LTMCB\bin\Debug\FontAwesome.Sharp.dll
-Z:\Courses\2023-2024\HK4\NT106.O22.ANTT\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.AssemblyReference.cache
-Z:\Courses\2023-2024\HK4\NT106.O22.ANTT\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.SuggestedBindingRedirects.cache
-Z:\Courses\2023-2024\HK4\NT106.O22.ANTT\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.ForgotPasss.resources
-Z:\Courses\2023-2024\HK4\NT106.O22.ANTT\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.LoginForm.resources
-Z:\Courses\2023-2024\HK4\NT106.O22.ANTT\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.MenuForm.resources
-Z:\Courses\2023-2024\HK4\NT106.O22.ANTT\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.Properties.Resources.resources
-Z:\Courses\2023-2024\HK4\NT106.O22.ANTT\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.SignUpForm.resources
-Z:\Courses\2023-2024\HK4\NT106.O22.ANTT\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.GenerateResource.cache
-Z:\Courses\2023-2024\HK4\NT106.O22.ANTT\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.CoreCompileInputs.cache
-Z:\Courses\2023-2024\HK4\NT106.O22.ANTT\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.CopyComplete
-Z:\Courses\2023-2024\HK4\NT106.O22.ANTT\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.exe
-Z:\Courses\2023-2024\HK4\NT106.O22.ANTT\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.pdb
+C:\Users\admin\Desktop\CARO_LTMCB\CARO_LTMCB\bin\Debug\CARO_LTMCB.exe.config
+C:\Users\admin\Desktop\CARO_LTMCB\CARO_LTMCB\bin\Debug\CARO_LTMCB.exe
+C:\Users\admin\Desktop\CARO_LTMCB\CARO_LTMCB\bin\Debug\CARO_LTMCB.pdb
+C:\Users\admin\Desktop\CARO_LTMCB\CARO_LTMCB\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\admin\Desktop\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.AssemblyReference.cache
+C:\Users\admin\Desktop\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.ForgotPasss.resources
+C:\Users\admin\Desktop\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.LoginForm.resources
+C:\Users\admin\Desktop\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.MenuForm.resources
+C:\Users\admin\Desktop\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.Properties.Resources.resources
+C:\Users\admin\Desktop\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.SignUpForm.resources
+C:\Users\admin\Desktop\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.GenerateResource.cache
+C:\Users\admin\Desktop\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.CopyComplete
+C:\Users\admin\Desktop\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.exe
+C:\Users\admin\Desktop\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.pdb
+C:\Users\Admin\Downloads\CARO_LTMCB\CARO_LTMCB\bin\Debug\CARO_LTMCB.exe.config
+C:\Users\Admin\Downloads\CARO_LTMCB\CARO_LTMCB\bin\Debug\CARO_LTMCB.exe
+C:\Users\Admin\Downloads\CARO_LTMCB\CARO_LTMCB\bin\Debug\CARO_LTMCB.pdb
+C:\Users\Admin\Downloads\CARO_LTMCB\CARO_LTMCB\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\Admin\Downloads\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.AssemblyReference.cache
+C:\Users\Admin\Downloads\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.ForgotPasss.resources
+C:\Users\Admin\Downloads\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.LoginForm.resources
+C:\Users\Admin\Downloads\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.MenuForm.resources
+C:\Users\Admin\Downloads\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.Properties.Resources.resources
+C:\Users\Admin\Downloads\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.SignUpForm.resources
+C:\Users\Admin\Downloads\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.GenerateResource.cache
+C:\Users\Admin\Downloads\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Downloads\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.CopyComplete
+C:\Users\Admin\Downloads\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.exe
+C:\Users\Admin\Downloads\CARO_LTMCB\CARO_LTMCB\obj\Debug\CARO_LTMCB.pdb
+C:\Users\Admin\Documents\Caroooooooooooo\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\CARO_LTMCB.exe.config
+C:\Users\Admin\Documents\Caroooooooooooo\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\CARO_LTMCB.exe
+C:\Users\Admin\Documents\Caroooooooooooo\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\CARO_LTMCB.pdb
+C:\Users\Admin\Documents\Caroooooooooooo\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\Admin\Documents\Caroooooooooooo\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.AssemblyReference.cache
+C:\Users\Admin\Documents\Caroooooooooooo\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.ForgotPasss.resources
+C:\Users\Admin\Documents\Caroooooooooooo\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.LoginForm.resources
+C:\Users\Admin\Documents\Caroooooooooooo\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.MenuForm.resources
+C:\Users\Admin\Documents\Caroooooooooooo\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.Properties.Resources.resources
+C:\Users\Admin\Documents\Caroooooooooooo\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.SignUpForm.resources
+C:\Users\Admin\Documents\Caroooooooooooo\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.GenerateResource.cache
+C:\Users\Admin\Documents\Caroooooooooooo\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\Caroooooooooooo\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.CopyComplete
+C:\Users\Admin\Documents\Caroooooooooooo\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.exe
+C:\Users\Admin\Documents\Caroooooooooooo\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.pdb
+C:\Users\admin\Documents\Zalo Received Files\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\CARO_LTMCB.exe.config
+C:\Users\admin\Documents\Zalo Received Files\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\CARO_LTMCB.exe
+C:\Users\admin\Documents\Zalo Received Files\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\CARO_LTMCB.pdb
+C:\Users\admin\Documents\Zalo Received Files\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\admin\Documents\Zalo Received Files\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.AssemblyReference.cache
+C:\Users\admin\Documents\Zalo Received Files\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.ForgotPasss.resources
+C:\Users\admin\Documents\Zalo Received Files\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.LoginForm.resources
+C:\Users\admin\Documents\Zalo Received Files\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.MenuForm.resources
+C:\Users\admin\Documents\Zalo Received Files\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.Properties.Resources.resources
+C:\Users\admin\Documents\Zalo Received Files\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.SignUpForm.resources
+C:\Users\admin\Documents\Zalo Received Files\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.GenerateResource.cache
+C:\Users\admin\Documents\Zalo Received Files\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\Zalo Received Files\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.CopyComplete
+C:\Users\admin\Documents\Zalo Received Files\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.exe
+C:\Users\admin\Documents\Zalo Received Files\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.pdb
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\CARO_LTMCB.exe.config
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\CARO_LTMCB.exe
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\CARO_LTMCB.pdb
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.ForgotPasss.resources
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.LoginForm.resources
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.MenuForm.resources
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.Properties.Resources.resources
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.SignUpForm.resources
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.GenerateResource.cache
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.CopyComplete
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.exe
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.pdb
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.MainForm.resources
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\Guna.UI2.dll
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.HelpForm.resources
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.HomeForm.resources
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.MessageForm.resources
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.ProfileForm.resources
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.SettingForm.resources
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.ChooseAvatarForm.resources
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.InforUserForm.resources
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.TinNhan.resources
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.AssemblyReference.cache
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.Account.resources
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.General.resources
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.Privacy.resources
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.MatchHistoryControl.resources
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\Microsoft.Win32.Registry.dll
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Asio.dll
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Core.dll
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.dll
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Midi.dll
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Wasapi.dll
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.WinForms.dll
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.WinMM.dll
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\System.Security.AccessControl.dll
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\Microsoft.Win32.Registry.xml
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.xml
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Asio.xml
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Core.xml
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Midi.xml
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Wasapi.xml
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.WinForms.xml
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.WinMM.xml
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\System.Security.AccessControl.xml
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\Admin\Documents\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.RankingControl.resources
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\CARO_LTMCB.exe.config
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\CARO_LTMCB.exe
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\CARO_LTMCB.pdb
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\Guna.UI2.dll
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\Microsoft.Win32.Registry.dll
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Asio.dll
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Core.dll
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.dll
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Midi.dll
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Wasapi.dll
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.WinForms.dll
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.WinMM.dll
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\System.Security.AccessControl.dll
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\Microsoft.Win32.Registry.xml
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.xml
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Asio.xml
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Core.xml
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Midi.xml
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Wasapi.xml
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.WinForms.xml
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.WinMM.xml
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\System.Security.AccessControl.xml
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.AssemblyReference.cache
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.ForgotPasss.resources
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.Account.resources
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.ChooseAvatarForm.resources
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.General.resources
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.HelpForm.resources
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.HomeForm.resources
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.InforUserForm.resources
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.MessageForm.resources
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.Privacy.resources
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.ProfileForm.resources
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.SettingForm.resources
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.LoginForm.resources
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.MainForm.resources
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.MatchHistoryControl.resources
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.MenuForm.resources
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.Properties.Resources.resources
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.RankingControl.resources
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.SignUpForm.resources
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.TinNhan.resources
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.GenerateResource.cache
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.CopyComplete
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.exe
+C:\Users\ASUS\Desktop\caro_5_03_858\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.pdb
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\CARO_LTMCB.exe.config
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\CARO_LTMCB.exe
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\CARO_LTMCB.pdb
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\Guna.UI2.dll
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\Microsoft.Win32.Registry.dll
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Asio.dll
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Core.dll
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.dll
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Midi.dll
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Wasapi.dll
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.WinForms.dll
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.WinMM.dll
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\System.Security.AccessControl.dll
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\Microsoft.Win32.Registry.xml
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.xml
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Asio.xml
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Core.xml
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Midi.xml
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Wasapi.xml
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.WinForms.xml
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.WinMM.xml
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\System.Security.AccessControl.xml
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.AssemblyReference.cache
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.ForgotPasss.resources
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.Account.resources
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.ChooseAvatarForm.resources
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.General.resources
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.HelpForm.resources
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.HomeForm.resources
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.InforUserForm.resources
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.MessageForm.resources
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.Privacy.resources
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.ProfileForm.resources
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.SettingForm.resources
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.LoginForm.resources
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.MainForm.resources
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.MatchHistoryControl.resources
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.MenuForm.resources
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.Properties.Resources.resources
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.RankingControl.resources
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.SignUpForm.resources
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.TinNhan.resources
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.GenerateResource.cache
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.CopyComplete
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.exe
+C:\Users\admin\Desktop\04_05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.pdb
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\CARO_LTMCB.exe.config
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\CARO_LTMCB.exe
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\CARO_LTMCB.pdb
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\Guna.UI2.dll
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\Microsoft.Win32.Registry.dll
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Asio.dll
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Core.dll
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.dll
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Midi.dll
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Wasapi.dll
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.WinForms.dll
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.WinMM.dll
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\System.Security.AccessControl.dll
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\Microsoft.Win32.Registry.xml
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.xml
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Asio.xml
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Core.xml
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Midi.xml
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.Wasapi.xml
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.WinForms.xml
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\NAudio.WinMM.xml
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\System.Security.AccessControl.xml
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.AssemblyReference.cache
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.ForgotPasss.resources
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.Account.resources
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.ChooseAvatarForm.resources
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.General.resources
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.HelpForm.resources
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.HomeForm.resources
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.InforUserForm.resources
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.MessageForm.resources
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.Privacy.resources
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.ProfileForm.resources
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.FORMS.SettingForm.resources
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.LoginForm.resources
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.MainForm.resources
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.MatchHistoryControl.resources
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.MenuForm.resources
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.Properties.Resources.resources
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.RankingControl.resources
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.SignUpForm.resources
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.TinNhan.resources
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.GenerateResource.cache
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.csproj.CopyComplete
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.exe
+C:\Users\admin\Desktop\05-05\CARO_LTMCB - Copy\CARO_LTMCB\obj\Debug\CARO_LTMCB.pdb

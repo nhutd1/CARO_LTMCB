@@ -409,6 +409,51 @@ namespace CARO_LTMCB
 
             return list;
         }
-        
+        public string GetPass()
+        {
+            string pass = "";
+            try
+            {
+                connect.Open();
+                string getUser = $"SELECT userpass FROM users WHERE iduser = '{userID}'";
+                SqlCommand cmd = new SqlCommand(getUser, connect);
+                using (SqlDataReader read = cmd.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        pass = read.GetValue(0).ToString();
+                    }
+                }
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                connect.Close();
+            }
+            return pass;
+        }
+        public void ChangePass(string newPass)
+        {
+            try
+            {
+                connect.Open();
+                string change = $"UPDATE users SET userpass = '{newPass}' WHERE iduser = {userID}";
+                using (SqlCommand cmd = new SqlCommand(change, connect))
+                {
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                connect.Close();
+            }
+        }
     }
 }

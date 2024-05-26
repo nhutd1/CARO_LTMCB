@@ -43,6 +43,7 @@ namespace CARO_LTMCB.FORMS
             // 
             // pnMain
             // 
+            this.pnMain.BackColor = System.Drawing.Color.MistyRose;
             this.pnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnMain.Controls.Add(this.panel6);
             this.pnMain.Location = new System.Drawing.Point(221, 0);

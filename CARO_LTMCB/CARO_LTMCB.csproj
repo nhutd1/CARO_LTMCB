@@ -110,17 +110,29 @@
     <Compile Include="FORMS\ChooseAvatarForm.Designer.cs">
       <DependentUpon>ChooseAvatarForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\General.cs">
+    <Compile Include="FORMS\GuideForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\General.Designer.cs">
-      <DependentUpon>General.cs</DependentUpon>
+    <Compile Include="FORMS\GuideForm.Designer.cs">
+      <DependentUpon>GuideForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FORMS\HelpForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FORMS\HelpForm.Designer.cs">
       <DependentUpon>HelpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\General.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\General.Designer.cs">
+      <DependentUpon>General.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FORMS\HomeForm.cs">
       <SubType>Form</SubType>
@@ -217,8 +229,14 @@
     <EmbeddedResource Include="FORMS\General.resx">
       <DependentUpon>General.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\GuideForm.resx">
+      <DependentUpon>GuideForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FORMS\HelpForm.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>

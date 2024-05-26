@@ -69,6 +69,7 @@ namespace CARO_LTMCB.FORMS
             this.pnProfile.Name = "pnProfile";
             this.pnProfile.Size = new System.Drawing.Size(1068, 738);
             this.pnProfile.TabIndex = 10;
+//            this.pnProfile.Paint += new System.Windows.Forms.PaintEventHandler(this.pnProfile_Paint);
             // 
             // btnSave
             // 
@@ -103,7 +104,7 @@ namespace CARO_LTMCB.FORMS
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(381, 37);
             this.comboBox1.TabIndex = 22;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            //this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // iconButton2
             // 

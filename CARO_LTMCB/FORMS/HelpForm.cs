@@ -1,8 +1,13 @@
-﻿using System;
-using System.Net;
-using System.Net.Mail;
+﻿using FontAwesome.Sharp;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace CARO_LTMCB.FORMS
 {
     public partial class HelpForm : Form
@@ -11,39 +16,59 @@ namespace CARO_LTMCB.FORMS
         {
             InitializeComponent();
         }
-
-        private void btnSend_Click(object sender, EventArgs e)
+        private Form currentForm;
+        private void OpenForm(Form childForm)
         {
-            string name = txtName.Text;
-            string ID = txtID.Text;
-            string email = txtMail.Text;
-            string password = "gkbx ggdt nguk gxdk";
-            string message = richTextBox1.Text;
-
-            try
+            if (currentForm != null)
             {
-                MailMessage mail = new MailMessage();
-                SmtpClient smtpServer = new SmtpClient("smtp.gmail.com");
-
-                mail.From = new MailAddress(email);
-                mail.To.Add("carogame2024@gmail.com");
-                mail.Subject = "Thắc mắc từ người chơi: " + name + "-" + ID;
-                mail.Body = $"Email: {email}\nNội dung:\n{message}";
-
-                smtpServer.Port = 587; // hoặc 465 tùy thuộc vào nhà cung cấp email
-                smtpServer.Credentials = new NetworkCredential("usercarogame@gmail.com", password);
-                smtpServer.EnableSsl = true;
-
-                smtpServer.Send(mail);
-                MessageBox.Show("Tin nhắn của bạn đã được gửi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                currentForm.Close();
             }
-            catch (Exception ex)
+            currentForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pnHelp.Controls.Add(childForm);
+            pnHelp.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private IconButton currentBtn;
+        //private Panel leftPannelBtn;
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            if (EffectManager.IsEffectEnabled())
             {
-                // Hiển thị thông báo lỗi nếu việc gửi email thất bại
-                MessageBox.Show("Có lỗi xảy ra khi gửi tin nhắn: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                Effect.PlayEffect("effect");
             }
+            if (currentBtn != sender)
+            {
+                OpenForm(new FORMS.ReportForm());
+                currentBtn = sender as IconButton;
+            }
+        }
+
+        private void btnGuide_Click(object sender, EventArgs e)
+        {
+            if (EffectManager.IsEffectEnabled())
+            {
+                Effect.PlayEffect("effect");
+            }
+            if (currentBtn != sender)
+            {
+                OpenForm(new FORMS.GuideForm());
+                currentBtn = sender as IconButton;
+            }
+        }
+
+        private void HelpForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

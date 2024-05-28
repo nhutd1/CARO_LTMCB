@@ -46,7 +46,7 @@ namespace CARO_LTMCB.FORMS
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(534, 53);
+            this.label6.Location = new System.Drawing.Point(542, 62);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 29);
             this.label6.TabIndex = 79;
@@ -55,7 +55,7 @@ namespace CARO_LTMCB.FORMS
             // txtID
             // 
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtID.Location = new System.Drawing.Point(588, 47);
+            this.txtID.Location = new System.Drawing.Point(596, 56);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(170, 38);
             this.txtID.TabIndex = 78;
@@ -64,7 +64,7 @@ namespace CARO_LTMCB.FORMS
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(186, 56);
+            this.label3.Location = new System.Drawing.Point(194, 65);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(136, 29);
             this.label3.TabIndex = 77;
@@ -73,7 +73,7 @@ namespace CARO_LTMCB.FORMS
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtName.Location = new System.Drawing.Point(323, 47);
+            this.txtName.Location = new System.Drawing.Point(331, 56);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(205, 38);
             this.txtName.TabIndex = 76;
@@ -82,7 +82,7 @@ namespace CARO_LTMCB.FORMS
             // 
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.richTextBox1.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.richTextBox1.Location = new System.Drawing.Point(48, 193);
+            this.richTextBox1.Location = new System.Drawing.Point(56, 202);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(710, 280);
             this.richTextBox1.TabIndex = 71;
@@ -91,7 +91,7 @@ namespace CARO_LTMCB.FORMS
             // txtMail
             // 
             this.txtMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtMail.Location = new System.Drawing.Point(323, 109);
+            this.txtMail.Location = new System.Drawing.Point(331, 118);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(435, 38);
             this.txtMail.TabIndex = 70;
@@ -100,7 +100,7 @@ namespace CARO_LTMCB.FORMS
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(186, 115);
+            this.label1.Location = new System.Drawing.Point(194, 124);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 29);
             this.label1.TabIndex = 69;
@@ -116,7 +116,7 @@ namespace CARO_LTMCB.FORMS
             this.btnSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSend.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSend.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btnSend.Location = new System.Drawing.Point(38, 35);
+            this.btnSend.Location = new System.Drawing.Point(46, 44);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(115, 112);
             this.btnSend.TabIndex = 68;

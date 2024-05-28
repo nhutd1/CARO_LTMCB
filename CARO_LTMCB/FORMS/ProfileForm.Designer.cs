@@ -258,6 +258,7 @@ namespace CARO_LTMCB.FORMS
             this.tbxMail.Size = new System.Drawing.Size(244, 28);
             this.tbxMail.TabIndex = 9;
             this.tbxMail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbxMail.TextChanged += new System.EventHandler(this.tbxMail_TextChanged);
             // 
             // tbxWinrate
             // 

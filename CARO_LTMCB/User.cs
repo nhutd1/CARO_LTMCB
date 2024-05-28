@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows;
 
 namespace CARO_LTMCB
 {
@@ -435,6 +436,69 @@ namespace CARO_LTMCB
             }
             return pass;
         }
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public void UpdateUserInfo(string newUserName, string newMail)
+        {
+            try
+            {
+                // Kiểm tra định dạng email
+                if (!IsValidEmail(newMail))
+                {
+                    MessageBox.Show("Vui lòng nhập địa chỉ email hợp lệ.");
+                    return;
+                }
+
+                // Kiểm tra kết nối cơ sở dữ liệu
+                if (connect.State != ConnectionState.Open)
+                {
+                    MessageBox.Show("Không thể kết nối đến cơ sở dữ liệu.");
+                    return;
+                }
+
+                connect.Open();
+                string updateQuery = $"UPDATE users SET username = '{newUserName}', mail = '{newMail}' WHERE iduser = {userID}";
+                using (SqlCommand cmd = new SqlCommand(updateQuery, connect))
+                {
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Thông tin người dùng đã được cập nhật thành công.");
+                        // Ghi nhật ký hoạt động vào hệ thống log (nếu cần)
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không có thông tin nào được cập nhật.");
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                // Xử lý ngoại lệ SQL
+                MessageBox.Show("Đã xảy ra lỗi khi cập nhật thông tin người dùng: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                // Xử lý ngoại lệ chung
+                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
+            }
+            finally
+            {
+                connect.Close();
+            }
+        }
+
         public void ChangePass(string newPass)
         {
             try

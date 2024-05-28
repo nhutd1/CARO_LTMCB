@@ -130,5 +130,10 @@ namespace CARO_LTMCB.FORMS
                     picProfile.Image = Image.FromFile($"Resources\\{userChange.Avatar}.png");
                 }
             }        }
+
+        private void tbxMail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

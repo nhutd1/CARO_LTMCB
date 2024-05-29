@@ -17,13 +17,13 @@ namespace CARO_LTMCB
             InitializeComponent();
             SetHeight();
         }
-        public TinNhan(string mess,string time,mstype messtype)
+        public TinNhan(string mess, DateTime date, mstype messtype)
         {
             InitializeComponent();
             lbMess.Text = mess;
-            lbTime.Text = time;
+            lbTime.Text = $"{date.Day}/{date.Month}/{date.Year} - {date.Hour}:{date.Minute}";
 
-            if(messtype == mstype.In)
+            if (messtype == mstype.In)
             {
                 this.BackColor = Color.FromArgb(32, 178, 170);
                 lbMess.BackColor = Color.FromArgb(32, 178, 170);
@@ -36,7 +36,7 @@ namespace CARO_LTMCB
 
             SetHeight();
         }
-        
+
         void SetHeight()
         {
             Size maxSize = new Size(390, int.MaxValue);

@@ -15,8 +15,6 @@ namespace CARO_LTMCB.FORMS
 {
     public partial class MessageForm : Form
     {
-        User user;
-        
         Guna2Button btnCurrentFriend;
         Guna2Button btnCurrentRequest;
         public MessageForm()
@@ -100,11 +98,13 @@ namespace CARO_LTMCB.FORMS
         Thread friend;
         Thread notFriend;
         Thread requests;
+
+        User user;
         private void MessageForm_Load(object sender, EventArgs e)
         {
-            if (this.Tag != null)
+            if (MyUser.user != null)
             {
-                user = new User(this.Tag.ToString());
+                user = MyUser.user;
                 friend = new Thread(() =>
                 {
                     LoadFriend();
@@ -121,7 +121,7 @@ namespace CARO_LTMCB.FORMS
                 notFriend.Start();
                 requests.Start();
 
-                timmerLoadTN.Start();
+                //timmerLoadTN.Start();
             }
         }
         [SecurityPermissionAttribute(SecurityAction.Demand, ControlThread = true)]
@@ -140,36 +140,43 @@ namespace CARO_LTMCB.FORMS
         }
         private void LoadFriend()
         {
-            user = new User(this.Tag.ToString());
-            foreach (var item in user.ListFriend)
+            List<int> listFriend = new List<int>();
+            try
             {
-                int id = 0;
-                User friend = new User(item, id);
-                Guna2Button btn = new Guna2Button()
+                listFriend = DTBase.ListFriends();
+                foreach (var item in listFriend)
                 {
-                    Tag = friend.UserID.ToString(),
-                    Image = Image.FromFile($"Resources\\{friend.Avatar}.png"),
-                    ImageAlign = HorizontalAlignment.Left,
-                    ImageOffset = new Point(10, 0),
-                    ImageSize = new Size(50, 50),
-                    BorderColor = Color.LightCyan,
-                    BorderThickness = 3,
-                    FillColor = Color.FromArgb(255, 128, 128),
-                    Dock = DockStyle.Top,
-                    ForeColor = Color.White,
-                    Font = new Font("Cooper Black", 12),
-                    Size = new Size(230, 70),
-                    Text = friend.UserName.ToString(),
-                    TextAlign = HorizontalAlignment.Left,
-                    TextOffset = new Point(20, 0),
-                    ContextMenuStrip = contextmnFriend,
-                };
-                btn.MouseDown += Btn_MouseDown;
-                pnFriend.Invoke((MethodInvoker)delegate {
-                    pnFriend.Controls.Add(btn);
-                });
+                    User friend = DTBase.GetUserUID(item);
+                    Guna2Button btn = new Guna2Button()
+                    {
+                        Tag = friend.userID,
+                        Image = Image.FromFile($"Resources\\{friend.avatar}.png"),
+                        ImageAlign = HorizontalAlignment.Left,
+                        ImageOffset = new Point(10, 0),
+                        ImageSize = new Size(50, 50),
+                        BorderColor = Color.LightCyan,
+                        BorderThickness = 3,
+                        FillColor = Color.FromArgb(255, 128, 128),
+                        Dock = DockStyle.Top,
+                        ForeColor = Color.White,
+                        Font = new Font("Cooper Black", 12),
+                        Size = new Size(230, 70),
+                        Text = friend.userName.ToString(),
+                        TextAlign = HorizontalAlignment.Left,
+                        TextOffset = new Point(20, 0),
+                        ContextMenuStrip = contextmnFriend,
+                    };
+                    btn.MouseDown += Btn_MouseDown;
+                    pnFriend.Invoke((MethodInvoker)delegate {
+                        pnFriend.Controls.Add(btn);
+                    });
+                }
+                menuButtonFriend = pnFriend.Controls.OfType<Guna2Button>();
             }
-            menuButtonFriend = pnFriend.Controls.OfType<Guna2Button>();
+            catch
+            {
+
+            }
         }
 
         private void Btn_MouseDown(object sender, MouseEventArgs e)
@@ -186,7 +193,7 @@ namespace CARO_LTMCB.FORMS
                 curentTinNhan = null;
                 LoadpnShowMess();
             }
-            else if(e.Button == MouseButtons.Right)
+            else if (e.Button == MouseButtons.Right)
             {
                 contextmnFriend.Tag = btn.Tag;
                 contextmnFriend.Show(MousePosition);
@@ -195,42 +202,48 @@ namespace CARO_LTMCB.FORMS
 
         private void LoadNotFriend()
         {
-            user = new User(this.Tag.ToString());
-            foreach (var item in user.ListNotFriend)
+            List<int> listNotFriend = new List<int>();
+            try
             {
-                int id = 0;
-                User friend = new User(item, id);
-                Guna2Button btnNotFriend = new Guna2Button()
+                listNotFriend = DTBase.ListNotFriends();
+                foreach (var item in listNotFriend)
                 {
-                    Tag = friend.UserID.ToString(),
-                    Image = Image.FromFile($"Resources\\{friend.Avatar}.png"),
-                    ImageAlign = HorizontalAlignment.Left,
-                    ImageOffset = new Point(10, 0),
-                    ImageSize = new Size(50, 50),
-                    BorderColor = Color.LightCyan,
-                    BorderThickness = 3,
-                    FillColor = Color.FromArgb(255, 128, 128),
-                    Dock = DockStyle.Top,
-                    ForeColor = Color.White,
-                    Font = new Font("Cooper Black", 12),
-                    Size = new Size(230, 70),
-                    Text = friend.UserName.ToString(),
-                    TextAlign = HorizontalAlignment.Left,
-                    TextOffset = new Point(20, 0),
-                    ContextMenuStrip = contextmnNotFriend,
-                };
-                btnNotFriend.MouseDown += BtnNotFriend_MouseDown;
-                pnNotFriend.Invoke((MethodInvoker)delegate {
-                    pnNotFriend.Controls.Add(btnNotFriend);
-                });
-                btnNotFriend.Invoke((MethodInvoker)delegate
-                {
-                    btnNotFriend.Hide();
-                });
+                    User nfriend = DTBase.GetUserUID(item);
+                    Guna2Button btnNotFriend = new Guna2Button()
+                    {
+                        Tag = nfriend.userID,
+                        Image = Image.FromFile($"Resources\\{nfriend.avatar}.png"),
+                        ImageAlign = HorizontalAlignment.Left,
+                        ImageOffset = new Point(10, 0),
+                        ImageSize = new Size(50, 50),
+                        BorderColor = Color.LightCyan,
+                        BorderThickness = 3,
+                        FillColor = Color.FromArgb(255, 128, 128),
+                        Dock = DockStyle.Top,
+                        ForeColor = Color.White,
+                        Font = new Font("Cooper Black", 12),
+                        Size = new Size(230, 70),
+                        Text = nfriend.userName.ToString(),
+                        TextAlign = HorizontalAlignment.Left,
+                        TextOffset = new Point(20, 0),
+                        ContextMenuStrip = contextmnNotFriend,
+                    };
+                    btnNotFriend.MouseDown += BtnNotFriend_MouseDown;
+                    pnNotFriend.Invoke((MethodInvoker)delegate {
+                        pnNotFriend.Controls.Add(btnNotFriend);
+                    });
+                    btnNotFriend.Invoke((MethodInvoker)delegate
+                    {
+                        btnNotFriend.Hide();
+                    });
+                }
+                menuButtonNotFriend = pnNotFriend.Controls.OfType<Guna2Button>();
             }
-            menuButtonNotFriend = pnNotFriend.Controls.OfType<Guna2Button>();
-        }
+            catch
+            {
 
+            }
+        }
         private void BtnNotFriend_MouseDown(object sender, MouseEventArgs e)
         {
             Guna2Button btn = sender as Guna2Button;
@@ -240,56 +253,68 @@ namespace CARO_LTMCB.FORMS
                 contextmnNotFriend.Show(MousePosition);
             }
         }
-
         private void LoadRequests()
         {
-            user = new User(this.Tag.ToString());
-            foreach (var item in user.ListRequest)
+            try
             {
-                int id = 0;
-                User friend = new User(item, id);
-                Guna2Button btnRequest = new Guna2Button()
+                List<int> listRequests = new List<int>();
+                listRequests = DTBase.ListRequests();
+                foreach (var item in listRequests)
                 {
-                    Tag = friend.UserID.ToString(),
-                    Image = Image.FromFile($"Resources\\{friend.Avatar}.png"),
-                    ImageAlign = HorizontalAlignment.Left,
-                    ImageOffset = new Point(10, 0),
-                    ImageSize = new Size(50, 50),
-                    BorderColor = Color.LightCyan,
-                    BorderThickness = 3,
-                    FillColor = Color.FromArgb(255, 128, 128),
-                    Dock = DockStyle.Top,
-                    ForeColor = Color.White,
-                    Font = new Font("Cooper Black", 12),
-                    Size = new Size(230, 70),
-                    Text = friend.UserName.ToString(),
-                    TextAlign = HorizontalAlignment.Left,
-                    TextOffset = new Point(20, 0),
-                    ContextMenuStrip = contextmnRequests,
-                };
-                btnRequest.MouseDown += BtnRequest_MouseDown;
-                pnFriendRequests.Invoke((MethodInvoker)delegate {
-                    pnFriendRequests.Controls.Add(btnRequest);
-                });
+                    User request = DTBase.GetUserUID(item);
+                    Guna2Button btnRequest = new Guna2Button()
+                    {
+                        Tag = request.userID,
+                        Image = Image.FromFile($"Resources\\{request.avatar}.png"),
+                        ImageAlign = HorizontalAlignment.Left,
+                        ImageOffset = new Point(10, 0),
+                        ImageSize = new Size(50, 50),
+                        BorderColor = Color.LightCyan,
+                        BorderThickness = 3,
+                        FillColor = Color.FromArgb(255, 128, 128),
+                        Dock = DockStyle.Top,
+                        ForeColor = Color.White,
+                        Font = new Font("Cooper Black", 12),
+                        Size = new Size(230, 70),
+                        Text = request.userName.ToString(),
+                        TextAlign = HorizontalAlignment.Left,
+                        TextOffset = new Point(20, 0),
+                        ContextMenuStrip = contextmnRequests,
+                    };
+                    btnRequest.MouseDown += BtnRequest_MouseDown;
+                    pnFriendRequests.Invoke((MethodInvoker)delegate {
+                        pnFriendRequests.Controls.Add(btnRequest);
+                    });
+                }
+            }
+            catch
+            {
+
             }
         }
-
         private void BtnRequest_MouseDown(object sender, MouseEventArgs e)
         {
             Guna2Button btn = sender as Guna2Button;
             btnCurrentRequest = btn;
             if (e.Button == MouseButtons.Left)
             {
-                DialogResult result = MessageBox.Show("Acept this friend request?", "Notification", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
+                try
                 {
-                    user.AceptFriendRequest(btn.Tag.ToString());
-                    pnFriendRequests.Controls.Remove(btnCurrentRequest);
+                    DialogResult result = MessageBox.Show("Acept this friend request?", "Notification", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        DTBase.AcceptFriendRequest(Convert.ToInt32(btn.Tag));
+                        pnFriendRequests.Controls.Remove(btnCurrentRequest);
+                    }
+                    else if (result == DialogResult.No)
+                    {
+                        DTBase.RejectFriendRequest(Convert.ToInt32(btn.Tag));
+                        pnFriendRequests.Controls.Remove(btnCurrentRequest);
+                    }
                 }
-                else if(result == DialogResult.No)
+                catch
                 {
-                    user.NoAceptFriendRequest(btn.Tag.ToString());
-                    pnFriendRequests.Controls.Remove(btnCurrentRequest);
+                    MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else if (e.Button == MouseButtons.Right)
@@ -303,9 +328,7 @@ namespace CARO_LTMCB.FORMS
         #region Context menustrip button
         private void btnUnfriend_Click(object sender, EventArgs e)
         {
-            user.UnFriend(contextmnFriend.Tag.ToString());
-            pnFriend.Controls.Remove(btnCurrentFriend);
-            
+
         }
 
         private void btnShowInfor_Friend_Click(object sender, EventArgs e)
@@ -322,7 +345,15 @@ namespace CARO_LTMCB.FORMS
 
         private void btnAddFriend_Click(object sender, EventArgs e)
         {
-            user.FriendRequest(contextmnNotFriend.Tag.ToString());
+
+            try
+            {
+                DTBase.SendFriendRequest(Convert.ToInt32(contextmnNotFriend.Tag));
+            }
+            catch
+            {
+                MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnShowInfor_Requests_Click(object sender, EventArgs e)
@@ -333,14 +364,13 @@ namespace CARO_LTMCB.FORMS
         #endregion
 
         #region Hàm gửi nhận tin nhắn
-        
         TinNhan curentTinNhan;
         int slTinNhan;
-        private void AddInMess(string mess, string time)
+        private void AddInMess(string mess, DateTime time)
         {
             TinNhan tn = new TinNhan(mess, time, mstype.In);
-            
-            if(curentTinNhan == null)
+
+            if (curentTinNhan == null)
             {
                 tn.Location = new Point(15, 10);
             }
@@ -354,11 +384,11 @@ namespace CARO_LTMCB.FORMS
             curentTinNhan = tn;
         }
 
-        private void AddOutMess(string mess, string time)
+        private void AddOutMess(string mess, DateTime time)
         {
             TinNhan tn = new TinNhan(mess, time, mstype.Out);
 
-            if(curentTinNhan == null)
+            if (curentTinNhan == null)
             {
                 tn.Location = new Point(120, 10);
             }
@@ -381,11 +411,18 @@ namespace CARO_LTMCB.FORMS
             }
             if (pnShowMess.Tag != null)
             {
-                if (tbxMess.Text != string.Empty)
+                try
                 {
-                    user.SendTo(pnShowMess.Tag.ToString(), tbxMess.Text);
-
-                    tbxMess.Text = string.Empty;
+                    int idReceive = Convert.ToInt32(pnShowMess.Tag);
+                    if (tbxMess.Text != string.Empty)
+                    {
+                        DTBase.SendMessTo(idReceive, tbxMess.Text);
+                        tbxMess.Text = string.Empty;
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -395,11 +432,18 @@ namespace CARO_LTMCB.FORMS
             {
                 if (pnShowMess.Tag != null)
                 {
-                    if (tbxMess.Text != string.Empty)
+                    try
                     {
-                        user.SendTo(pnShowMess.Tag.ToString(), tbxMess.Text);
-
-                        tbxMess.Text = string.Empty;
+                        int idReceive = Convert.ToInt32(pnShowMess.Tag);
+                        if (tbxMess.Text != string.Empty)
+                        {
+                            DTBase.SendMessTo(idReceive, tbxMess.Text);
+                            tbxMess.Text = string.Empty;
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -408,47 +452,61 @@ namespace CARO_LTMCB.FORMS
         private void LoadpnShowMess()
         {
             pnShowMess.Controls.Clear();
-
-            List<Message> list = user.GetMess(pnShowMess.Tag.ToString());
-            slTinNhan = list.Count;
-            foreach(var item in list)
+            List<Message> list = new List<Message>();
+            try
             {
-                if(item.IdSend == user.UserID)
+                int idUser = Convert.ToInt32(pnShowMess.Tag);
+                list = DTBase.ListMessWith(idUser);
+                slTinNhan = list.Count;
+                foreach (var item in list)
                 {
-                    AddOutMess(item.Content, item.NgayMess);
-                }
-                else
-                {
-                    AddInMess(item.Content, item.NgayMess);
+                    if (item.idSend == user.userID)
+                    {
+                        AddOutMess(item.content, item.ngayMess);
+                    }
+                    else
+                    {
+                        AddInMess(item.content, item.ngayMess);
+                    }
                 }
             }
+            catch
+            {
+                MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-        #endregion
-
         private void timmerLoadTN_Tick(object sender, EventArgs e)
         {
             if (pnShowMess.Tag != null)
             {
-                List<Message> list = user.GetMess(pnShowMess.Tag.ToString());
-                list = user.GetMess(pnShowMess.Tag.ToString());
-                if (slTinNhan != list.Count)
+                int idUser = Convert.ToInt32(pnShowMess.Tag);
+                try
                 {
-                    for (int i = slTinNhan; i < list.Count; i++)
+                    List<Message> list = new List<Message>();
+                    list = DTBase.ListMessWith(idUser);
+                    if (slTinNhan != list.Count)
                     {
-                        if (list[i].IdSend == user.UserID)
+                        for (int i = slTinNhan; i < list.Count; i++)
                         {
-                            AddOutMess(list[i].Content, list[i].NgayMess);
+                            if (list[i].idSend == user.userID)
+                            {
+                                AddOutMess(list[i].content, list[i].ngayMess);
+                            }
+                            else
+                            {
+                                AddInMess(list[i].content, list[i].ngayMess);
+                            }
+                            slTinNhan++;
                         }
-                        else
-                        {
-                            AddInMess(list[i].Content, list[i].NgayMess);
-                        }
-                        slTinNhan++;
                     }
+                }
+                catch
+                {
+                    MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
-
+        #endregion
         private void btnEmotion_Click(object sender, EventArgs e)
         {
             if (EffectManager.IsEffectEnabled())

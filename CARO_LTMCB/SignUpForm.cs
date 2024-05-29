@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -9,7 +8,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using System.Runtime.InteropServices;
-using System.Data.SqlClient;
 
 namespace CARO_LTMCB
 {
@@ -18,8 +16,11 @@ namespace CARO_LTMCB
         public SignUpForm()
         {
             InitializeComponent();
+            lbFill.Hide();
+            lbExists.Hide();
+            lbConfirm.Hide();
         }
-
+        #region Buttons event
         private void btnForgotpass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             LoginForm lgf = new LoginForm();
@@ -90,7 +91,7 @@ namespace CARO_LTMCB
             {
                 tbxMail.Text = "example@gmail.com";
                 tbxMail.Font = new Font("Microsoft Sans Serif", 18, FontStyle.Italic);
-                tbxMail.ForeColor = Color.LightGray;
+                tbxMail.ForeColor = Color.FromArgb(180, 180, 180);
             }
         }
 
@@ -110,7 +111,7 @@ namespace CARO_LTMCB
             {
                 tbxUsername.Text = "username";
                 tbxUsername.Font = new Font("Microsoft Sans Serif", 18, FontStyle.Italic);
-                tbxUsername.ForeColor = Color.LightGray;
+                tbxUsername.ForeColor = Color.FromArgb(180, 180, 180);
             }
         }
 
@@ -130,7 +131,7 @@ namespace CARO_LTMCB
             {
                 tbxPass.Text = "password";
                 tbxPass.Font = new Font("Microsoft Sans Serif", 18, FontStyle.Italic);
-                tbxPass.ForeColor = Color.LightGray;
+                tbxPass.ForeColor = Color.FromArgb(180, 180, 180);
             }
         }
 
@@ -150,9 +151,10 @@ namespace CARO_LTMCB
             {
                 tbxConfirmpass.Text = "password";
                 tbxConfirmpass.Font = new Font("Microsoft Sans Serif", 18, FontStyle.Italic);
-                tbxConfirmpass.ForeColor = Color.LightGray;
+                tbxConfirmpass.ForeColor = Color.FromArgb(180, 180, 180);
             }
         }
+        #endregion
 
         #region Kéo form 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -173,69 +175,50 @@ namespace CARO_LTMCB
 
         #endregion
 
-        SqlConnection connect = new SqlConnection(@"Data Source=34.87.92.114;Initial Catalog=CARO;User ID=sqlserver;Password=carogame123");
-
         private void btnRegister_Click(object sender, EventArgs e)
         {
             if (EffectManager.IsEffectEnabled())
             {
                 Effect.PlayEffect("effect");
             }
-            if (tbxMail.Text == "example@gmail.com" || tbxUsername.Text == "username" || tbxPass.Text == "password")
+            if (tbxMail.Text == "example@gmail.com" || tbxUsername.Text == "username" || tbxPass.Text == "password" || tbxConfirmpass.Text == "password")
             {
-                MessageBox.Show("Please fill all the information!", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lbExists.Hide();
+                lbConfirm.Hide();
+                lbFill.Show();
             }
             else
             {
-                if (connect.State != ConnectionState.Open)
+                try
                 {
-                    try
+                    if (DTBase.IsUsernameExists(tbxUsername.Text))
                     {
-                        connect.Open();
-                        string checkUsername = $"SELECT * FROM users WHERE username = '{tbxUsername.Text}'";
-                        using (SqlCommand check = new SqlCommand(checkUsername, connect))
+                        lbFill.Hide();
+                        lbConfirm.Hide();
+                        lbExists.Show();
+                    }
+                    else
+                    {
+                        if (tbxPass.Text != tbxConfirmpass.Text)
                         {
-                            SqlDataAdapter adapter = new SqlDataAdapter(check);
-                            DataTable dttable = new DataTable();
-                            adapter.Fill(dttable);
-
-                            if (dttable.Rows.Count > 0)
-                            {
-                                MessageBox.Show(tbxUsername.Text + " is already exist", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                            }
-                            else
-                            {
-                                if (tbxPass.Text == tbxConfirmpass.Text)
-                                {
-                                    DateTime date = DateTime.Now;
-                                    string adduser = $"INSERT INTO users VALUES ('{tbxUsername.Text}','{tbxPass.Text}','{tbxMail.Text}','{date}','0','0','0')";
-                                    using (SqlCommand insertcmd = new SqlCommand(adduser, connect))
-                                    {
-                                        insertcmd.ExecuteNonQuery();
-                                        MessageBox.Show("Registered successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                                        LoginForm lgf = new LoginForm();
-                                        lgf.Show();
-                                        lgf.Location = new Point(this.Location.X, this.Location.Y);
-                                        this.Hide();
-                                    }
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Please confirm the correct password!", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
-                            }
+                            lbFill.Hide();
+                            lbExists.Hide();
+                            lbConfirm.Show();
+                        }
+                        else
+                        {
+                            DTBase.AddNewUser(tbxUsername.Text, tbxPass.Text, tbxMail.Text);
+                            MessageBox.Show("Register successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoginForm lgf = new LoginForm();
+                            lgf.Show();
+                            lgf.Location = new Point(this.Location.X, this.Location.Y);
+                            this.Hide();
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    finally
-                    {
-                        connect.Close();
-                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

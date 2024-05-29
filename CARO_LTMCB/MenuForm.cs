@@ -20,7 +20,6 @@ namespace CARO_LTMCB
         private void timer1_Tick(object sender, EventArgs e)
         {
             MainForm mf = new MainForm();
-            mf.Tag = Tag;
             mf.Show();
             this.Hide();
             timer1.Stop();

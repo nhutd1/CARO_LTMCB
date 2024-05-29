@@ -71,6 +71,5 @@ namespace CARO_LTMCB.FORMS
         {
             EffectManager.EnableEffect();
         }
-
     }
 }

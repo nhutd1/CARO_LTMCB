@@ -22,27 +22,20 @@ namespace CARO_LTMCB.FORMS
 
         private void ProfileForm_Load(object sender, EventArgs e)
         {
-            if(this.Tag != null)
+            if (MyUser.user != null)
             {
-                user = new User(this.Tag.ToString());
-                tbxID.Text = user.UserID.ToString();
-                tbxUsername.Text = user.UserName;
-                tbxMail.Text = user.Mail;
-                tbxWinrate.Text = user.WinRate.ToString() + " %";
-                tbxScore.Text = user.Score.ToString();
-                tbxDate.Text = $"{user.NgayTao.Day}/{user.NgayTao.Month}/{user.NgayTao.Year}";
-                picProfile.Image = Image.FromFile($"Resources\\{user.Avatar.ToString()}.png");
-
-                //tmAvtChange.Start();
+                user = MyUser.user;
+                tbxID.Text = user.userID.ToString();
+                tbxUsername.Text = user.userName;
+                tbxMail.Text = user.userMail;
+                tbxWinrate.Text = user.winRate.ToString() + " %";
+                tbxScore.Text = user.score.ToString();
+                tbxDate.Text = $"{user.ngayTao.Day}/{user.ngayTao.Month}/{user.ngayTao.Year}";
+                picProfile.Image = Image.FromFile($"Resources\\{user.avatar.ToString()}.png");
 
                 historyThread = new Thread(LoadHistoryMatch);
                 historyThread.Start();
             }
-        }
-
-        private void panel5_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("OK");
         }
 
         private void btnChangeAvatar_Click(object sender, EventArgs e)
@@ -51,24 +44,14 @@ namespace CARO_LTMCB.FORMS
             {
                 Effect.PlayEffect("effect");
             }
-            FORMS.ChooseAvatarForm avtf = new FORMS.ChooseAvatarForm() {Tag = this.Tag };
+            FORMS.ChooseAvatarForm avtf = new FORMS.ChooseAvatarForm();
             avtf.ShowDialog();
-        }
-
-        private void tmAvtChange_Tick(object sender, EventArgs e)
-        {
-            User userChange = new User(this.Tag.ToString());
-            if(picProfile.Image != Image.FromFile($"Resources\\{userChange.Avatar}.png"))
-            {
-                picProfile.Image = Image.FromFile($"Resources\\{userChange.Avatar}.png");
-            }
         }
 
         private void ProfileForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if(this.Tag != null)
+            if (this.Tag != null)
             {
-                //tmAvtChange.Stop();
                 historyThread.Abort();
             }
         }
@@ -76,64 +59,64 @@ namespace CARO_LTMCB.FORMS
         MatchHistoryControl curentMatch;
         private void LoadHistoryMatch()
         {
-            user = new User(this.Tag.ToString());
-            List<Match> list= new List<Match>();
-            list = user.GetMatch();
-            foreach (var item in list)
+            List<Match> list = new List<Match>();
+            try
             {
-                if(item.IdWin == user.UserID)
+                list = DTBase.HistoryMatch();
+                foreach (var item in list)
                 {
-                    MatchHistoryControl matchControl = new MatchHistoryControl(item.IdLoss.ToString(), item.NgayMatch, result.win);
-                    if(curentMatch == null)
+                    if (item.idUserWin == user.userID)
                     {
-                        matchControl.Location = new Point(25, 5);
+                        MatchHistoryControl matchControl = new MatchHistoryControl(item.idUserLoss, item.ngayMatch, result.win);
+                        if (curentMatch == null)
+                        {
+                            matchControl.Location = new Point(25, 5);
+                        }
+                        else
+                        {
+                            matchControl.Location = new Point(25, curentMatch.Bottom + 10);
+                        }
+
+                        pnLSDau.Invoke((MethodInvoker)delegate {
+                            pnLSDau.Controls.Add(matchControl);
+                        });
+
+                        curentMatch = matchControl;
                     }
                     else
                     {
-                        matchControl.Location = new Point(25, curentMatch.Bottom + 10);
+                        MatchHistoryControl matchControl = new MatchHistoryControl(item.idUserWin, item.ngayMatch, result.loss);
+                        if (curentMatch == null)
+                        {
+                            matchControl.Location = new Point(25, 5);
+                        }
+                        else
+                        {
+                            matchControl.Location = new Point(25, curentMatch.Bottom + 10);
+                        }
+
+                        pnLSDau.Invoke((MethodInvoker)delegate {
+                            pnLSDau.Controls.Add(matchControl);
+                        });
+
+                        curentMatch = matchControl;
                     }
-
-                    pnLSDau.Invoke((MethodInvoker) delegate {
-                        pnLSDau.Controls.Add(matchControl);
-                    });
-
-                    curentMatch = matchControl;
                 }
-                else
-                {
-                    MatchHistoryControl matchControl = new MatchHistoryControl(item.IdWin.ToString(), item.NgayMatch, result.loss);
-                    if (curentMatch == null)
-                    {
-                        matchControl.Location = new Point(25, 5);
-                    }
-                    else
-                    {
-                        matchControl.Location = new Point(25, curentMatch.Bottom + 10);
-                    }
-
-                    pnLSDau.Invoke((MethodInvoker)delegate {
-                        pnLSDau.Controls.Add(matchControl);
-                    });
-
-                    curentMatch = matchControl;
-                }
+            }
+            catch
+            {
             }
         }
 
         private void picProfile_Click(object sender, EventArgs e)
         {
-            if(this.Tag != null)
+            if (MyUser.user != null)
             {
-                User userChange = new User(this.Tag.ToString());
-                if (picProfile.Image != Image.FromFile($"Resources\\{userChange.Avatar}.png"))
+                if (picProfile.Image != Image.FromFile($"Resources\\{user.avatar}.png"))
                 {
-                    picProfile.Image = Image.FromFile($"Resources\\{userChange.Avatar}.png");
+                    picProfile.Image = Image.FromFile($"Resources\\{user.avatar}.png");
                 }
-            }        }
-
-        private void tbxMail_TextChanged(object sender, EventArgs e)
-        {
-
+            }
         }
     }
 }

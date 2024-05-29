@@ -29,7 +29,6 @@ namespace CARO_LTMCB.FORMS
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.pnProfile = new System.Windows.Forms.Panel();
             this.btnChangeAvatar = new FontAwesome.Sharp.IconButton();
             this.picProfile = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -52,7 +51,6 @@ namespace CARO_LTMCB.FORMS
             this.pnLSDau = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.tmAvtChange = new System.Windows.Forms.Timer(this.components);
             this.pnProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfile)).BeginInit();
             this.panel5.SuspendLayout();
@@ -258,7 +256,6 @@ namespace CARO_LTMCB.FORMS
             this.tbxMail.Size = new System.Drawing.Size(244, 28);
             this.tbxMail.TabIndex = 9;
             this.tbxMail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbxMail.TextChanged += new System.EventHandler(this.tbxMail_TextChanged);
             // 
             // tbxWinrate
             // 
@@ -409,10 +406,6 @@ namespace CARO_LTMCB.FORMS
             this.label1.TabIndex = 0;
             this.label1.Text = "MATCH HISTORY";
             // 
-            // tmAvtChange
-            // 
-            this.tmAvtChange.Tick += new System.EventHandler(this.tmAvtChange_Tick);
-            // 
             // ProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -461,6 +454,5 @@ namespace CARO_LTMCB.FORMS
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2CirclePictureBox picProfile;
         private FontAwesome.Sharp.IconButton btnChangeAvatar;
-        private System.Windows.Forms.Timer tmAvtChange;
     }
 }

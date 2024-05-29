@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 using FontAwesome.Sharp;
 using System.Runtime.InteropServices;
 
@@ -16,12 +14,14 @@ namespace CARO_LTMCB
 {
     public partial class LoginForm : Form
     {
-        
         public LoginForm()
         {
             InitializeComponent();
+            lbWrong.Hide();
+            lbFill.Hide();
         }
 
+        #region Buttons event
         private void btnSignup_Click(object sender, EventArgs e)
         {
             if (EffectManager.IsEffectEnabled())
@@ -117,6 +117,7 @@ namespace CARO_LTMCB
                 tbxPass.ForeColor = Color.LightGray;
             }
         }
+        #endregion
 
         #region Kéo form 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -136,65 +137,40 @@ namespace CARO_LTMCB
         }
         #endregion
 
-        SqlConnection connect = new SqlConnection(@"Data Source=34.87.92.114;Initial Catalog=CARO;User ID=sqlserver;Password=carogame123");
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (EffectManager.IsEffectEnabled())
             {
                 Effect.PlayEffect("effect");
             }
-            if (tbxUsername.Text!="username" && tbxPass.Text != "password")
+            if (tbxUsername.Text != "username" && tbxPass.Text != "password")
             {
-                if(connect.State!= ConnectionState.Open)
+                try
                 {
-                    try
+                    if (DTBase.CheckLogin(tbxUsername.Text, tbxPass.Text))
                     {
-                        connect.Open();
-                        string checkUsername = $"SELECT * FROM users WHERE username = '{tbxUsername.Text}' AND userpass = '{tbxPass.Text}'";
-                        using(SqlCommand check = new SqlCommand(checkUsername,connect))
-                        {
-                            SqlDataAdapter adapter = new SqlDataAdapter(check);
-                            DataTable dttable = new DataTable();
-                            adapter.Fill(dttable);
-
-                            if(dttable.Rows.Count > 0)
-                            {
-                                MessageBox.Show("Login successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                MenuForm mnf = new MenuForm();
-                                mnf.Tag = tbxUsername.Text;
-                                mnf.Show();
-                                this.Hide();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Incorrect username or password!", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                                tbxUsername.Text = "username";
-                                tbxUsername.Font = new Font("Microsoft Sans Serif", 18, FontStyle.Italic);
-                                tbxUsername.ForeColor = Color.LightGray;
-
-                                tbxPass.Text = "password";
-                                tbxPass.Font = new Font("Microsoft Sans Serif", 18, FontStyle.Italic);
-                                tbxPass.ForeColor = Color.LightGray;
-                            }
-                        }
+                        MessageBox.Show("Login successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DTBase.GetUserUName(tbxUsername.Text);
+                        MenuForm mnf = new MenuForm();
+                        mnf.Show();
+                        this.Hide();
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        MessageBox.Show("Error connect to database: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        lbFill.Hide();
+                        lbWrong.Show();
                     }
-                    finally
-                    {
-                        connect.Close();
-                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Please fill all the information!", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lbWrong.Hide();
+                lbFill.Show();
             }
         }
-
     }
 }

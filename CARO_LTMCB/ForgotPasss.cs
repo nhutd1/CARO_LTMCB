@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -9,9 +8,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using System.Runtime.InteropServices;
-using System.Data.SqlClient;
 using System.Net;
 using System.Net.Mail;
+
 
 namespace CARO_LTMCB
 {
@@ -20,8 +19,14 @@ namespace CARO_LTMCB
         public ForgotPasss()
         {
             InitializeComponent();
+            lbFill1.Hide();
+            lbFill2.Hide();
+            lbWrong1.Hide();
+            lbWrong2.Hide();
+            lbConfirm.Hide();
+            lbEnter.Hide();
         }
-
+        #region Buttons event
         private void btnExit_Click(object sender, EventArgs e)
         {
             if (EffectManager.IsEffectEnabled())
@@ -38,11 +43,6 @@ namespace CARO_LTMCB
                 Effect.PlayEffect("effect");
             }
             this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void btnConfirmCode_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void iconPictureBox5_Click(object sender, EventArgs e)
@@ -89,7 +89,7 @@ namespace CARO_LTMCB
             {
                 tbxMail.Text = "example@gmail.com";
                 tbxMail.Font = new Font("Microsoft Sans Serif", 18, FontStyle.Italic);
-                tbxMail.ForeColor = Color.LightGray;
+                tbxMail.ForeColor = Color.FromArgb(180, 180, 180);
             }
         }
 
@@ -109,7 +109,7 @@ namespace CARO_LTMCB
             {
                 tbxUsername.Text = "username";
                 tbxUsername.Font = new Font("Microsoft Sans Serif", 18, FontStyle.Italic);
-                tbxUsername.ForeColor = Color.LightGray;
+                tbxUsername.ForeColor = Color.FromArgb(180, 180, 180);
             }
         }
 
@@ -124,6 +124,7 @@ namespace CARO_LTMCB
             lgf.Location = new Point(this.Location.X, this.Location.Y);
             this.Hide();
         }
+        #endregion
 
         #region Kéo form 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -144,45 +145,8 @@ namespace CARO_LTMCB
         }
         #endregion
 
-        SqlConnection connect = new SqlConnection(@"Data Source=34.87.92.114;Initial Catalog=CARO;User ID=sqlserver;Password=carogame123");
-
         #region Gửi code qua mail người dùng
-        private bool IsUserAndMailExist()
-        {
-            bool result = false;
-            if (connect.State != ConnectionState.Open)
-            {
-                try
-                {
-                    connect.Open();
-                    string checkUserMail = $"SELECT * FROM users WHERE username='{tbxUsername.Text}' AND mail='{tbxMail.Text}'";
-
-                    using (SqlCommand check = new SqlCommand(checkUserMail, connect))
-                    {
-                        SqlDataAdapter adapter = new SqlDataAdapter(check);
-                        DataTable dttable = new DataTable();
-                        adapter.Fill(dttable);
-
-                        if (dttable.Rows.Count > 0)
-                        {
-                            result = true;
-                        }
-                    }
-                }
-                catch(Exception ex)
-                {
-                    MessageBox.Show("Error connect to database: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                finally
-                {
-                    connect.Close();
-                }
-            }
-            return result;
-        }
-
         string randomcode;
-        
         private void btnGetcode_Click(object sender, EventArgs e)
         {
             if (EffectManager.IsEffectEnabled())
@@ -191,55 +155,72 @@ namespace CARO_LTMCB
             }
             if (tbxMail.Text != "example@gmail.com" && tbxUsername.Text != "username")
             {
-                if (IsUserAndMailExist())
+                try
                 {
-                    string from, pass, messageBody,to;
-                    Random rand = new Random();
-                    randomcode = (rand.Next(999999)).ToString();
-
-                    MailMessage message = new MailMessage();
-
-                    to = tbxMail.Text;
-                    from = "carogameserver@gmail.com";
-                    pass = "iotb mxrh byqb xizh";
-                    messageBody = "Your code is: " + randomcode;
-                    try
+                    if (DTBase.CheckUNameUMail(tbxUsername.Text, tbxMail.Text))
                     {
-                        message.To.Add(to);
-                        message.From = new MailAddress(from);
-                        message.Body = messageBody;
-                        message.Subject = "Code Verification";
+                        string from, pass, messageBody, to;
+                        Random rand = new Random();
+                        randomcode = (rand.Next(999999)).ToString();
 
-                        SmtpClient smtp = new SmtpClient("smtp.gmail.com");
-                        smtp.EnableSsl = true;
-                        smtp.Port = 587;
-                        smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                        smtp.Credentials = new NetworkCredential(from, pass);
+                        MailMessage message = new MailMessage();
 
+                        to = tbxMail.Text;
+                        from = "carogameserver@gmail.com";
+                        pass = "iotb mxrh byqb xizh";
+                        messageBody = "Your code is: " + randomcode;
                         try
                         {
-                            smtp.Send(message);
-                            MessageBox.Show("Code send successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            btnConfirmcode.Enabled = true;
+                            message.To.Add(to);
+                            message.From = new MailAddress(from);
+                            message.Body = messageBody;
+                            message.Subject = "Code Verification";
+
+                            SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+                            smtp.EnableSsl = true;
+                            smtp.Port = 587;
+                            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                            smtp.Credentials = new NetworkCredential(from, pass);
+
+                            try
+                            {
+                                smtp.Send(message);
+                                MessageBox.Show("Code send successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                btnConfirmcode.Enabled = true;
+                                lbFill1.Hide();
+                                lbFill2.Hide();
+                                lbWrong1.Hide();
+                                lbWrong2.Hide();
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Error to send code: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Error to send code: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        lbFill1.Hide();
+                        lbFill2.Hide();
+                        lbWrong1.Show();
+                        lbWrong2.Show();
                     }
                 }
-                else
+                catch
                 {
-                    MessageBox.Show("Username is not exists or wrong E-MAIL!", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Please fill all the information!", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lbWrong1.Hide();
+                lbWrong2.Hide();
+                lbFill1.Show();
+                lbFill2.Show();
             }
         }
         #endregion
@@ -255,6 +236,8 @@ namespace CARO_LTMCB
                 tbxNewpass.Enabled = true;
                 tbxConfirmpass.Enabled = true;
                 btnChangepass.Enabled = true;
+                btnConfirmcode.Enabled = false;
+                DTBase.GetUserUName(tbxUsername.Text);
                 MessageBox.Show("Confirm successfully! You need to change your password below.", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -269,45 +252,33 @@ namespace CARO_LTMCB
             {
                 Effect.PlayEffect("effect");
             }
-            if (tbxNewpass.Text != "" && tbxConfirmpass.Text !="")
+            if (tbxNewpass.Text != "" && tbxConfirmpass.Text != "")
             {
-                if (tbxNewpass.Text == tbxConfirmpass.Text) 
+                if (tbxNewpass.Text == tbxConfirmpass.Text)
                 {
-                    if (connect.State != ConnectionState.Open)
+                    try
                     {
-                        try
-                        {
-                            connect.Open();
-                            string updatePass = $"UPDATE users SET userpass = '{tbxConfirmpass.Text}' WHERE username='{tbxUsername.Text}' AND mail='{tbxMail.Text}'";
-                            using (SqlCommand updatePassCmd = new SqlCommand(updatePass, connect))
-                            {
-                                updatePassCmd.ExecuteNonQuery();
-                                MessageBox.Show("Change password successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                                LoginForm lgf = new LoginForm();
-                                lgf.Show();
-                                lgf.Location = new Point(this.Location.X, this.Location.Y);
-                                this.Hide();
-                            }
-                        }
-                        catch(Exception ex)
-                        {
-                            MessageBox.Show("Error connect to database: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        finally
-                        {
-                            connect.Close();
-                        }
+                        DTBase.ChangePass(tbxConfirmpass.Text);
+                        LoginForm lgf = new LoginForm();
+                        lgf.Show();
+                        lgf.Location = new Point(this.Location.X, this.Location.Y);
+                        this.Hide();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please confirm the correct password!", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    lbEnter.Hide();
+                    lbConfirm.Show();
                 }
             }
             else
             {
-                MessageBox.Show("Please enter the new password!", "Error message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lbConfirm.Hide();
+                lbEnter.Show();
             }
         }
     }

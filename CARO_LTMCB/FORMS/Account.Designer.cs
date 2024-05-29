@@ -93,7 +93,6 @@ namespace CARO_LTMCB.FORMS
             this.btnSave.Size = new System.Drawing.Size(397, 79);
             this.btnSave.TabIndex = 42;
             this.btnSave.Text = "SAVE";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // guna2CheckBox2
             // 
@@ -184,7 +183,6 @@ namespace CARO_LTMCB.FORMS
             this.iconCopy.Size = new System.Drawing.Size(60, 46);
             this.iconCopy.TabIndex = 15;
             this.iconCopy.UseVisualStyleBackColor = false;
-            this.iconCopy.Click += new System.EventHandler(this.iconCopy_Click);
             // 
             // label4
             // 
@@ -306,7 +304,6 @@ namespace CARO_LTMCB.FORMS
             this.Controls.Add(this.pnProfile);
             this.Name = "Account";
             this.Text = "Account";
-            this.Load += new System.EventHandler(this.Account_Load);
             this.pnProfile.ResumeLayout(false);
             this.pnProfile.PerformLayout();
             this.ResumeLayout(false);

@@ -17,7 +17,7 @@ namespace CARO_LTMCB.FORMS
         public InforUserForm()
         {
             InitializeComponent();
-            
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -29,13 +29,20 @@ namespace CARO_LTMCB.FORMS
         {
             if (this.Tag != null)
             {
-                int i = 0;
-                user = new User(Tag.ToString(), i);
-                picAvatar.Image = Image.FromFile($"Resources\\{user.Avatar}.png");
-                lbID.Text = user.UserID.ToString();
-                lbUsername.Text = user.UserName;
-                lbWinRate.Text = user.WinRate.ToString() + " %";
-                lbScore.Text = user.Score.ToString();
+                int id = Convert.ToInt32(this.Tag);
+                try
+                {
+                    user = DTBase.GetUserUID(id);
+                    picAvatar.Image = Image.FromFile($"Resources\\{user.avatar}.png");
+                    lbID.Text = user.userID.ToString();
+                    lbUsername.Text = user.userName;
+                    lbWinRate.Text = user.winRate.ToString() + " %";
+                    lbScore.Text = user.score.ToString();
+                }
+                catch
+                {
+                    MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

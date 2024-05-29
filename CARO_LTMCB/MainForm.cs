@@ -34,7 +34,7 @@ namespace CARO_LTMCB
         {
             
         }
-
+        #region Button event
         private void btnExit_Click(object sender, EventArgs e)
         {
             if (EffectManager.IsEffectEnabled())
@@ -43,7 +43,6 @@ namespace CARO_LTMCB
             }
             Application.Exit();
         }
-
         private void btnMinisize_Click(object sender, EventArgs e)
         {
             if (EffectManager.IsEffectEnabled())
@@ -52,6 +51,84 @@ namespace CARO_LTMCB
             }
             this.WindowState = FormWindowState.Minimized;
         }
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            if (EffectManager.IsEffectEnabled())
+            {
+                Effect.PlayEffect("effect");
+            }
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                AudioPlayer.StopAudio();
+                LoginForm lgf = new LoginForm();
+                lgf.Show();
+                this.Hide();
+            }
+        }
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            if (EffectManager.IsEffectEnabled())
+            {
+                Effect.PlayEffect("effect");
+            }
+            if (currentBtn != sender)
+            {
+                ChangeBtn(sender);
+                OpenForm(new FORMS.HomeForm());
+            }
+        }
+        private void btnMessage_Click(object sender, EventArgs e)
+        {
+            if (EffectManager.IsEffectEnabled())
+            {
+                Effect.PlayEffect("effect");
+            }
+            if (currentBtn != sender)
+            {
+                ChangeBtn(sender);
+                FORMS.MessageForm mf = new FORMS.MessageForm();
+                OpenForm(mf);
+            }
+        }
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            if (EffectManager.IsEffectEnabled())
+            {
+                Effect.PlayEffect("effect");
+            }
+            if (currentBtn != sender)
+            {
+                ChangeBtn(sender);
+                FORMS.ProfileForm pf = new FORMS.ProfileForm();
+                OpenForm(pf);
+            }
+        }
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            if (EffectManager.IsEffectEnabled())
+            {
+                Effect.PlayEffect("effect");
+            }
+            if (currentBtn != sender)
+            {
+                ChangeBtn(sender);
+                OpenForm(new FORMS.SettingForm());
+            }
+        }
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            if (EffectManager.IsEffectEnabled())
+            {
+                Effect.PlayEffect("effect");
+            }
+            if (currentBtn != sender)
+            {
+                ChangeBtn(sender);
+                OpenForm(new FORMS.HelpForm());
+            }
+        }
+        #endregion
 
         #region Kéo form 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -67,32 +144,16 @@ namespace CARO_LTMCB
 
         #endregion
 
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            if (EffectManager.IsEffectEnabled())
-            {
-                Effect.PlayEffect("effect");
-            }
-            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(result == DialogResult.Yes)
-            {
-                AudioPlayer.StopAudio();
-                LoginForm lgf = new LoginForm();
-                lgf.Show();
-                this.Hide();
-            }
-        }
-
         private IconButton currentBtn;
         private Panel leftPannelBtn;
         private void ChangeBtn(object senderbtn)
         {
-            if(senderbtn != null)
+            if (senderbtn != null)
             {
                 RemoveChangeBtn();
                 currentBtn = senderbtn as IconButton;
                 currentBtn.ImageAlign = ContentAlignment.MiddleRight;
-                
+
                 leftPannelBtn.Location = new Point(0, currentBtn.Location.Y);
                 leftPannelBtn.Visible = true;
                 leftPannelBtn.BringToFront();
@@ -124,75 +185,6 @@ namespace CARO_LTMCB
             pnMain.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-        }
-
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            if (EffectManager.IsEffectEnabled())
-            {
-                Effect.PlayEffect("effect");
-            }
-            if (currentBtn != sender)
-            {
-                ChangeBtn(sender);
-                OpenForm(new FORMS.HomeForm());
-            }
-        }
-
-        private void btnMessage_Click(object sender, EventArgs e)
-        {
-            if (EffectManager.IsEffectEnabled())
-            {
-                Effect.PlayEffect("effect");
-            }
-            if (currentBtn != sender)
-            {
-                ChangeBtn(sender);
-                FORMS.MessageForm mf = new FORMS.MessageForm();
-                mf.Tag = this.Tag;
-                OpenForm(mf);
-            }
-        }
-
-        private void btnProfile_Click(object sender, EventArgs e)
-        {
-            if (EffectManager.IsEffectEnabled())
-            {
-                Effect.PlayEffect("effect");
-            }
-            if (currentBtn != sender)
-            {
-                ChangeBtn(sender);
-                FORMS.ProfileForm pf = new FORMS.ProfileForm();
-                pf.Tag = this.Tag;
-                OpenForm(pf);
-            }
-        }
-
-        private void btnSetting_Click(object sender, EventArgs e)
-        {
-            if (EffectManager.IsEffectEnabled())
-            {
-                Effect.PlayEffect("effect");
-            }
-            if (currentBtn != sender)
-            {
-                ChangeBtn(sender);
-                OpenForm(new FORMS.SettingForm());
-            }
-        }
-
-        private void btnHelp_Click(object sender, EventArgs e)
-        {
-            if (EffectManager.IsEffectEnabled())
-            {
-                Effect.PlayEffect("effect");
-            }
-            if (currentBtn != sender)
-            {
-                ChangeBtn(sender);
-                OpenForm(new FORMS.HelpForm());
-            }
         }
     }
 }

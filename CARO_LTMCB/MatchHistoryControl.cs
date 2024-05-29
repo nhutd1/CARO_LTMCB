@@ -16,15 +16,14 @@ namespace CARO_LTMCB
         {
             InitializeComponent();
         }
-        public MatchHistoryControl(string userID,string time, result matchResult)
+        public MatchHistoryControl(int userID, DateTime time, result matchResult)
         {
             InitializeComponent();
-            int i = 0;
-            User user = new User(userID, i);
-            lbUserName.Text = user.UserName;
-            lbTime.Text = time;
+            User user = DTBase.GetUserUID(userID);
+            lbUserName.Text = user.userName;
+            lbTime.Text = $"{time.Day}/{time.Month}/{time.Year} - {time.Hour}:{time.Minute}";
 
-            if(matchResult == result.win)
+            if (matchResult == result.win)
             {
                 lbResult.Text = "WIN";
                 lbResult.ForeColor = Color.FromArgb(32, 178, 170);

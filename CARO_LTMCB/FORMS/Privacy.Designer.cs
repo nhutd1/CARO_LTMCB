@@ -64,7 +64,7 @@ namespace CARO_LTMCB.FORMS
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(105, 292);
+            this.label5.Location = new System.Drawing.Point(246, 328);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(309, 27);
             this.label5.TabIndex = 57;
@@ -75,7 +75,7 @@ namespace CARO_LTMCB.FORMS
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(105, 196);
+            this.label3.Location = new System.Drawing.Point(246, 232);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(201, 27);
             this.label3.TabIndex = 54;
@@ -86,7 +86,7 @@ namespace CARO_LTMCB.FORMS
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(105, 101);
+            this.label2.Location = new System.Drawing.Point(246, 137);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(138, 27);
             this.label2.TabIndex = 55;
@@ -106,7 +106,7 @@ namespace CARO_LTMCB.FORMS
             this.guna2Button5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.guna2Button5.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button5.ForeColor = System.Drawing.Color.IndianRed;
-            this.guna2Button5.Location = new System.Drawing.Point(83, 396);
+            this.guna2Button5.Location = new System.Drawing.Point(224, 432);
             this.guna2Button5.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.PressedDepth = 15;
@@ -162,7 +162,7 @@ namespace CARO_LTMCB.FORMS
             this.iconPictureBox4.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox4.IconSize = 42;
-            this.iconPictureBox4.Location = new System.Drawing.Point(453, 129);
+            this.iconPictureBox4.Location = new System.Drawing.Point(594, 165);
             this.iconPictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.iconPictureBox4.Name = "iconPictureBox4";
             this.iconPictureBox4.Size = new System.Drawing.Size(47, 42);
@@ -178,7 +178,7 @@ namespace CARO_LTMCB.FORMS
             this.iconPictureBox2.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox2.IconSize = 54;
-            this.iconPictureBox2.Location = new System.Drawing.Point(28, 117);
+            this.iconPictureBox2.Location = new System.Drawing.Point(169, 153);
             this.iconPictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.iconPictureBox2.Name = "iconPictureBox2";
             this.iconPictureBox2.Size = new System.Drawing.Size(65, 54);
@@ -192,7 +192,7 @@ namespace CARO_LTMCB.FORMS
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox1.Location = new System.Drawing.Point(111, 129);
+            this.textBox1.Location = new System.Drawing.Point(252, 165);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -209,7 +209,7 @@ namespace CARO_LTMCB.FORMS
             this.iconPictureBox6.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox6.IconSize = 42;
-            this.iconPictureBox6.Location = new System.Drawing.Point(453, 321);
+            this.iconPictureBox6.Location = new System.Drawing.Point(594, 357);
             this.iconPictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.iconPictureBox6.Name = "iconPictureBox6";
             this.iconPictureBox6.Size = new System.Drawing.Size(47, 42);
@@ -225,7 +225,7 @@ namespace CARO_LTMCB.FORMS
             this.iconPictureBox5.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox5.IconSize = 42;
-            this.iconPictureBox5.Location = new System.Drawing.Point(453, 224);
+            this.iconPictureBox5.Location = new System.Drawing.Point(594, 260);
             this.iconPictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.iconPictureBox5.Name = "iconPictureBox5";
             this.iconPictureBox5.Size = new System.Drawing.Size(47, 42);
@@ -241,7 +241,7 @@ namespace CARO_LTMCB.FORMS
             this.iconPictureBox3.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox3.IconSize = 54;
-            this.iconPictureBox3.Location = new System.Drawing.Point(28, 309);
+            this.iconPictureBox3.Location = new System.Drawing.Point(169, 345);
             this.iconPictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.iconPictureBox3.Name = "iconPictureBox3";
             this.iconPictureBox3.Size = new System.Drawing.Size(65, 54);
@@ -255,7 +255,7 @@ namespace CARO_LTMCB.FORMS
             this.tbxConfirmpass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbxConfirmpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxConfirmpass.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.tbxConfirmpass.Location = new System.Drawing.Point(111, 321);
+            this.tbxConfirmpass.Location = new System.Drawing.Point(252, 357);
             this.tbxConfirmpass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxConfirmpass.Multiline = true;
             this.tbxConfirmpass.Name = "tbxConfirmpass";
@@ -272,7 +272,7 @@ namespace CARO_LTMCB.FORMS
             this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 54;
-            this.iconPictureBox1.Location = new System.Drawing.Point(28, 212);
+            this.iconPictureBox1.Location = new System.Drawing.Point(169, 248);
             this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(65, 54);
@@ -286,7 +286,7 @@ namespace CARO_LTMCB.FORMS
             this.tbxPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbxPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxPass.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.tbxPass.Location = new System.Drawing.Point(111, 224);
+            this.tbxPass.Location = new System.Drawing.Point(252, 260);
             this.tbxPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxPass.Multiline = true;
             this.tbxPass.Name = "tbxPass";

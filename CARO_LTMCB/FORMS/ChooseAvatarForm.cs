@@ -18,8 +18,6 @@ namespace CARO_LTMCB.FORMS
         {
             InitializeComponent();
         }
-
-
         #region Kéo form 
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -27,7 +25,7 @@ namespace CARO_LTMCB.FORMS
 
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
-        
+
         private void panel2_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
@@ -38,9 +36,9 @@ namespace CARO_LTMCB.FORMS
 
         private void ChooseAvatarForm_Load(object sender, EventArgs e)
         {
-            if (this.Tag != null)
+            if (MyUser.user != null)
             {
-                user = new User(Tag.ToString());
+                user = MyUser.user;
             }
         }
 
@@ -52,7 +50,14 @@ namespace CARO_LTMCB.FORMS
             }
             if (user != null)
             {
-                user.ChangeAvatar(1);
+                try
+                {
+                    DTBase.ChangeAvatar(1);
+                }
+                catch
+                {
+                    MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -64,7 +69,14 @@ namespace CARO_LTMCB.FORMS
             }
             if (user != null)
             {
-                user.ChangeAvatar(2);
+                try
+                {
+                    DTBase.ChangeAvatar(2);
+                }
+                catch
+                {
+                    MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -76,7 +88,14 @@ namespace CARO_LTMCB.FORMS
             }
             if (user != null)
             {
-                user.ChangeAvatar(3);
+                try
+                {
+                    DTBase.ChangeAvatar(3);
+                }
+                catch
+                {
+                    MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -88,7 +107,14 @@ namespace CARO_LTMCB.FORMS
             }
             if (user != null)
             {
-                user.ChangeAvatar(4);
+                try
+                {
+                    DTBase.ChangeAvatar(4);
+                }
+                catch
+                {
+                    MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -100,7 +126,14 @@ namespace CARO_LTMCB.FORMS
             }
             if (user != null)
             {
-                user.ChangeAvatar(5);
+                try
+                {
+                    DTBase.ChangeAvatar(5);
+                }
+                catch
+                {
+                    MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -112,7 +145,14 @@ namespace CARO_LTMCB.FORMS
             }
             if (user != null)
             {
-                user.ChangeAvatar(11);
+                try
+                {
+                    DTBase.ChangeAvatar(11);
+                }
+                catch
+                {
+                    MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -124,7 +164,14 @@ namespace CARO_LTMCB.FORMS
             }
             if (user != null)
             {
-                user.ChangeAvatar(12);
+                try
+                {
+                    DTBase.ChangeAvatar(12);
+                }
+                catch
+                {
+                    MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -136,7 +183,14 @@ namespace CARO_LTMCB.FORMS
             }
             if (user != null)
             {
-                user.ChangeAvatar(6);
+                try
+                {
+                    DTBase.ChangeAvatar(6);
+                }
+                catch
+                {
+                    MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -148,7 +202,14 @@ namespace CARO_LTMCB.FORMS
             }
             if (user != null)
             {
-                user.ChangeAvatar(7);
+                try
+                {
+                    DTBase.ChangeAvatar(7);
+                }
+                catch
+                {
+                    MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -160,7 +221,14 @@ namespace CARO_LTMCB.FORMS
             }
             if (user != null)
             {
-                user.ChangeAvatar(8);
+                try
+                {
+                    DTBase.ChangeAvatar(8);
+                }
+                catch
+                {
+                    MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -172,7 +240,14 @@ namespace CARO_LTMCB.FORMS
             }
             if (user != null)
             {
-                user.ChangeAvatar(9);
+                try
+                {
+                    DTBase.ChangeAvatar(9);
+                }
+                catch
+                {
+                    MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -184,7 +259,14 @@ namespace CARO_LTMCB.FORMS
             }
             if (user != null)
             {
-                user.ChangeAvatar(10);
+                try
+                {
+                    DTBase.ChangeAvatar(10);
+                }
+                catch
+                {
+                    MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

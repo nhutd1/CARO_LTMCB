@@ -47,6 +47,8 @@ namespace CARO_LTMCB
             this.tbxUsername = new System.Windows.Forms.TextBox();
             this.lbUsername = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lbFill = new System.Windows.Forms.Label();
+            this.lbWrong = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -94,6 +96,8 @@ namespace CARO_LTMCB
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LightCyan;
+            this.panel2.Controls.Add(this.lbFill);
+            this.panel2.Controls.Add(this.lbWrong);
             this.panel2.Controls.Add(this.iconPictureBox5);
             this.panel2.Controls.Add(this.iconPictureBox2);
             this.panel2.Controls.Add(this.iconPictureBox1);
@@ -124,7 +128,7 @@ namespace CARO_LTMCB
             this.iconPictureBox5.IconColor = System.Drawing.SystemColors.ControlDarkDark;
             this.iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox5.IconSize = 38;
-            this.iconPictureBox5.Location = new System.Drawing.Point(418, 279);
+            this.iconPictureBox5.Location = new System.Drawing.Point(418, 276);
             this.iconPictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.iconPictureBox5.Name = "iconPictureBox5";
             this.iconPictureBox5.Size = new System.Drawing.Size(38, 38);
@@ -157,7 +161,7 @@ namespace CARO_LTMCB
             this.iconPictureBox1.IconColor = System.Drawing.Color.Black;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 44;
-            this.iconPictureBox1.Location = new System.Drawing.Point(81, 279);
+            this.iconPictureBox1.Location = new System.Drawing.Point(81, 276);
             this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(46, 44);
@@ -209,7 +213,7 @@ namespace CARO_LTMCB
             this.btnSignup.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSignup.IconSize = 30;
             this.btnSignup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSignup.Location = new System.Drawing.Point(180, 446);
+            this.btnSignup.Location = new System.Drawing.Point(171, 465);
             this.btnSignup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSignup.Name = "btnSignup";
             this.btnSignup.Size = new System.Drawing.Size(220, 55);
@@ -228,7 +232,7 @@ namespace CARO_LTMCB
             this.btnLogin.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLogin.IconSize = 30;
             this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogin.Location = new System.Drawing.Point(180, 370);
+            this.btnLogin.Location = new System.Drawing.Point(171, 389);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(220, 55);
@@ -243,7 +247,7 @@ namespace CARO_LTMCB
             this.btnForgotpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnForgotpass.Location = new System.Drawing.Point(209, 567);
             this.btnForgotpass.Name = "btnForgotpass";
-            this.btnForgotpass.Size = new System.Drawing.Size(142, 20);
+            this.btnForgotpass.Size = new System.Drawing.Size(143, 20);
             this.btnForgotpass.TabIndex = 5;
             this.btnForgotpass.TabStop = true;
             this.btnForgotpass.Text = "Forgot password?";
@@ -253,9 +257,9 @@ namespace CARO_LTMCB
             // 
             this.tbxPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.tbxPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbxPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxPass.ForeColor = System.Drawing.Color.Silver;
-            this.tbxPass.Location = new System.Drawing.Point(134, 279);
+            this.tbxPass.Location = new System.Drawing.Point(134, 276);
             this.tbxPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxPass.Multiline = true;
             this.tbxPass.Name = "tbxPass";
@@ -270,7 +274,7 @@ namespace CARO_LTMCB
             // 
             this.lbPass.AutoSize = true;
             this.lbPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPass.Location = new System.Drawing.Point(76, 246);
+            this.lbPass.Location = new System.Drawing.Point(76, 243);
             this.lbPass.Name = "lbPass";
             this.lbPass.Size = new System.Drawing.Size(106, 25);
             this.lbPass.TabIndex = 10;
@@ -280,7 +284,7 @@ namespace CARO_LTMCB
             // 
             this.tbxUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.tbxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxUsername.ForeColor = System.Drawing.Color.Silver;
             this.tbxUsername.Location = new System.Drawing.Point(134, 169);
             this.tbxUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -311,6 +315,30 @@ namespace CARO_LTMCB
             this.label3.Size = new System.Drawing.Size(325, 38);
             this.label3.TabIndex = 0;
             this.label3.Text = "WELCOME BACK !";
+            // 
+            // lbFill
+            // 
+            this.lbFill.AutoSize = true;
+            this.lbFill.BackColor = System.Drawing.Color.LightCyan;
+            this.lbFill.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lbFill.Location = new System.Drawing.Point(136, 341);
+            this.lbFill.Name = "lbFill";
+            this.lbFill.Size = new System.Drawing.Size(310, 23);
+            this.lbFill.TabIndex = 39;
+            this.lbFill.Text = "Please fill all the information!";
+            // 
+            // lbWrong
+            // 
+            this.lbWrong.AutoSize = true;
+            this.lbWrong.BackColor = System.Drawing.Color.LightCyan;
+            this.lbWrong.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWrong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lbWrong.Location = new System.Drawing.Point(130, 341);
+            this.lbWrong.Name = "lbWrong";
+            this.lbWrong.Size = new System.Drawing.Size(326, 23);
+            this.lbWrong.TabIndex = 38;
+            this.lbWrong.Text = "Wrong Username or Password!";
             // 
             // LoginForm
             // 
@@ -357,6 +385,8 @@ namespace CARO_LTMCB
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
+        private System.Windows.Forms.Label lbFill;
+        private System.Windows.Forms.Label lbWrong;
     }
 }
 

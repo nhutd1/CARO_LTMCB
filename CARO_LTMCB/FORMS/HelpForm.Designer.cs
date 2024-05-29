@@ -31,13 +31,13 @@ namespace CARO_LTMCB.FORMS
         {
             this.label1 = new System.Windows.Forms.Label();
             this.pnHelp = new Guna.UI2.WinForms.Guna2Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.pnMenu = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnGuide = new FontAwesome.Sharp.IconButton();
             this.btnReport = new FontAwesome.Sharp.IconButton();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.pnHelp.SuspendLayout();
             this.pnMenu.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +60,25 @@ namespace CARO_LTMCB.FORMS
             this.pnHelp.Name = "pnHelp";
             this.pnHelp.Size = new System.Drawing.Size(830, 745);
             this.pnHelp.TabIndex = 1;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(830, 7);
+            this.panel6.TabIndex = 5;
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.guna2Panel1.Location = new System.Drawing.Point(4, 0);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(8, 745);
+            this.guna2Panel1.TabIndex = 4;
             // 
             // pnMenu
             // 
@@ -139,25 +158,6 @@ namespace CARO_LTMCB.FORMS
             this.btnReport.Text = "   Report";
             this.btnReport.UseVisualStyleBackColor = false;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.guna2Panel1.Location = new System.Drawing.Point(4, 0);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(8, 745);
-            this.guna2Panel1.TabIndex = 4;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(830, 7);
-            this.panel6.TabIndex = 5;
             // 
             // HelpForm
             // 

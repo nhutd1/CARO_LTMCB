@@ -31,6 +31,9 @@ namespace CARO_LTMCB
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignUpForm));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbConfirm = new System.Windows.Forms.Label();
+            this.lbExists = new System.Windows.Forms.Label();
+            this.lbFill = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
@@ -53,9 +56,6 @@ namespace CARO_LTMCB
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lbConfirm = new System.Windows.Forms.Label();
-            this.lbExists = new System.Windows.Forms.Label();
-            this.lbFill = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).BeginInit();
@@ -102,6 +102,42 @@ namespace CARO_LTMCB
             this.panel2.Size = new System.Drawing.Size(575, 615);
             this.panel2.TabIndex = 3;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            // 
+            // lbConfirm
+            // 
+            this.lbConfirm.AutoSize = true;
+            this.lbConfirm.BackColor = System.Drawing.Color.LightCyan;
+            this.lbConfirm.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbConfirm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lbConfirm.Location = new System.Drawing.Point(110, 457);
+            this.lbConfirm.Name = "lbConfirm";
+            this.lbConfirm.Size = new System.Drawing.Size(391, 23);
+            this.lbConfirm.TabIndex = 43;
+            this.lbConfirm.Text = "Please confirm the correct password!";
+            // 
+            // lbExists
+            // 
+            this.lbExists.AutoSize = true;
+            this.lbExists.BackColor = System.Drawing.Color.LightCyan;
+            this.lbExists.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbExists.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lbExists.Location = new System.Drawing.Point(172, 457);
+            this.lbExists.Name = "lbExists";
+            this.lbExists.Size = new System.Drawing.Size(263, 23);
+            this.lbExists.TabIndex = 42;
+            this.lbExists.Text = "Username already exists!";
+            // 
+            // lbFill
+            // 
+            this.lbFill.AutoSize = true;
+            this.lbFill.BackColor = System.Drawing.Color.LightCyan;
+            this.lbFill.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lbFill.Location = new System.Drawing.Point(147, 457);
+            this.lbFill.Name = "lbFill";
+            this.lbFill.Size = new System.Drawing.Size(310, 23);
+            this.lbFill.TabIndex = 41;
+            this.lbFill.Text = "Please fill all the information!";
             // 
             // iconPictureBox1
             // 
@@ -308,7 +344,7 @@ namespace CARO_LTMCB
             this.btnRegister.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnRegister.IconSize = 30;
             this.btnRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegister.Location = new System.Drawing.Point(162, 492);
+            this.btnRegister.Location = new System.Drawing.Point(172, 492);
             this.btnRegister.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(248, 66);
@@ -321,7 +357,7 @@ namespace CARO_LTMCB
             // 
             this.btnForgotpass.AutoSize = true;
             this.btnForgotpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnForgotpass.Location = new System.Drawing.Point(180, 572);
+            this.btnForgotpass.Location = new System.Drawing.Point(190, 572);
             this.btnForgotpass.Name = "btnForgotpass";
             this.btnForgotpass.Size = new System.Drawing.Size(201, 20);
             this.btnForgotpass.TabIndex = 6;
@@ -412,42 +448,6 @@ namespace CARO_LTMCB
             this.label1.Size = new System.Drawing.Size(226, 32);
             this.label1.TabIndex = 12;
             this.label1.Text = "CARO ONLINE";
-            // 
-            // lbConfirm
-            // 
-            this.lbConfirm.AutoSize = true;
-            this.lbConfirm.BackColor = System.Drawing.Color.LightCyan;
-            this.lbConfirm.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbConfirm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lbConfirm.Location = new System.Drawing.Point(110, 457);
-            this.lbConfirm.Name = "lbConfirm";
-            this.lbConfirm.Size = new System.Drawing.Size(391, 23);
-            this.lbConfirm.TabIndex = 43;
-            this.lbConfirm.Text = "Please confirm the correct password!";
-            // 
-            // lbExists
-            // 
-            this.lbExists.AutoSize = true;
-            this.lbExists.BackColor = System.Drawing.Color.LightCyan;
-            this.lbExists.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbExists.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lbExists.Location = new System.Drawing.Point(172, 457);
-            this.lbExists.Name = "lbExists";
-            this.lbExists.Size = new System.Drawing.Size(263, 23);
-            this.lbExists.TabIndex = 42;
-            this.lbExists.Text = "Username already exists!";
-            // 
-            // lbFill
-            // 
-            this.lbFill.AutoSize = true;
-            this.lbFill.BackColor = System.Drawing.Color.LightCyan;
-            this.lbFill.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lbFill.Location = new System.Drawing.Point(147, 457);
-            this.lbFill.Name = "lbFill";
-            this.lbFill.Size = new System.Drawing.Size(310, 23);
-            this.lbFill.TabIndex = 41;
-            this.lbFill.Text = "Please fill all the information!";
             // 
             // SignUpForm
             // 

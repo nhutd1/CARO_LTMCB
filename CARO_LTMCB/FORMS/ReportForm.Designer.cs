@@ -40,6 +40,7 @@ namespace CARO_LTMCB.FORMS
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnFile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label6
@@ -84,7 +85,7 @@ namespace CARO_LTMCB.FORMS
             this.richTextBox1.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.richTextBox1.Location = new System.Drawing.Point(56, 202);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(710, 280);
+            this.richTextBox1.Size = new System.Drawing.Size(710, 382);
             this.richTextBox1.TabIndex = 71;
             this.richTextBox1.Text = "";
             // 
@@ -137,12 +138,12 @@ namespace CARO_LTMCB.FORMS
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(838, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(7, 752);
+            this.panel1.Size = new System.Drawing.Size(7, 745);
             this.panel1.TabIndex = 3;
             // 
             // panel3
@@ -152,8 +153,19 @@ namespace CARO_LTMCB.FORMS
             this.panel3.Location = new System.Drawing.Point(10, 740);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(835, 5);
+            this.panel3.Size = new System.Drawing.Size(828, 5);
             this.panel3.TabIndex = 83;
+            // 
+            // btnFile
+            // 
+            this.btnFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFile.Location = new System.Drawing.Point(588, 595);
+            this.btnFile.Name = "btnFile";
+            this.btnFile.Size = new System.Drawing.Size(178, 39);
+            this.btnFile.TabIndex = 84;
+            this.btnFile.Text = "Attached File";
+            this.btnFile.UseVisualStyleBackColor = true;
+            this.btnFile.Click += new System.EventHandler(this.btnFile_Click);
             // 
             // ReportForm
             // 
@@ -161,6 +173,7 @@ namespace CARO_LTMCB.FORMS
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(845, 745);
+            this.Controls.Add(this.btnFile);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
@@ -193,5 +206,6 @@ namespace CARO_LTMCB.FORMS
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnFile;
     }
 }

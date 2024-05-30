@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Mail;
 using System.Windows.Forms;
@@ -10,6 +11,12 @@ namespace CARO_LTMCB.FORMS
         public ReportForm()
         {
             InitializeComponent();
+            if (MyUser.user != null)
+            {
+                txtName.Text = MyUser.user.userName;
+                txtID.Text = MyUser.user.userID.ToString();
+                txtMail.Text = MyUser.user.userMail;
+            }
         }
 
         private void btnSend_Click(object sender, EventArgs e)
@@ -30,12 +37,32 @@ namespace CARO_LTMCB.FORMS
                 mail.Subject = "Thắc mắc từ người chơi: " + name + "-" + ID;
                 mail.Body = $"Email: {email}\nNội dung:\n{message}";
 
+                //Đính kèm file
+                if (listPathFile != null)
+                {
+                    foreach (string item in listPathFile)
+                    {
+                        Attachment attachment = new Attachment(item);
+                        mail.Attachments.Add(attachment);
+                    }
+                }
+
                 smtpServer.Port = 587; // hoặc 465 tùy thuộc vào nhà cung cấp email
                 smtpServer.Credentials = new NetworkCredential("usercarogame@gmail.com", password);
                 smtpServer.EnableSsl = true;
 
-                smtpServer.Send(mail);
-                MessageBox.Show("Tin nhắn của bạn đã được gửi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                try
+                {
+                    smtpServer.Send(mail);
+                    richTextBox1.Text = string.Empty;
+                    listPathFile = null;
+                    btnFile.Text = "Attached File";
+                    MessageBox.Show("Phản hồi của bạn đã được gửi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show($"Phản hồi của bạn gửi không thành công!\nError: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
             }
             catch (Exception ex)
@@ -46,5 +73,21 @@ namespace CARO_LTMCB.FORMS
             }
         }
 
+        List<string> listPathFile;
+        private void btnFile_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Multiselect = true;
+            ofd.RestoreDirectory = true;
+            ofd.ShowDialog();
+
+            listPathFile = new List<string>();
+            foreach (string item in ofd.FileNames)
+            {
+                listPathFile.Add(item);
+            }
+
+            btnFile.Text = $"Attached File ({listPathFile.Count})";
+        }
     }
 }

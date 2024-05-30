@@ -106,12 +106,12 @@ namespace CARO_LTMCB.FORMS
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(820, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(7, 752);
+            this.panel1.Size = new System.Drawing.Size(7, 698);
             this.panel1.TabIndex = 6;
             // 
             // panel3
@@ -121,7 +121,7 @@ namespace CARO_LTMCB.FORMS
             this.panel3.Location = new System.Drawing.Point(10, 693);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(817, 5);
+            this.panel3.Size = new System.Drawing.Size(810, 5);
             this.panel3.TabIndex = 7;
             // 
             // GuideForm

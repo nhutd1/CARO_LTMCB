@@ -94,7 +94,7 @@ namespace CARO_LTMCB
             {
                 tbxUsername.Text = "username";
                 tbxUsername.Font = new Font("Microsoft Sans Serif", 18, FontStyle.Italic);
-                tbxUsername.ForeColor = Color.LightGray;
+                tbxUsername.ForeColor = Color.FromArgb(180, 180, 180);
             }
         }
 
@@ -114,7 +114,7 @@ namespace CARO_LTMCB
             {
                 tbxPass.Text = "password";
                 tbxPass.Font = new Font("Microsoft Sans Serif", 18, FontStyle.Italic);
-                tbxPass.ForeColor = Color.LightGray;
+                tbxPass.ForeColor = Color.FromArgb(180, 180, 180);
             }
         }
         #endregion

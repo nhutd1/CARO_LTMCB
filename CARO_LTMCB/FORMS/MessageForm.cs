@@ -513,6 +513,8 @@ namespace CARO_LTMCB.FORMS
             {
                 Effect.PlayEffect("effect");
             }
+            FORMS.ChooseIconForm avtf = new FORMS.ChooseIconForm();
+            avtf.ShowDialog();
         }
     }
 }

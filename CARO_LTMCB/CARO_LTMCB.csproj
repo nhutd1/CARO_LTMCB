@@ -140,6 +140,12 @@
     <Compile Include="FORMS\ChooseAvatarForm.Designer.cs">
       <DependentUpon>ChooseAvatarForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\ChooseIconForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\ChooseIconForm.Designer.cs">
+      <DependentUpon>ChooseIconForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMS\GuideForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\ChooseAvatarForm.resx">
       <DependentUpon>ChooseAvatarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\ChooseIconForm.resx">
+      <DependentUpon>ChooseIconForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\General.resx">
       <DependentUpon>General.cs</DependentUpon>

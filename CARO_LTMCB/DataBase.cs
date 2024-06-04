@@ -331,5 +331,6 @@ namespace CARO_LTMCB
     static public class MyUser
     {
         static public User user;
+
     }
 }

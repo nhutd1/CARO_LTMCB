@@ -29,6 +29,7 @@ namespace CARO_LTMCB.FORMS
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GuideForm));
             this.GUIDE = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,15 +38,19 @@ namespace CARO_LTMCB.FORMS
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // GUIDE
             // 
             this.GUIDE.AutoSize = true;
-            this.GUIDE.Font = new System.Drawing.Font("Cooper Black", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GUIDE.Location = new System.Drawing.Point(237, 54);
+            this.GUIDE.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GUIDE.Location = new System.Drawing.Point(241, 89);
             this.GUIDE.Name = "GUIDE";
-            this.GUIDE.Size = new System.Drawing.Size(320, 46);
+            this.GUIDE.Size = new System.Drawing.Size(352, 50);
             this.GUIDE.TabIndex = 0;
             this.GUIDE.Text = "HOW TO PLAY";
             // 
@@ -53,18 +58,19 @@ namespace CARO_LTMCB.FORMS
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(88, 135);
+            this.label2.Location = new System.Drawing.Point(84, 203);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(598, 58);
             this.label2.TabIndex = 1;
             this.label2.Text = "Starting: Decide who goes first. Players take turns \r\nplacing their mark (X or O)" +
     " in an empty square.";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(88, 235);
+            this.label1.Location = new System.Drawing.Point(84, 301);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(575, 58);
             this.label1.TabIndex = 2;
@@ -76,7 +82,7 @@ namespace CARO_LTMCB.FORMS
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(88, 330);
+            this.label3.Location = new System.Drawing.Point(84, 396);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(658, 58);
             this.label3.TabIndex = 3;
@@ -87,7 +93,7 @@ namespace CARO_LTMCB.FORMS
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(88, 434);
+            this.label4.Location = new System.Drawing.Point(84, 500);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(671, 58);
             this.label4.TabIndex = 4;
@@ -124,12 +130,34 @@ namespace CARO_LTMCB.FORMS
             this.panel3.Size = new System.Drawing.Size(810, 5);
             this.panel3.TabIndex = 7;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(89, 48);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 91);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(655, 48);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 91);
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            // 
             // GuideForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(827, 698);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
@@ -141,6 +169,8 @@ namespace CARO_LTMCB.FORMS
             this.Name = "GuideForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.GuideForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,5 +186,7 @@ namespace CARO_LTMCB.FORMS
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

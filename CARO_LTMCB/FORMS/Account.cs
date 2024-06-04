@@ -10,11 +10,33 @@ using System.Windows.Forms;
 
 namespace CARO_LTMCB.FORMS
 {
+    
     public partial class Account : Form
     {
+        
         public Account()
         {
             InitializeComponent();
+        }
+
+        private void tbxID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Account_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void iconCopy_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

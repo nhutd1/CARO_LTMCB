@@ -31,5 +31,10 @@ namespace CARO_LTMCB.FORMS
         {
 
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

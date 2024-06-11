@@ -118,6 +118,22 @@ namespace CARO_LTMCB
             MyUser.user.avatar = index;
             FirebaseResponse rep = await client.UpdateAsync("USER/" + MyUser.user.userID.ToString(), MyUser.user);
         }
+
+        static public async void UpdateUserInfo(int userId, string newUsername, string newEmail, string newGender)
+        {
+            
+            FirebaseResponse response = client.Get("USER/" + userId.ToString());
+            User user = response.ResultAs<User>();
+
+            // Cập nhật các trường thông tin mới
+            user.userName = newUsername;
+            user.userMail = newEmail;
+            user.gender = newGender;
+
+            // Lưu lại thông tin người dùng đã cập nhật vào cơ sở dữ liệu
+            FirebaseResponse updateResponse = await client.UpdateAsync("USER/" + userId.ToString(), user);
+        }
+
         static public async void SendFriendRequest(int idRcv)
         {
             FirebaseResponse rep = client.Get("AddinviteIdentity/");

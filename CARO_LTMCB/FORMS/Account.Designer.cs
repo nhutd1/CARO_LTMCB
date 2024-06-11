@@ -29,10 +29,10 @@ namespace CARO_LTMCB.FORMS
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Account));
             this.pnProfile = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2CheckBox2 = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tbxMail = new Guna.UI2.WinForms.Guna2TextBox();
             this.iconCopy = new FontAwesome.Sharp.IconButton();
@@ -44,15 +44,30 @@ namespace CARO_LTMCB.FORMS
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.picBoxOffFemale = new System.Windows.Forms.PictureBox();
+            this.picBoxOnMale = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picBoxOnFemale = new System.Windows.Forms.PictureBox();
+            this.picBoxOffMale = new System.Windows.Forms.PictureBox();
             this.pnProfile.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxOffFemale)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxOnMale)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxOnFemale)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxOffMale)).BeginInit();
             this.SuspendLayout();
             // 
             // pnProfile
             // 
             this.pnProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.pnProfile.Controls.Add(this.picBoxOffMale);
+            this.pnProfile.Controls.Add(this.picBoxOnFemale);
+            this.pnProfile.Controls.Add(this.pictureBox1);
+            this.pnProfile.Controls.Add(this.picBoxOnMale);
+            this.pnProfile.Controls.Add(this.picBoxOffFemale);
+            this.pnProfile.Controls.Add(this.pictureBox2);
             this.pnProfile.Controls.Add(this.btnSave);
-            this.pnProfile.Controls.Add(this.guna2CheckBox2);
-            this.pnProfile.Controls.Add(this.guna2CheckBox1);
             this.pnProfile.Controls.Add(this.label6);
             this.pnProfile.Controls.Add(this.tbxMail);
             this.pnProfile.Controls.Add(this.iconCopy);
@@ -71,6 +86,16 @@ namespace CARO_LTMCB.FORMS
             this.pnProfile.Name = "pnProfile";
             this.pnProfile.Size = new System.Drawing.Size(1041, 738);
             this.pnProfile.TabIndex = 2;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(287, 219);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(69, 57);
+            this.pictureBox2.TabIndex = 46;
+            this.pictureBox2.TabStop = false;
             // 
             // btnSave
             // 
@@ -94,46 +119,6 @@ namespace CARO_LTMCB.FORMS
             this.btnSave.TabIndex = 42;
             this.btnSave.Text = "SAVE";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // guna2CheckBox2
-            // 
-            this.guna2CheckBox2.AutoSize = true;
-            this.guna2CheckBox2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox2.CheckedState.BorderRadius = 0;
-            this.guna2CheckBox2.CheckedState.BorderThickness = 0;
-            this.guna2CheckBox2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox2.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2CheckBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.guna2CheckBox2.Location = new System.Drawing.Point(437, 240);
-            this.guna2CheckBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2CheckBox2.Name = "guna2CheckBox2";
-            this.guna2CheckBox2.Size = new System.Drawing.Size(155, 35);
-            this.guna2CheckBox2.TabIndex = 22;
-            this.guna2CheckBox2.Text = "FEMALE\r\n";
-            this.guna2CheckBox2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox2.UncheckedState.BorderRadius = 0;
-            this.guna2CheckBox2.UncheckedState.BorderThickness = 0;
-            this.guna2CheckBox2.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            // 
-            // guna2CheckBox1
-            // 
-            this.guna2CheckBox1.AutoSize = true;
-            this.guna2CheckBox1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox1.CheckedState.BorderRadius = 0;
-            this.guna2CheckBox1.CheckedState.BorderThickness = 0;
-            this.guna2CheckBox1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox1.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2CheckBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.guna2CheckBox1.Location = new System.Drawing.Point(259, 240);
-            this.guna2CheckBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2CheckBox1.Name = "guna2CheckBox1";
-            this.guna2CheckBox1.Size = new System.Drawing.Size(118, 35);
-            this.guna2CheckBox1.TabIndex = 41;
-            this.guna2CheckBox1.Text = "MALE\r\n";
-            this.guna2CheckBox1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox1.UncheckedState.BorderRadius = 0;
-            this.guna2CheckBox1.UncheckedState.BorderThickness = 0;
-            this.guna2CheckBox1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             // 
             // label6
             // 
@@ -185,6 +170,7 @@ namespace CARO_LTMCB.FORMS
             this.iconCopy.TabIndex = 15;
             this.iconCopy.UseVisualStyleBackColor = false;
             this.iconCopy.Click += new System.EventHandler(this.iconCopy_Click);
+            this.iconCopy.MouseClick += new System.Windows.Forms.MouseEventHandler(this.iconCopy_MouseClick);
             // 
             // label4
             // 
@@ -267,7 +253,6 @@ namespace CARO_LTMCB.FORMS
             this.tbxID.Size = new System.Drawing.Size(397, 57);
             this.tbxID.TabIndex = 9;
             this.tbxID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbxID.TextChanged += new System.EventHandler(this.tbxID_TextChanged);
             // 
             // panel1
             // 
@@ -299,6 +284,60 @@ namespace CARO_LTMCB.FORMS
             this.panel3.Size = new System.Drawing.Size(1041, 5);
             this.panel3.TabIndex = 0;
             // 
+            // picBoxOffFemale
+            // 
+            this.picBoxOffFemale.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxOffFemale.BackgroundImage")));
+            this.picBoxOffFemale.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picBoxOffFemale.Location = new System.Drawing.Point(511, 233);
+            this.picBoxOffFemale.Name = "picBoxOffFemale";
+            this.picBoxOffFemale.Size = new System.Drawing.Size(46, 43);
+            this.picBoxOffFemale.TabIndex = 47;
+            this.picBoxOffFemale.TabStop = false;
+            this.picBoxOffFemale.Click += new System.EventHandler(this.picBoxOffFemale_Click);
+            // 
+            // picBoxOnMale
+            // 
+            this.picBoxOnMale.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxOnMale.BackgroundImage")));
+            this.picBoxOnMale.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picBoxOnMale.Location = new System.Drawing.Point(235, 233);
+            this.picBoxOnMale.Name = "picBoxOnMale";
+            this.picBoxOnMale.Size = new System.Drawing.Size(46, 43);
+            this.picBoxOnMale.TabIndex = 48;
+            this.picBoxOnMale.TabStop = false;
+            this.picBoxOnMale.Click += new System.EventHandler(this.picBoxOnMale_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(563, 219);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(69, 57);
+            this.pictureBox1.TabIndex = 49;
+            this.pictureBox1.TabStop = false;
+            // 
+            // picBoxOnFemale
+            // 
+            this.picBoxOnFemale.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxOnFemale.BackgroundImage")));
+            this.picBoxOnFemale.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picBoxOnFemale.Location = new System.Drawing.Point(511, 233);
+            this.picBoxOnFemale.Name = "picBoxOnFemale";
+            this.picBoxOnFemale.Size = new System.Drawing.Size(46, 43);
+            this.picBoxOnFemale.TabIndex = 50;
+            this.picBoxOnFemale.TabStop = false;
+            this.picBoxOnFemale.Click += new System.EventHandler(this.picBoxOnFemale_Click);
+            // 
+            // picBoxOffMale
+            // 
+            this.picBoxOffMale.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxOffMale.BackgroundImage")));
+            this.picBoxOffMale.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picBoxOffMale.Location = new System.Drawing.Point(235, 233);
+            this.picBoxOffMale.Name = "picBoxOffMale";
+            this.picBoxOffMale.Size = new System.Drawing.Size(46, 43);
+            this.picBoxOffMale.TabIndex = 51;
+            this.picBoxOffMale.TabStop = false;
+            this.picBoxOffMale.Click += new System.EventHandler(this.picBoxOffMale_Click);
+            // 
             // Account
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -310,6 +349,12 @@ namespace CARO_LTMCB.FORMS
             this.Load += new System.EventHandler(this.Account_Load);
             this.pnProfile.ResumeLayout(false);
             this.pnProfile.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxOffFemale)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxOnMale)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxOnFemale)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxOffMale)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -318,8 +363,6 @@ namespace CARO_LTMCB.FORMS
 
         private System.Windows.Forms.Panel pnProfile;
         private Guna.UI2.WinForms.Guna2Button btnSave;
-        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox2;
-        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox1;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2TextBox tbxMail;
         private FontAwesome.Sharp.IconButton iconCopy;
@@ -331,5 +374,11 @@ namespace CARO_LTMCB.FORMS
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox picBoxOnMale;
+        private System.Windows.Forms.PictureBox picBoxOffFemale;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picBoxOffMale;
+        private System.Windows.Forms.PictureBox picBoxOnFemale;
     }
 }

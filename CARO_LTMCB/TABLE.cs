@@ -20,6 +20,11 @@ namespace CARO_LTMCB
         public string userName { get; set; }
         public string userPass { get; set; }
         public double winRate { get; set; }
+        public string gender { get; set; }
+        public User()
+        {
+            gender = "male"; // Thiết lập giá trị mặc định là "male" khi tạo đối tượng
+        }
     }
     public class UserIdentity
     {

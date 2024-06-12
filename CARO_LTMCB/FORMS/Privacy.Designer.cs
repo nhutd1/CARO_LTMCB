@@ -38,13 +38,13 @@ namespace CARO_LTMCB.FORMS
             this.label1 = new System.Windows.Forms.Label();
             this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbxPass = new System.Windows.Forms.TextBox();
             this.iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
-            this.tbxConfirmpass = new System.Windows.Forms.TextBox();
+            this.tbxConfirmPass = new System.Windows.Forms.TextBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.tbxPass = new System.Windows.Forms.TextBox();
+            this.tbxNewPass = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -169,6 +169,7 @@ namespace CARO_LTMCB.FORMS
             this.iconPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconPictureBox4.TabIndex = 49;
             this.iconPictureBox4.TabStop = false;
+            this.iconPictureBox4.Click += new System.EventHandler(this.iconPictureBox4_Click);
             // 
             // iconPictureBox2
             // 
@@ -186,20 +187,22 @@ namespace CARO_LTMCB.FORMS
             this.iconPictureBox2.TabIndex = 48;
             this.iconPictureBox2.TabStop = false;
             // 
-            // textBox1
+            // tbxPass
             // 
-            this.textBox1.BackColor = System.Drawing.Color.LightCyan;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox1.Location = new System.Drawing.Point(252, 165);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(349, 42);
-            this.textBox1.TabIndex = 47;
-            this.textBox1.Text = "password";
+            this.tbxPass.BackColor = System.Drawing.Color.LightCyan;
+            this.tbxPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbxPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxPass.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.tbxPass.Location = new System.Drawing.Point(252, 165);
+            this.tbxPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbxPass.Multiline = true;
+            this.tbxPass.Name = "tbxPass";
+            this.tbxPass.PasswordChar = '*';
+            this.tbxPass.Size = new System.Drawing.Size(349, 42);
+            this.tbxPass.TabIndex = 47;
+            this.tbxPass.Text = "password";
+            this.tbxPass.Enter += new System.EventHandler(this.tbxPass_Enter);
+            this.tbxPass.Leave += new System.EventHandler(this.tbxPass_Leave);
             // 
             // iconPictureBox6
             // 
@@ -216,6 +219,7 @@ namespace CARO_LTMCB.FORMS
             this.iconPictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconPictureBox6.TabIndex = 46;
             this.iconPictureBox6.TabStop = false;
+            this.iconPictureBox6.Click += new System.EventHandler(this.iconPictureBox6_Click);
             // 
             // iconPictureBox5
             // 
@@ -232,6 +236,7 @@ namespace CARO_LTMCB.FORMS
             this.iconPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconPictureBox5.TabIndex = 45;
             this.iconPictureBox5.TabStop = false;
+            this.iconPictureBox5.Click += new System.EventHandler(this.iconPictureBox5_Click);
             // 
             // iconPictureBox3
             // 
@@ -249,20 +254,22 @@ namespace CARO_LTMCB.FORMS
             this.iconPictureBox3.TabIndex = 44;
             this.iconPictureBox3.TabStop = false;
             // 
-            // tbxConfirmpass
+            // tbxConfirmPass
             // 
-            this.tbxConfirmpass.BackColor = System.Drawing.Color.LightCyan;
-            this.tbxConfirmpass.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbxConfirmpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxConfirmpass.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.tbxConfirmpass.Location = new System.Drawing.Point(252, 357);
-            this.tbxConfirmpass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbxConfirmpass.Multiline = true;
-            this.tbxConfirmpass.Name = "tbxConfirmpass";
-            this.tbxConfirmpass.PasswordChar = '*';
-            this.tbxConfirmpass.Size = new System.Drawing.Size(349, 42);
-            this.tbxConfirmpass.TabIndex = 38;
-            this.tbxConfirmpass.Text = "password";
+            this.tbxConfirmPass.BackColor = System.Drawing.Color.LightCyan;
+            this.tbxConfirmPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbxConfirmPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxConfirmPass.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.tbxConfirmPass.Location = new System.Drawing.Point(252, 357);
+            this.tbxConfirmPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbxConfirmPass.Multiline = true;
+            this.tbxConfirmPass.Name = "tbxConfirmPass";
+            this.tbxConfirmPass.PasswordChar = '*';
+            this.tbxConfirmPass.Size = new System.Drawing.Size(349, 42);
+            this.tbxConfirmPass.TabIndex = 38;
+            this.tbxConfirmPass.Text = "password";
+            this.tbxConfirmPass.Enter += new System.EventHandler(this.tbxConfirmPass_Enter);
+            this.tbxConfirmPass.Leave += new System.EventHandler(this.tbxConfirmPass_Leave);
             // 
             // iconPictureBox1
             // 
@@ -280,20 +287,22 @@ namespace CARO_LTMCB.FORMS
             this.iconPictureBox1.TabIndex = 43;
             this.iconPictureBox1.TabStop = false;
             // 
-            // tbxPass
+            // tbxNewPass
             // 
-            this.tbxPass.BackColor = System.Drawing.Color.LightCyan;
-            this.tbxPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbxPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxPass.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.tbxPass.Location = new System.Drawing.Point(252, 260);
-            this.tbxPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbxPass.Multiline = true;
-            this.tbxPass.Name = "tbxPass";
-            this.tbxPass.PasswordChar = '*';
-            this.tbxPass.Size = new System.Drawing.Size(349, 42);
-            this.tbxPass.TabIndex = 37;
-            this.tbxPass.Text = "password";
+            this.tbxNewPass.BackColor = System.Drawing.Color.LightCyan;
+            this.tbxNewPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbxNewPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxNewPass.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.tbxNewPass.Location = new System.Drawing.Point(252, 260);
+            this.tbxNewPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbxNewPass.Multiline = true;
+            this.tbxNewPass.Name = "tbxNewPass";
+            this.tbxNewPass.PasswordChar = '*';
+            this.tbxNewPass.Size = new System.Drawing.Size(349, 42);
+            this.tbxNewPass.TabIndex = 37;
+            this.tbxNewPass.Text = "password";
+            this.tbxNewPass.Enter += new System.EventHandler(this.tbxNewPass_Enter);
+            this.tbxNewPass.Leave += new System.EventHandler(this.tbxNewPass_Leave);
             // 
             // panel1
             // 
@@ -336,13 +345,13 @@ namespace CARO_LTMCB.FORMS
             this.pnProfile.Controls.Add(this.label1);
             this.pnProfile.Controls.Add(this.iconPictureBox4);
             this.pnProfile.Controls.Add(this.iconPictureBox2);
-            this.pnProfile.Controls.Add(this.textBox1);
+            this.pnProfile.Controls.Add(this.tbxPass);
             this.pnProfile.Controls.Add(this.iconPictureBox6);
             this.pnProfile.Controls.Add(this.iconPictureBox5);
             this.pnProfile.Controls.Add(this.iconPictureBox3);
-            this.pnProfile.Controls.Add(this.tbxConfirmpass);
+            this.pnProfile.Controls.Add(this.tbxConfirmPass);
             this.pnProfile.Controls.Add(this.iconPictureBox1);
-            this.pnProfile.Controls.Add(this.tbxPass);
+            this.pnProfile.Controls.Add(this.tbxNewPass);
             this.pnProfile.Controls.Add(this.panel1);
             this.pnProfile.Controls.Add(this.panel4);
             this.pnProfile.Controls.Add(this.panel3);
@@ -387,13 +396,13 @@ namespace CARO_LTMCB.FORMS
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbxPass;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox6;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
-        private System.Windows.Forms.TextBox tbxConfirmpass;
+        private System.Windows.Forms.TextBox tbxConfirmPass;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private System.Windows.Forms.TextBox tbxPass;
+        private System.Windows.Forms.TextBox tbxNewPass;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;

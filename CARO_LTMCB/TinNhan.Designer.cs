@@ -39,9 +39,9 @@ namespace CARO_LTMCB
             // 
             this.lbMess.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbMess.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lbMess.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(148)))), ((int)(((byte)(148)))));
             this.lbMess.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMess.ForeColor = System.Drawing.Color.LightCyan;
+            this.lbMess.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbMess.Location = new System.Drawing.Point(14, 14);
             this.lbMess.Name = "lbMess";
             this.lbMess.Size = new System.Drawing.Size(361, 83);
@@ -53,7 +53,7 @@ namespace CARO_LTMCB
             // 
             this.lbTime.AutoSize = true;
             this.lbTime.Font = new System.Drawing.Font("Book Antiqua", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTime.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lbTime.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbTime.Location = new System.Drawing.Point(14, 100);
             this.lbTime.Name = "lbTime";
             this.lbTime.Size = new System.Drawing.Size(128, 22);
@@ -68,7 +68,7 @@ namespace CARO_LTMCB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(148)))), ((int)(((byte)(148)))));
             this.Controls.Add(this.lbTime);
             this.Controls.Add(this.lbMess);
             this.Name = "TinNhan";

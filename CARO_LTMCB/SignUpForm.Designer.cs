@@ -157,7 +157,7 @@ namespace CARO_LTMCB
             // 
             // iconPictureBox6
             // 
-            this.iconPictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.iconPictureBox6.BackColor = System.Drawing.Color.MistyRose;
             this.iconPictureBox6.ForeColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox6.IconChar = FontAwesome.Sharp.IconChar.Eye;
             this.iconPictureBox6.IconColor = System.Drawing.SystemColors.ControlText;
@@ -174,7 +174,7 @@ namespace CARO_LTMCB
             // 
             // iconPictureBox5
             // 
-            this.iconPictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.iconPictureBox5.BackColor = System.Drawing.Color.MistyRose;
             this.iconPictureBox5.ForeColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.Eye;
             this.iconPictureBox5.IconColor = System.Drawing.SystemColors.ControlText;
@@ -207,7 +207,7 @@ namespace CARO_LTMCB
             // 
             // tbxMail
             // 
-            this.tbxMail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tbxMail.BackColor = System.Drawing.Color.MistyRose;
             this.tbxMail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbxMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxMail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
@@ -239,7 +239,7 @@ namespace CARO_LTMCB
             // 
             // tbxConfirmpass
             // 
-            this.tbxConfirmpass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tbxConfirmpass.BackColor = System.Drawing.Color.MistyRose;
             this.tbxConfirmpass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbxConfirmpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxConfirmpass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
@@ -256,7 +256,7 @@ namespace CARO_LTMCB
             // 
             // tbxPass
             // 
-            this.tbxPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tbxPass.BackColor = System.Drawing.Color.MistyRose;
             this.tbxPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbxPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
@@ -289,7 +289,7 @@ namespace CARO_LTMCB
             // 
             // tbxUsername
             // 
-            this.tbxUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tbxUsername.BackColor = System.Drawing.Color.MistyRose;
             this.tbxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
@@ -305,10 +305,10 @@ namespace CARO_LTMCB
             // 
             // btnMinisize
             // 
-            this.btnMinisize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnMinisize.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.btnMinisize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(148)))), ((int)(((byte)(148)))));
+            this.btnMinisize.ForeColor = System.Drawing.Color.Snow;
             this.btnMinisize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.btnMinisize.IconColor = System.Drawing.SystemColors.ControlDark;
+            this.btnMinisize.IconColor = System.Drawing.Color.Snow;
             this.btnMinisize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMinisize.IconSize = 30;
             this.btnMinisize.Location = new System.Drawing.Point(507, 0);
@@ -321,10 +321,10 @@ namespace CARO_LTMCB
             // 
             // btnExit
             // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnExit.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(148)))), ((int)(((byte)(148)))));
+            this.btnExit.ForeColor = System.Drawing.Color.Snow;
             this.btnExit.IconChar = FontAwesome.Sharp.IconChar.Xmark;
-            this.btnExit.IconColor = System.Drawing.SystemColors.ControlDark;
+            this.btnExit.IconColor = System.Drawing.Color.Snow;
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExit.IconSize = 30;
             this.btnExit.Location = new System.Drawing.Point(543, 0);
@@ -337,16 +337,18 @@ namespace CARO_LTMCB
             // 
             // btnRegister
             // 
-            this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(148)))), ((int)(((byte)(148)))));
             this.btnRegister.Font = new System.Drawing.Font("Cooper Black", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegister.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnRegister.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
-            this.btnRegister.IconColor = System.Drawing.Color.Black;
+            this.btnRegister.IconColor = System.Drawing.SystemColors.ControlText;
             this.btnRegister.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnRegister.IconSize = 30;
             this.btnRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRegister.Location = new System.Drawing.Point(172, 492);
             this.btnRegister.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Padding = new System.Windows.Forms.Padding(10);
             this.btnRegister.Size = new System.Drawing.Size(248, 66);
             this.btnRegister.TabIndex = 5;
             this.btnRegister.Text = "REGISTER";
@@ -417,7 +419,7 @@ namespace CARO_LTMCB
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.panel1.BackColor = System.Drawing.Color.MistyRose;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;

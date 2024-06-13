@@ -35,6 +35,12 @@ namespace CARO_LTMCB
             this.lbMail = new System.Windows.Forms.Label();
             this.btnExit = new FontAwesome.Sharp.IconPictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbEnter = new System.Windows.Forms.Label();
+            this.lbConfirm = new System.Windows.Forms.Label();
+            this.lbWrong2 = new System.Windows.Forms.Label();
+            this.lbWrong1 = new System.Windows.Forms.Label();
+            this.lbFill2 = new System.Windows.Forms.Label();
+            this.lbFill1 = new System.Windows.Forms.Label();
             this.iconPictureBox7 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox8 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox9 = new FontAwesome.Sharp.IconPictureBox();
@@ -56,12 +62,6 @@ namespace CARO_LTMCB
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lbWrong2 = new System.Windows.Forms.Label();
-            this.lbWrong1 = new System.Windows.Forms.Label();
-            this.lbFill2 = new System.Windows.Forms.Label();
-            this.lbFill1 = new System.Windows.Forms.Label();
-            this.lbEnter = new System.Windows.Forms.Label();
-            this.lbConfirm = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinisize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.panel2.SuspendLayout();
@@ -77,7 +77,7 @@ namespace CARO_LTMCB
             // 
             // btnMinisize
             // 
-            this.btnMinisize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnMinisize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(148)))), ((int)(((byte)(148)))));
             this.btnMinisize.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnMinisize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
             this.btnMinisize.IconColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -114,7 +114,7 @@ namespace CARO_LTMCB
             // 
             // btnExit
             // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(148)))), ((int)(((byte)(148)))));
             this.btnExit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnExit.IconChar = FontAwesome.Sharp.IconChar.Xmark;
             this.btnExit.IconColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -167,6 +167,72 @@ namespace CARO_LTMCB
             this.panel2.Size = new System.Drawing.Size(575, 615);
             this.panel2.TabIndex = 5;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            // 
+            // lbEnter
+            // 
+            this.lbEnter.AutoSize = true;
+            this.lbEnter.Font = new System.Drawing.Font("Cooper Black", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEnter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lbEnter.Location = new System.Drawing.Point(141, 509);
+            this.lbEnter.Name = "lbEnter";
+            this.lbEnter.Size = new System.Drawing.Size(316, 21);
+            this.lbEnter.TabIndex = 52;
+            this.lbEnter.Text = "Please enter the new password!";
+            // 
+            // lbConfirm
+            // 
+            this.lbConfirm.AutoSize = true;
+            this.lbConfirm.Font = new System.Drawing.Font("Cooper Black", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbConfirm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lbConfirm.Location = new System.Drawing.Point(120, 509);
+            this.lbConfirm.Name = "lbConfirm";
+            this.lbConfirm.Size = new System.Drawing.Size(369, 21);
+            this.lbConfirm.TabIndex = 51;
+            this.lbConfirm.Text = "Please confirm the correct password!";
+            // 
+            // lbWrong2
+            // 
+            this.lbWrong2.AutoSize = true;
+            this.lbWrong2.Font = new System.Drawing.Font("Cooper Black", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWrong2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lbWrong2.Location = new System.Drawing.Point(173, 276);
+            this.lbWrong2.Name = "lbWrong2";
+            this.lbWrong2.Size = new System.Drawing.Size(139, 21);
+            this.lbWrong2.TabIndex = 50;
+            this.lbWrong2.Text = "or Username!";
+            // 
+            // lbWrong1
+            // 
+            this.lbWrong1.AutoSize = true;
+            this.lbWrong1.Font = new System.Drawing.Font("Cooper Black", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWrong1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lbWrong1.Location = new System.Drawing.Point(176, 253);
+            this.lbWrong1.Name = "lbWrong1";
+            this.lbWrong1.Size = new System.Drawing.Size(136, 21);
+            this.lbWrong1.TabIndex = 49;
+            this.lbWrong1.Text = "Wrong Email";
+            // 
+            // lbFill2
+            // 
+            this.lbFill2.AutoSize = true;
+            this.lbFill2.Font = new System.Drawing.Font("Cooper Black", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFill2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lbFill2.Location = new System.Drawing.Point(158, 276);
+            this.lbFill2.Name = "lbFill2";
+            this.lbFill2.Size = new System.Drawing.Size(176, 21);
+            this.lbFill2.TabIndex = 47;
+            this.lbFill2.Text = " the information!";
+            // 
+            // lbFill1
+            // 
+            this.lbFill1.AutoSize = true;
+            this.lbFill1.Font = new System.Drawing.Font("Cooper Black", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFill1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lbFill1.Location = new System.Drawing.Point(175, 253);
+            this.lbFill1.Name = "lbFill1";
+            this.lbFill1.Size = new System.Drawing.Size(134, 21);
+            this.lbFill1.TabIndex = 48;
+            this.lbFill1.Text = "Please fill all";
             // 
             // iconPictureBox7
             // 
@@ -234,7 +300,7 @@ namespace CARO_LTMCB
             // 
             // iconPictureBox6
             // 
-            this.iconPictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.iconPictureBox6.BackColor = System.Drawing.Color.MistyRose;
             this.iconPictureBox6.ForeColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox6.IconChar = FontAwesome.Sharp.IconChar.Eye;
             this.iconPictureBox6.IconColor = System.Drawing.SystemColors.ControlText;
@@ -251,7 +317,7 @@ namespace CARO_LTMCB
             // 
             // iconPictureBox5
             // 
-            this.iconPictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.iconPictureBox5.BackColor = System.Drawing.Color.MistyRose;
             this.iconPictureBox5.ForeColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.Eye;
             this.iconPictureBox5.IconColor = System.Drawing.SystemColors.ControlText;
@@ -268,7 +334,7 @@ namespace CARO_LTMCB
             // 
             // tbxConfirmpass
             // 
-            this.tbxConfirmpass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tbxConfirmpass.BackColor = System.Drawing.Color.MistyRose;
             this.tbxConfirmpass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbxConfirmpass.Enabled = false;
             this.tbxConfirmpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -282,7 +348,7 @@ namespace CARO_LTMCB
             // 
             // tbxNewpass
             // 
-            this.tbxNewpass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tbxNewpass.BackColor = System.Drawing.Color.MistyRose;
             this.tbxNewpass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbxNewpass.Enabled = false;
             this.tbxNewpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -318,7 +384,7 @@ namespace CARO_LTMCB
             // 
             // tbxUsername
             // 
-            this.tbxUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tbxUsername.BackColor = System.Drawing.Color.MistyRose;
             this.tbxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
@@ -334,7 +400,7 @@ namespace CARO_LTMCB
             // 
             // tbxMail
             // 
-            this.tbxMail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tbxMail.BackColor = System.Drawing.Color.MistyRose;
             this.tbxMail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbxMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxMail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
@@ -350,12 +416,13 @@ namespace CARO_LTMCB
             // 
             // btnChangepass
             // 
-            this.btnChangepass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnChangepass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(148)))), ((int)(((byte)(148)))));
             this.btnChangepass.Enabled = false;
-            this.btnChangepass.Location = new System.Drawing.Point(203, 534);
+            this.btnChangepass.Font = new System.Drawing.Font("Cooper Black", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangepass.Location = new System.Drawing.Point(187, 534);
             this.btnChangepass.Margin = new System.Windows.Forms.Padding(4);
             this.btnChangepass.Name = "btnChangepass";
-            this.btnChangepass.Size = new System.Drawing.Size(167, 43);
+            this.btnChangepass.Size = new System.Drawing.Size(197, 43);
             this.btnChangepass.TabIndex = 5;
             this.btnChangepass.Text = "Change Password";
             this.btnChangepass.UseVisualStyleBackColor = false;
@@ -363,8 +430,9 @@ namespace CARO_LTMCB
             // 
             // btnConfirmcode
             // 
-            this.btnConfirmcode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnConfirmcode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(148)))), ((int)(((byte)(148)))));
             this.btnConfirmcode.Enabled = false;
+            this.btnConfirmcode.Font = new System.Drawing.Font("Cooper Black", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmcode.Location = new System.Drawing.Point(353, 306);
             this.btnConfirmcode.Margin = new System.Windows.Forms.Padding(4);
             this.btnConfirmcode.Name = "btnConfirmcode";
@@ -376,7 +444,8 @@ namespace CARO_LTMCB
             // 
             // btnGetcode
             // 
-            this.btnGetcode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnGetcode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(148)))), ((int)(((byte)(148)))));
+            this.btnGetcode.Font = new System.Drawing.Font("Cooper Black", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGetcode.Location = new System.Drawing.Point(353, 252);
             this.btnGetcode.Margin = new System.Windows.Forms.Padding(4);
             this.btnGetcode.Name = "btnGetcode";
@@ -400,7 +469,7 @@ namespace CARO_LTMCB
             // 
             // tbxConfirmcode
             // 
-            this.tbxConfirmcode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tbxConfirmcode.BackColor = System.Drawing.Color.MistyRose;
             this.tbxConfirmcode.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbxConfirmcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxConfirmcode.Location = new System.Drawing.Point(135, 311);
@@ -422,7 +491,7 @@ namespace CARO_LTMCB
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.panel1.BackColor = System.Drawing.Color.MistyRose;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -453,72 +522,6 @@ namespace CARO_LTMCB
             this.label1.Size = new System.Drawing.Size(226, 32);
             this.label1.TabIndex = 12;
             this.label1.Text = "CARO ONLINE";
-            // 
-            // lbWrong2
-            // 
-            this.lbWrong2.AutoSize = true;
-            this.lbWrong2.Font = new System.Drawing.Font("Cooper Black", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWrong2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lbWrong2.Location = new System.Drawing.Point(173, 276);
-            this.lbWrong2.Name = "lbWrong2";
-            this.lbWrong2.Size = new System.Drawing.Size(139, 21);
-            this.lbWrong2.TabIndex = 50;
-            this.lbWrong2.Text = "or Username!";
-            // 
-            // lbWrong1
-            // 
-            this.lbWrong1.AutoSize = true;
-            this.lbWrong1.Font = new System.Drawing.Font("Cooper Black", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWrong1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lbWrong1.Location = new System.Drawing.Point(176, 253);
-            this.lbWrong1.Name = "lbWrong1";
-            this.lbWrong1.Size = new System.Drawing.Size(136, 21);
-            this.lbWrong1.TabIndex = 49;
-            this.lbWrong1.Text = "Wrong Email";
-            // 
-            // lbFill2
-            // 
-            this.lbFill2.AutoSize = true;
-            this.lbFill2.Font = new System.Drawing.Font("Cooper Black", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFill2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lbFill2.Location = new System.Drawing.Point(158, 276);
-            this.lbFill2.Name = "lbFill2";
-            this.lbFill2.Size = new System.Drawing.Size(176, 21);
-            this.lbFill2.TabIndex = 47;
-            this.lbFill2.Text = " the information!";
-            // 
-            // lbFill1
-            // 
-            this.lbFill1.AutoSize = true;
-            this.lbFill1.Font = new System.Drawing.Font("Cooper Black", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFill1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lbFill1.Location = new System.Drawing.Point(175, 253);
-            this.lbFill1.Name = "lbFill1";
-            this.lbFill1.Size = new System.Drawing.Size(134, 21);
-            this.lbFill1.TabIndex = 48;
-            this.lbFill1.Text = "Please fill all";
-            // 
-            // lbEnter
-            // 
-            this.lbEnter.AutoSize = true;
-            this.lbEnter.Font = new System.Drawing.Font("Cooper Black", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEnter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lbEnter.Location = new System.Drawing.Point(141, 509);
-            this.lbEnter.Name = "lbEnter";
-            this.lbEnter.Size = new System.Drawing.Size(316, 21);
-            this.lbEnter.TabIndex = 52;
-            this.lbEnter.Text = "Please enter the new password!";
-            // 
-            // lbConfirm
-            // 
-            this.lbConfirm.AutoSize = true;
-            this.lbConfirm.Font = new System.Drawing.Font("Cooper Black", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbConfirm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lbConfirm.Location = new System.Drawing.Point(120, 509);
-            this.lbConfirm.Name = "lbConfirm";
-            this.lbConfirm.Size = new System.Drawing.Size(369, 21);
-            this.lbConfirm.TabIndex = 51;
-            this.lbConfirm.Text = "Please confirm the correct password!";
             // 
             // ForgotPasss
             // 

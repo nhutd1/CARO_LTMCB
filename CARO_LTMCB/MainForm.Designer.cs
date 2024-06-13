@@ -56,6 +56,7 @@ namespace CARO_LTMCB
             // 
             // pnMenu
             // 
+            this.pnMenu.BackColor = System.Drawing.Color.MistyRose;
             this.pnMenu.Controls.Add(this.btnHelp);
             this.pnMenu.Controls.Add(this.btnLogout);
             this.pnMenu.Controls.Add(this.btnSetting);
@@ -64,16 +65,16 @@ namespace CARO_LTMCB
             this.pnMenu.Controls.Add(this.btnHome);
             this.pnMenu.Controls.Add(this.guna2CustomGradientPanel1);
             this.pnMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnMenu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.pnMenu.FillColor = System.Drawing.Color.MistyRose;
             this.pnMenu.Location = new System.Drawing.Point(0, 0);
-            this.pnMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnMenu.Name = "pnMenu";
-            this.pnMenu.Size = new System.Drawing.Size(150, 650);
+            this.pnMenu.Size = new System.Drawing.Size(200, 800);
             this.pnMenu.TabIndex = 0;
             // 
             // btnHelp
             // 
-            this.btnHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnHelp.BackColor = System.Drawing.Color.MistyRose;
             this.btnHelp.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnHelp.FlatAppearance.BorderSize = 0;
             this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -84,11 +85,11 @@ namespace CARO_LTMCB
             this.btnHelp.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHelp.IconSize = 45;
             this.btnHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHelp.Location = new System.Drawing.Point(0, 520);
-            this.btnHelp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHelp.Location = new System.Drawing.Point(0, 640);
+            this.btnHelp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHelp.Name = "btnHelp";
-            this.btnHelp.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnHelp.Size = new System.Drawing.Size(150, 65);
+            this.btnHelp.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnHelp.Size = new System.Drawing.Size(200, 80);
             this.btnHelp.TabIndex = 2;
             this.btnHelp.Text = "Help";
             this.btnHelp.UseVisualStyleBackColor = false;
@@ -96,7 +97,7 @@ namespace CARO_LTMCB
             // 
             // btnLogout
             // 
-            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnLogout.BackColor = System.Drawing.Color.MistyRose;
             this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -107,11 +108,11 @@ namespace CARO_LTMCB
             this.btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLogout.IconSize = 45;
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(0, 585);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogout.Location = new System.Drawing.Point(0, 720);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnLogout.Size = new System.Drawing.Size(150, 65);
+            this.btnLogout.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnLogout.Size = new System.Drawing.Size(200, 80);
             this.btnLogout.TabIndex = 1;
             this.btnLogout.Text = "    Log Out";
             this.btnLogout.UseVisualStyleBackColor = false;
@@ -119,7 +120,7 @@ namespace CARO_LTMCB
             // 
             // btnSetting
             // 
-            this.btnSetting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnSetting.BackColor = System.Drawing.Color.MistyRose;
             this.btnSetting.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSetting.FlatAppearance.BorderSize = 0;
             this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -130,11 +131,11 @@ namespace CARO_LTMCB
             this.btnSetting.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSetting.IconSize = 45;
             this.btnSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSetting.Location = new System.Drawing.Point(0, 246);
-            this.btnSetting.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSetting.Location = new System.Drawing.Point(0, 303);
+            this.btnSetting.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnSetting.Size = new System.Drawing.Size(150, 65);
+            this.btnSetting.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnSetting.Size = new System.Drawing.Size(200, 80);
             this.btnSetting.TabIndex = 0;
             this.btnSetting.Text = "Setting";
             this.btnSetting.UseVisualStyleBackColor = false;
@@ -142,7 +143,7 @@ namespace CARO_LTMCB
             // 
             // btnProfile
             // 
-            this.btnProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnProfile.BackColor = System.Drawing.Color.MistyRose;
             this.btnProfile.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProfile.FlatAppearance.BorderSize = 0;
             this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -153,11 +154,11 @@ namespace CARO_LTMCB
             this.btnProfile.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnProfile.IconSize = 45;
             this.btnProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProfile.Location = new System.Drawing.Point(0, 181);
-            this.btnProfile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnProfile.Location = new System.Drawing.Point(0, 223);
+            this.btnProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnProfile.Size = new System.Drawing.Size(150, 65);
+            this.btnProfile.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnProfile.Size = new System.Drawing.Size(200, 80);
             this.btnProfile.TabIndex = 0;
             this.btnProfile.Text = "Profile";
             this.btnProfile.UseVisualStyleBackColor = false;
@@ -165,7 +166,7 @@ namespace CARO_LTMCB
             // 
             // btnMessage
             // 
-            this.btnMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnMessage.BackColor = System.Drawing.Color.MistyRose;
             this.btnMessage.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMessage.FlatAppearance.BorderSize = 0;
             this.btnMessage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -176,11 +177,11 @@ namespace CARO_LTMCB
             this.btnMessage.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMessage.IconSize = 45;
             this.btnMessage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMessage.Location = new System.Drawing.Point(0, 116);
-            this.btnMessage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMessage.Location = new System.Drawing.Point(0, 143);
+            this.btnMessage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMessage.Name = "btnMessage";
-            this.btnMessage.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnMessage.Size = new System.Drawing.Size(150, 65);
+            this.btnMessage.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnMessage.Size = new System.Drawing.Size(200, 80);
             this.btnMessage.TabIndex = 0;
             this.btnMessage.Text = "Message";
             this.btnMessage.UseVisualStyleBackColor = false;
@@ -188,7 +189,7 @@ namespace CARO_LTMCB
             // 
             // btnHome
             // 
-            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnHome.BackColor = System.Drawing.Color.MistyRose;
             this.btnHome.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -199,11 +200,11 @@ namespace CARO_LTMCB
             this.btnHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHome.IconSize = 45;
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(0, 51);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHome.Location = new System.Drawing.Point(0, 63);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnHome.Size = new System.Drawing.Size(150, 65);
+            this.btnHome.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnHome.Size = new System.Drawing.Size(200, 80);
             this.btnHome.TabIndex = 0;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = false;
@@ -213,24 +214,24 @@ namespace CARO_LTMCB
             // 
             this.guna2CustomGradientPanel1.Controls.Add(this.pictureBox1);
             this.guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2CustomGradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.guna2CustomGradientPanel1.FillColor = System.Drawing.Color.MistyRose;
+            this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.MistyRose;
+            this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.MistyRose;
+            this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.MistyRose;
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(150, 51);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(200, 63);
             this.guna2CustomGradientPanel1.TabIndex = 0;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.pictureBox1.BackColor = System.Drawing.Color.MistyRose;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(50, 6);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(67, 7);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(39, 41);
+            this.pictureBox1.Size = new System.Drawing.Size(52, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -243,10 +244,10 @@ namespace CARO_LTMCB
             this.pnTitle.Controls.Add(this.btnExit);
             this.pnTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTitle.FillColor = System.Drawing.Color.LightCyan;
-            this.pnTitle.Location = new System.Drawing.Point(150, 0);
-            this.pnTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnTitle.Location = new System.Drawing.Point(200, 0);
+            this.pnTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnTitle.Name = "pnTitle";
-            this.pnTitle.Size = new System.Drawing.Size(765, 45);
+            this.pnTitle.Size = new System.Drawing.Size(1020, 55);
             this.pnTitle.TabIndex = 1;
             this.pnTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2Panel2_MouseDown);
             // 
@@ -256,10 +257,9 @@ namespace CARO_LTMCB
             this.lbNameForm.BackColor = System.Drawing.Color.LightCyan;
             this.lbNameForm.Font = new System.Drawing.Font("Cooper Black", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNameForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lbNameForm.Location = new System.Drawing.Point(72, 8);
-            this.lbNameForm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbNameForm.Location = new System.Drawing.Point(96, 10);
             this.lbNameForm.Name = "lbNameForm";
-            this.lbNameForm.Size = new System.Drawing.Size(92, 31);
+            this.lbNameForm.Size = new System.Drawing.Size(113, 38);
             this.lbNameForm.TabIndex = 18;
             this.lbNameForm.Text = "Home";
             // 
@@ -270,11 +270,11 @@ namespace CARO_LTMCB
             this.picIconForm.IconChar = FontAwesome.Sharp.IconChar.HouseChimneyUser;
             this.picIconForm.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.picIconForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.picIconForm.IconSize = 46;
-            this.picIconForm.Location = new System.Drawing.Point(15, 2);
-            this.picIconForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picIconForm.IconSize = 57;
+            this.picIconForm.Location = new System.Drawing.Point(20, 2);
+            this.picIconForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picIconForm.Name = "picIconForm";
-            this.picIconForm.Size = new System.Drawing.Size(55, 46);
+            this.picIconForm.Size = new System.Drawing.Size(73, 57);
             this.picIconForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picIconForm.TabIndex = 17;
             this.picIconForm.TabStop = false;
@@ -286,9 +286,11 @@ namespace CARO_LTMCB
             this.btnMinisize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
             this.btnMinisize.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnMinisize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMinisize.Location = new System.Drawing.Point(709, -6);
+            this.btnMinisize.IconSize = 39;
+            this.btnMinisize.Location = new System.Drawing.Point(945, -7);
+            this.btnMinisize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMinisize.Name = "btnMinisize";
-            this.btnMinisize.Size = new System.Drawing.Size(32, 32);
+            this.btnMinisize.Size = new System.Drawing.Size(43, 39);
             this.btnMinisize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinisize.TabIndex = 15;
             this.btnMinisize.TabStop = false;
@@ -301,9 +303,11 @@ namespace CARO_LTMCB
             this.btnExit.IconChar = FontAwesome.Sharp.IconChar.Xmark;
             this.btnExit.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExit.Location = new System.Drawing.Point(736, 0);
+            this.btnExit.IconSize = 39;
+            this.btnExit.Location = new System.Drawing.Point(981, 0);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(32, 32);
+            this.btnExit.Size = new System.Drawing.Size(43, 39);
             this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnExit.TabIndex = 16;
             this.btnExit.TabStop = false;
@@ -312,24 +316,24 @@ namespace CARO_LTMCB
             // pnMain
             // 
             this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnMain.Location = new System.Drawing.Point(150, 45);
-            this.pnMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnMain.Location = new System.Drawing.Point(200, 55);
+            this.pnMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(765, 605);
+            this.pnMain.Size = new System.Drawing.Size(1020, 745);
             this.pnMain.TabIndex = 2;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(915, 650);
+            this.ClientSize = new System.Drawing.Size(1220, 800);
             this.Controls.Add(this.pnMain);
             this.Controls.Add(this.pnTitle);
             this.Controls.Add(this.pnMenu);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";

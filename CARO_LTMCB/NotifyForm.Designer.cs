@@ -131,7 +131,7 @@ namespace CARO_LTMCB
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnCancel.BackColor = System.Drawing.Color.MistyRose;
             this.btnCancel.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(178, 6);
             this.btnCancel.Name = "btnCancel";
@@ -143,7 +143,7 @@ namespace CARO_LTMCB
             // 
             // btnYes
             // 
-            this.btnYes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnYes.BackColor = System.Drawing.Color.MistyRose;
             this.btnYes.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnYes.Location = new System.Drawing.Point(7, 6);
             this.btnYes.Name = "btnYes";
@@ -155,7 +155,7 @@ namespace CARO_LTMCB
             // 
             // btnOk
             // 
-            this.btnOk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnOk.BackColor = System.Drawing.Color.MistyRose;
             this.btnOk.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOk.Location = new System.Drawing.Point(7, 6);
             this.btnOk.Name = "btnOk";
@@ -167,7 +167,7 @@ namespace CARO_LTMCB
             // 
             // btnCancel2
             // 
-            this.btnCancel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnCancel2.BackColor = System.Drawing.Color.MistyRose;
             this.btnCancel2.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel2.Location = new System.Drawing.Point(248, 6);
             this.btnCancel2.Name = "btnCancel2";
@@ -179,7 +179,7 @@ namespace CARO_LTMCB
             // 
             // btnNo
             // 
-            this.btnNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnNo.BackColor = System.Drawing.Color.MistyRose;
             this.btnNo.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNo.Location = new System.Drawing.Point(126, 6);
             this.btnNo.Name = "btnNo";
@@ -191,7 +191,7 @@ namespace CARO_LTMCB
             // 
             // pic
             // 
-            this.pic.BackColor = System.Drawing.Color.MistyRose;
+            this.pic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.pic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.pic.IconChar = FontAwesome.Sharp.IconChar.ExclamationCircle;
             this.pic.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
@@ -223,7 +223,7 @@ namespace CARO_LTMCB
             // 
             // btnOk2
             // 
-            this.btnOk2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnOk2.BackColor = System.Drawing.Color.MistyRose;
             this.btnOk2.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOk2.Location = new System.Drawing.Point(23, 13);
             this.btnOk2.Name = "btnOk2";
@@ -235,7 +235,7 @@ namespace CARO_LTMCB
             // 
             // pn1
             // 
-            this.pn1.BackColor = System.Drawing.Color.MistyRose;
+            this.pn1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.pn1.Controls.Add(this.pnOk);
             this.pn1.Controls.Add(this.pic);
             this.pn1.Controls.Add(this.pnYesNo);
@@ -267,7 +267,7 @@ namespace CARO_LTMCB
             // 
             this.lbMess.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbMess.BackColor = System.Drawing.Color.MistyRose;
+            this.lbMess.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.lbMess.Font = new System.Drawing.Font("Cooper Black", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMess.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.lbMess.Location = new System.Drawing.Point(17, 63);

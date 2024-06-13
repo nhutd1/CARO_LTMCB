@@ -293,7 +293,7 @@ namespace CARO_LTMCB.FORMS
             // 
             // pnChessBoard
             // 
-            this.pnChessBoard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.pnChessBoard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(148)))), ((int)(((byte)(148)))));
             this.pnChessBoard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnChessBoard.Location = new System.Drawing.Point(155, 13);
             this.pnChessBoard.Name = "pnChessBoard";

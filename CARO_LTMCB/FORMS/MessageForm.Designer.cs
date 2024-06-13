@@ -57,6 +57,7 @@ namespace CARO_LTMCB.FORMS
             this.btnEmotion = new FontAwesome.Sharp.IconButton();
             this.panel11 = new System.Windows.Forms.Panel();
             this.pnToUsers = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.picOnline = new FontAwesome.Sharp.IconPictureBox();
             this.lbMessage = new System.Windows.Forms.Label();
             this.lbUserName = new System.Windows.Forms.Label();
             this.picUserAvatar = new System.Windows.Forms.PictureBox();
@@ -70,7 +71,6 @@ namespace CARO_LTMCB.FORMS
             this.contextmnRequests = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnShowInfor_Requests = new System.Windows.Forms.ToolStripMenuItem();
             this.timmerLoadTN = new System.Windows.Forms.Timer(this.components);
-            this.picOnline = new FontAwesome.Sharp.IconPictureBox();
             this.pn5.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pn6.SuspendLayout();
@@ -80,11 +80,11 @@ namespace CARO_LTMCB.FORMS
             this.pnSendMess.SuspendLayout();
             this.panel11.SuspendLayout();
             this.pnToUsers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picOnline)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUserAvatar)).BeginInit();
             this.contextmnFriend.SuspendLayout();
             this.contextmnNotFriend.SuspendLayout();
             this.contextmnRequests.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picOnline)).BeginInit();
             this.SuspendLayout();
             // 
             // pn5
@@ -322,7 +322,7 @@ namespace CARO_LTMCB.FORMS
             // pnShowMess
             // 
             this.pnShowMess.AutoScroll = true;
-            this.pnShowMess.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.pnShowMess.BackColor = System.Drawing.Color.MistyRose;
             this.pnShowMess.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnShowMess.Location = new System.Drawing.Point(240, 74);
             this.pnShowMess.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -346,10 +346,10 @@ namespace CARO_LTMCB.FORMS
             this.pnSendMess.Controls.Add(this.btnSend);
             this.pnSendMess.Controls.Add(this.tbxMess);
             this.pnSendMess.Controls.Add(this.btnEmotion);
-            this.pnSendMess.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.pnSendMess.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.pnSendMess.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.pnSendMess.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.pnSendMess.FillColor = System.Drawing.Color.MistyRose;
+            this.pnSendMess.FillColor2 = System.Drawing.Color.MistyRose;
+            this.pnSendMess.FillColor3 = System.Drawing.Color.MistyRose;
+            this.pnSendMess.FillColor4 = System.Drawing.Color.MistyRose;
             this.pnSendMess.Location = new System.Drawing.Point(0, 6);
             this.pnSendMess.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnSendMess.Name = "pnSendMess";
@@ -358,7 +358,7 @@ namespace CARO_LTMCB.FORMS
             // 
             // btnSend
             // 
-            this.btnSend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnSend.BackColor = System.Drawing.Color.MistyRose;
             this.btnSend.FlatAppearance.BorderSize = 0;
             this.btnSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSend.IconChar = FontAwesome.Sharp.IconChar.PaperPlane;
@@ -377,7 +377,7 @@ namespace CARO_LTMCB.FORMS
             // 
             this.tbxMess.AcceptsReturn = true;
             this.tbxMess.AutoScroll = true;
-            this.tbxMess.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tbxMess.BackColor = System.Drawing.Color.MistyRose;
             this.tbxMess.BorderRadius = 20;
             this.tbxMess.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbxMess.DefaultText = "";
@@ -400,7 +400,7 @@ namespace CARO_LTMCB.FORMS
             // 
             // btnEmotion
             // 
-            this.btnEmotion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnEmotion.BackColor = System.Drawing.Color.MistyRose;
             this.btnEmotion.FlatAppearance.BorderSize = 0;
             this.btnEmotion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmotion.IconChar = FontAwesome.Sharp.IconChar.FaceSmileBeam;
@@ -427,25 +427,40 @@ namespace CARO_LTMCB.FORMS
             // 
             // pnToUsers
             // 
+            this.pnToUsers.BackColor = System.Drawing.Color.MistyRose;
             this.pnToUsers.BorderRadius = 10;
             this.pnToUsers.Controls.Add(this.picOnline);
             this.pnToUsers.Controls.Add(this.lbMessage);
             this.pnToUsers.Controls.Add(this.lbUserName);
             this.pnToUsers.Controls.Add(this.picUserAvatar);
-            this.pnToUsers.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.pnToUsers.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.pnToUsers.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.pnToUsers.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.pnToUsers.FillColor = System.Drawing.Color.MistyRose;
+            this.pnToUsers.FillColor2 = System.Drawing.Color.MistyRose;
+            this.pnToUsers.FillColor3 = System.Drawing.Color.MistyRose;
+            this.pnToUsers.FillColor4 = System.Drawing.Color.MistyRose;
             this.pnToUsers.Location = new System.Drawing.Point(0, 5);
             this.pnToUsers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnToUsers.Name = "pnToUsers";
             this.pnToUsers.Size = new System.Drawing.Size(540, 59);
             this.pnToUsers.TabIndex = 4;
             // 
+            // picOnline
+            // 
+            this.picOnline.BackColor = System.Drawing.Color.MistyRose;
+            this.picOnline.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.picOnline.IconChar = FontAwesome.Sharp.IconChar.FacebookMessenger;
+            this.picOnline.IconColor = System.Drawing.Color.LightSeaGreen;
+            this.picOnline.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.picOnline.IconSize = 40;
+            this.picOnline.Location = new System.Drawing.Point(474, 11);
+            this.picOnline.Name = "picOnline";
+            this.picOnline.Size = new System.Drawing.Size(40, 40);
+            this.picOnline.TabIndex = 3;
+            this.picOnline.TabStop = false;
+            // 
             // lbMessage
             // 
             this.lbMessage.AutoSize = true;
-            this.lbMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.lbMessage.BackColor = System.Drawing.Color.MistyRose;
             this.lbMessage.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.lbMessage.Location = new System.Drawing.Point(164, 4);
@@ -457,9 +472,9 @@ namespace CARO_LTMCB.FORMS
             // lbUserName
             // 
             this.lbUserName.AutoSize = true;
-            this.lbUserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.lbUserName.BackColor = System.Drawing.Color.MistyRose;
             this.lbUserName.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.lbUserName.ForeColor = System.Drawing.Color.MistyRose;
             this.lbUserName.Location = new System.Drawing.Point(96, 5);
             this.lbUserName.Name = "lbUserName";
             this.lbUserName.Size = new System.Drawing.Size(246, 49);
@@ -468,7 +483,7 @@ namespace CARO_LTMCB.FORMS
             // 
             // picUserAvatar
             // 
-            this.picUserAvatar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.picUserAvatar.BackColor = System.Drawing.Color.MistyRose;
             this.picUserAvatar.Location = new System.Drawing.Point(24, 3);
             this.picUserAvatar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picUserAvatar.Name = "picUserAvatar";
@@ -573,20 +588,6 @@ namespace CARO_LTMCB.FORMS
             this.timmerLoadTN.Interval = 200;
             this.timmerLoadTN.Tick += new System.EventHandler(this.timmerLoadTN_Tick);
             // 
-            // picOnline
-            // 
-            this.picOnline.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.picOnline.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.picOnline.IconChar = FontAwesome.Sharp.IconChar.FacebookMessenger;
-            this.picOnline.IconColor = System.Drawing.Color.LightSeaGreen;
-            this.picOnline.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.picOnline.IconSize = 40;
-            this.picOnline.Location = new System.Drawing.Point(474, 11);
-            this.picOnline.Name = "picOnline";
-            this.picOnline.Size = new System.Drawing.Size(40, 40);
-            this.picOnline.TabIndex = 3;
-            this.picOnline.TabStop = false;
-            // 
             // MessageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -611,11 +612,11 @@ namespace CARO_LTMCB.FORMS
             this.panel11.ResumeLayout(false);
             this.pnToUsers.ResumeLayout(false);
             this.pnToUsers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picOnline)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUserAvatar)).EndInit();
             this.contextmnFriend.ResumeLayout(false);
             this.contextmnNotFriend.ResumeLayout(false);
             this.contextmnRequests.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picOnline)).EndInit();
             this.ResumeLayout(false);
 
         }

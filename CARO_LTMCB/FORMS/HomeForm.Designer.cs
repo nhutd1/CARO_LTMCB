@@ -34,6 +34,11 @@ namespace CARO_LTMCB.FORMS
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnMessage = new System.Windows.Forms.Panel();
+            this.rtbxCurMess = new System.Windows.Forms.RichTextBox();
+            this.btnSend = new FontAwesome.Sharp.IconButton();
+            this.tbxMess = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnEmotion = new FontAwesome.Sharp.IconButton();
             this.pnButtons = new System.Windows.Forms.Panel();
             this.btnPvP = new System.Windows.Forms.Button();
             this.btnPractice = new System.Windows.Forms.Button();
@@ -47,6 +52,7 @@ namespace CARO_LTMCB.FORMS
             this.pnChessBoard = new System.Windows.Forms.Panel();
             this.tmCoolDown = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
+            this.pnMessage.SuspendLayout();
             this.pnButtons.SuspendLayout();
             this.pnAnotherUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAnotherUser)).BeginInit();
@@ -74,6 +80,7 @@ namespace CARO_LTMCB.FORMS
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightCyan;
+            this.panel1.Controls.Add(this.pnMessage);
             this.panel1.Controls.Add(this.pnButtons);
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.Controls.Add(this.pnAnotherUser);
@@ -87,6 +94,84 @@ namespace CARO_LTMCB.FORMS
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1020, 745);
             this.panel1.TabIndex = 0;
+            // 
+            // pnMessage
+            // 
+            this.pnMessage.Controls.Add(this.rtbxCurMess);
+            this.pnMessage.Controls.Add(this.btnSend);
+            this.pnMessage.Controls.Add(this.tbxMess);
+            this.pnMessage.Controls.Add(this.btnEmotion);
+            this.pnMessage.Location = new System.Drawing.Point(29, 641);
+            this.pnMessage.Name = "pnMessage";
+            this.pnMessage.Size = new System.Drawing.Size(972, 104);
+            this.pnMessage.TabIndex = 1;
+            // 
+            // rtbxCurMess
+            // 
+            this.rtbxCurMess.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbxCurMess.Location = new System.Drawing.Point(205, 3);
+            this.rtbxCurMess.Name = "rtbxCurMess";
+            this.rtbxCurMess.ReadOnly = true;
+            this.rtbxCurMess.Size = new System.Drawing.Size(529, 57);
+            this.rtbxCurMess.TabIndex = 6;
+            this.rtbxCurMess.Text = "";
+            // 
+            // btnSend
+            // 
+            this.btnSend.BackColor = System.Drawing.Color.LightCyan;
+            this.btnSend.FlatAppearance.BorderSize = 0;
+            this.btnSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSend.IconChar = FontAwesome.Sharp.IconChar.PaperPlane;
+            this.btnSend.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnSend.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSend.IconSize = 40;
+            this.btnSend.Location = new System.Drawing.Point(740, 63);
+            this.btnSend.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(40, 40);
+            this.btnSend.TabIndex = 5;
+            this.btnSend.UseVisualStyleBackColor = false;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
+            // tbxMess
+            // 
+            this.tbxMess.AcceptsReturn = true;
+            this.tbxMess.AutoScroll = true;
+            this.tbxMess.BackColor = System.Drawing.Color.LightCyan;
+            this.tbxMess.BorderRadius = 20;
+            this.tbxMess.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbxMess.DefaultText = "";
+            this.tbxMess.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbxMess.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbxMess.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbxMess.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbxMess.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbxMess.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxMess.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbxMess.Location = new System.Drawing.Point(205, 63);
+            this.tbxMess.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.tbxMess.Name = "tbxMess";
+            this.tbxMess.PasswordChar = '\0';
+            this.tbxMess.PlaceholderText = "";
+            this.tbxMess.SelectedText = "";
+            this.tbxMess.Size = new System.Drawing.Size(529, 38);
+            this.tbxMess.TabIndex = 4;
+            // 
+            // btnEmotion
+            // 
+            this.btnEmotion.BackColor = System.Drawing.Color.LightCyan;
+            this.btnEmotion.FlatAppearance.BorderSize = 0;
+            this.btnEmotion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmotion.IconChar = FontAwesome.Sharp.IconChar.FaceSmileBeam;
+            this.btnEmotion.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnEmotion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEmotion.IconSize = 40;
+            this.btnEmotion.Location = new System.Drawing.Point(158, 63);
+            this.btnEmotion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEmotion.Name = "btnEmotion";
+            this.btnEmotion.Size = new System.Drawing.Size(40, 40);
+            this.btnEmotion.TabIndex = 3;
+            this.btnEmotion.UseVisualStyleBackColor = false;
             // 
             // pnButtons
             // 
@@ -175,6 +260,7 @@ namespace CARO_LTMCB.FORMS
             this.picAnotherUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAnotherUser.TabIndex = 0;
             this.picAnotherUser.TabStop = false;
+            this.picAnotherUser.Click += new System.EventHandler(this.picAnotherUser_Click);
             // 
             // prcbPlayer2
             // 
@@ -229,6 +315,7 @@ namespace CARO_LTMCB.FORMS
             this.Text = "HomeForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HomeForm_FormClosing);
             this.panel1.ResumeLayout(false);
+            this.pnMessage.ResumeLayout(false);
             this.pnButtons.ResumeLayout(false);
             this.pnAnotherUser.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picAnotherUser)).EndInit();
@@ -254,5 +341,10 @@ namespace CARO_LTMCB.FORMS
         private System.Windows.Forms.PictureBox picMyUser;
         private System.Windows.Forms.Panel pnChessBoard;
         private System.Windows.Forms.Timer tmCoolDown;
+        private System.Windows.Forms.Panel pnMessage;
+        private FontAwesome.Sharp.IconButton btnSend;
+        private Guna.UI2.WinForms.Guna2TextBox tbxMess;
+        private FontAwesome.Sharp.IconButton btnEmotion;
+        private System.Windows.Forms.RichTextBox rtbxCurMess;
     }
 }

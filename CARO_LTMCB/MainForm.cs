@@ -41,7 +41,26 @@ namespace CARO_LTMCB
             {
                 Effect.PlayEffect("effect");
             }
-            Application.Exit();
+            NotifyForm nf = new NotifyForm("Are you sure you want to log out?", "Notification", NotifyForm.BoxBtn.OkCancel);
+            nf.ShowDialog();
+            if (nf.isOk)
+            {
+                AudioPlayer.StopAudio();
+                if (MyUser.user != null)
+                {
+                    try
+                    {
+                        DTBase.UserOffline();
+                    }
+                    catch
+                    {
+
+                    }
+                }
+                LoginForm lgf = new LoginForm();
+                lgf.Show();
+                this.Hide();
+            }
         }
         private void btnMinisize_Click(object sender, EventArgs e)
         {
@@ -57,10 +76,22 @@ namespace CARO_LTMCB
             {
                 Effect.PlayEffect("effect");
             }
-            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            NotifyForm nf = new NotifyForm("Are you sure you want to log out?", "Notification", NotifyForm.BoxBtn.OkCancel);
+            nf.ShowDialog();
+            if (nf.isOk)
             {
                 AudioPlayer.StopAudio();
+                if (MyUser.user != null)
+                {
+                    try
+                    {
+                        DTBase.UserOffline();
+                    }
+                    catch
+                    {
+
+                    }
+                }
                 LoginForm lgf = new LoginForm();
                 lgf.Show();
                 this.Hide();

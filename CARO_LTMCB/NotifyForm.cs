@@ -20,23 +20,32 @@ namespace CARO_LTMCB
         public NotifyForm(string content, string sub, BoxBtn btn)
         {
             InitializeComponent();
-            pnOK.Parent = pn1;
+            pnOkCancel.Parent = pn1;
             pnYesNo.Parent = pn1;
+            pnOk.Parent = pn1;
+            pnOk.Hide();
+            pnOkCancel.Hide();
+            pnYesNo.Hide();
             lbSub.Text = sub;
             lbMess.Text = content;
             if (btn == BoxBtn.YesNo)
             {
-                pnOK.Hide();
+                pnYesNo.Show();
                 pic.IconChar = FontAwesome.Sharp.IconChar.CircleInfo;
             }
             else if (btn == BoxBtn.Ok)
             {
-                pnYesNo.Hide();
+                pnOk.Show();
+                pic.IconChar = FontAwesome.Sharp.IconChar.CircleInfo;
+            }
+            else if (btn == BoxBtn.OkCancel)
+            {
+                pnOkCancel.Show();
                 pic.IconChar = FontAwesome.Sharp.IconChar.CircleInfo;
             }
             else
             {
-                pnYesNo.Hide();
+                pnOk.Show();
                 pic.IconChar = FontAwesome.Sharp.IconChar.ExclamationCircle;
             }
         }
@@ -45,7 +54,8 @@ namespace CARO_LTMCB
         {
             YesNo,
             Ok,
-            Error
+            Error,
+            OkCancel
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -109,5 +119,11 @@ namespace CARO_LTMCB
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
         #endregion
+
+        private void btnOk2_Click(object sender, EventArgs e)
+        {
+            isOk = true;
+            this.Close();
+        }
     }
 }

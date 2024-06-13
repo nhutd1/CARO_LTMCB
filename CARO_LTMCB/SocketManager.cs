@@ -50,7 +50,8 @@ namespace CARO_LTMCB
                 try
                 {
                     client = server.Accept();
-                    Send(new SocketData((int)SocketCommand.SENDBACK_USERINFO, MyUser.user.userID.ToString(), new Point()));
+                    FORMS.HomeForm.isReady = false;
+                    Send(new SocketData((int)SocketCommand.SEND_USERINFO, MyUser.user.userID.ToString(), new Point()));
                 }
                 catch
                 {

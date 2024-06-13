@@ -70,6 +70,7 @@ namespace CARO_LTMCB.FORMS
             this.contextmnRequests = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnShowInfor_Requests = new System.Windows.Forms.ToolStripMenuItem();
             this.timmerLoadTN = new System.Windows.Forms.Timer(this.components);
+            this.picOnline = new FontAwesome.Sharp.IconPictureBox();
             this.pn5.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pn6.SuspendLayout();
@@ -83,6 +84,7 @@ namespace CARO_LTMCB.FORMS
             this.contextmnFriend.SuspendLayout();
             this.contextmnNotFriend.SuspendLayout();
             this.contextmnRequests.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picOnline)).BeginInit();
             this.SuspendLayout();
             // 
             // pn5
@@ -97,46 +99,46 @@ namespace CARO_LTMCB.FORMS
             this.pn5.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pn5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.pn5.Location = new System.Drawing.Point(0, 0);
-            this.pn5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pn5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pn5.Name = "pn5";
-            this.pn5.Size = new System.Drawing.Size(180, 605);
+            this.pn5.Size = new System.Drawing.Size(240, 745);
             this.pn5.TabIndex = 0;
             // 
             // pnFriend
             // 
             this.pnFriend.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnFriend.Location = new System.Drawing.Point(4, 65);
-            this.pnFriend.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnFriend.Location = new System.Drawing.Point(5, 80);
+            this.pnFriend.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnFriend.Name = "pnFriend";
-            this.pnFriend.Size = new System.Drawing.Size(172, 540);
+            this.pnFriend.Size = new System.Drawing.Size(230, 665);
             this.pnFriend.TabIndex = 5;
             // 
             // panel5
             // 
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(176, 65);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Location = new System.Drawing.Point(235, 80);
+            this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(4, 540);
+            this.panel5.Size = new System.Drawing.Size(5, 665);
             this.panel5.TabIndex = 5;
             // 
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(0, 65);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Location = new System.Drawing.Point(0, 80);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(4, 540);
+            this.panel4.Size = new System.Drawing.Size(5, 665);
             this.panel4.TabIndex = 5;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.tbxFindFriend);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 4);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(0, 5);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(180, 61);
+            this.panel2.Size = new System.Drawing.Size(240, 75);
             this.panel2.TabIndex = 3;
             // 
             // tbxFindFriend
@@ -154,13 +156,13 @@ namespace CARO_LTMCB.FORMS
             this.tbxFindFriend.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbxFindFriend.IconLeft = ((System.Drawing.Image)(resources.GetObject("tbxFindFriend.IconLeft")));
             this.tbxFindFriend.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.tbxFindFriend.Location = new System.Drawing.Point(8, 12);
-            this.tbxFindFriend.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbxFindFriend.Location = new System.Drawing.Point(11, 15);
+            this.tbxFindFriend.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.tbxFindFriend.Name = "tbxFindFriend";
             this.tbxFindFriend.PasswordChar = '\0';
             this.tbxFindFriend.PlaceholderText = "";
             this.tbxFindFriend.SelectedText = "";
-            this.tbxFindFriend.Size = new System.Drawing.Size(164, 37);
+            this.tbxFindFriend.Size = new System.Drawing.Size(219, 46);
             this.tbxFindFriend.TabIndex = 3;
             this.tbxFindFriend.TextOffset = new System.Drawing.Point(6, 0);
             this.tbxFindFriend.TextChanged += new System.EventHandler(this.tbxFindFriend_TextChanged);
@@ -172,9 +174,9 @@ namespace CARO_LTMCB.FORMS
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel10.Location = new System.Drawing.Point(0, 0);
-            this.panel10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(180, 4);
+            this.panel10.Size = new System.Drawing.Size(240, 5);
             this.panel10.TabIndex = 2;
             // 
             // pn6
@@ -189,10 +191,10 @@ namespace CARO_LTMCB.FORMS
             this.pn6.Controls.Add(this.panel3);
             this.pn6.Controls.Add(this.panel6);
             this.pn6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pn6.Location = new System.Drawing.Point(585, 0);
-            this.pn6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pn6.Location = new System.Drawing.Point(780, 0);
+            this.pn6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pn6.Name = "pn6";
-            this.pn6.Size = new System.Drawing.Size(180, 605);
+            this.pn6.Size = new System.Drawing.Size(240, 745);
             this.pn6.TabIndex = 1;
             // 
             // label1
@@ -200,68 +202,67 @@ namespace CARO_LTMCB.FORMS
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cooper Black", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.label1.Location = new System.Drawing.Point(12, 288);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(16, 354);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 21);
+            this.label1.Size = new System.Drawing.Size(211, 27);
             this.label1.TabIndex = 8;
             this.label1.Text = "Friend Requests";
             // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.panel9.Location = new System.Drawing.Point(-2, 280);
-            this.panel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel9.Location = new System.Drawing.Point(-3, 345);
+            this.panel9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(178, 4);
+            this.panel9.Size = new System.Drawing.Size(237, 5);
             this.panel9.TabIndex = 9;
             // 
             // pnFriendRequests
             // 
             this.pnFriendRequests.AutoScroll = true;
             this.pnFriendRequests.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnFriendRequests.Location = new System.Drawing.Point(4, 312);
-            this.pnFriendRequests.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnFriendRequests.Location = new System.Drawing.Point(5, 384);
+            this.pnFriendRequests.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnFriendRequests.Name = "pnFriendRequests";
-            this.pnFriendRequests.Size = new System.Drawing.Size(172, 293);
+            this.pnFriendRequests.Size = new System.Drawing.Size(230, 361);
             this.pnFriendRequests.TabIndex = 10;
             // 
             // pnNotFriend
             // 
             this.pnNotFriend.AutoScroll = true;
             this.pnNotFriend.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnNotFriend.Location = new System.Drawing.Point(4, 65);
-            this.pnNotFriend.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnNotFriend.Location = new System.Drawing.Point(5, 80);
+            this.pnNotFriend.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnNotFriend.Name = "pnNotFriend";
-            this.pnNotFriend.Size = new System.Drawing.Size(172, 217);
+            this.pnNotFriend.Size = new System.Drawing.Size(230, 267);
             this.pnNotFriend.TabIndex = 7;
             // 
             // panel8
             // 
             this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel8.Location = new System.Drawing.Point(176, 65);
-            this.panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel8.Location = new System.Drawing.Point(235, 80);
+            this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(4, 540);
+            this.panel8.Size = new System.Drawing.Size(5, 665);
             this.panel8.TabIndex = 6;
             // 
             // panel7
             // 
             this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel7.Location = new System.Drawing.Point(0, 65);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel7.Location = new System.Drawing.Point(0, 80);
+            this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(4, 540);
+            this.panel7.Size = new System.Drawing.Size(5, 665);
             this.panel7.TabIndex = 6;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.tbxFindUser);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 4);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Location = new System.Drawing.Point(0, 5);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(180, 61);
+            this.panel3.Size = new System.Drawing.Size(240, 75);
             this.panel3.TabIndex = 5;
             // 
             // tbxFindUser
@@ -279,13 +280,13 @@ namespace CARO_LTMCB.FORMS
             this.tbxFindUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbxFindUser.IconLeft = ((System.Drawing.Image)(resources.GetObject("tbxFindUser.IconLeft")));
             this.tbxFindUser.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.tbxFindUser.Location = new System.Drawing.Point(7, 12);
-            this.tbxFindUser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbxFindUser.Location = new System.Drawing.Point(9, 15);
+            this.tbxFindUser.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.tbxFindUser.Name = "tbxFindUser";
             this.tbxFindUser.PasswordChar = '\0';
             this.tbxFindUser.PlaceholderText = "";
             this.tbxFindUser.SelectedText = "";
-            this.tbxFindUser.Size = new System.Drawing.Size(164, 37);
+            this.tbxFindUser.Size = new System.Drawing.Size(219, 46);
             this.tbxFindUser.TabIndex = 4;
             this.tbxFindUser.TextOffset = new System.Drawing.Point(6, 0);
             this.tbxFindUser.TextChanged += new System.EventHandler(this.tbxFindUser_TextChanged);
@@ -297,9 +298,9 @@ namespace CARO_LTMCB.FORMS
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(180, 4);
+            this.panel6.Size = new System.Drawing.Size(240, 5);
             this.panel6.TabIndex = 1;
             // 
             // panel1
@@ -313,9 +314,9 @@ namespace CARO_LTMCB.FORMS
             this.panel1.Controls.Add(this.pn5);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(765, 605);
+            this.panel1.Size = new System.Drawing.Size(1020, 745);
             this.panel1.TabIndex = 0;
             // 
             // pnShowMess
@@ -323,20 +324,20 @@ namespace CARO_LTMCB.FORMS
             this.pnShowMess.AutoScroll = true;
             this.pnShowMess.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.pnShowMess.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnShowMess.Location = new System.Drawing.Point(180, 60);
-            this.pnShowMess.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnShowMess.Location = new System.Drawing.Point(240, 74);
+            this.pnShowMess.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnShowMess.Name = "pnShowMess";
-            this.pnShowMess.Size = new System.Drawing.Size(405, 475);
+            this.pnShowMess.Size = new System.Drawing.Size(540, 585);
             this.pnShowMess.TabIndex = 6;
             // 
             // panel12
             // 
             this.panel12.Controls.Add(this.pnSendMess);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel12.Location = new System.Drawing.Point(180, 535);
-            this.panel12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel12.Location = new System.Drawing.Point(240, 659);
+            this.panel12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(405, 70);
+            this.panel12.Size = new System.Drawing.Size(540, 86);
             this.panel12.TabIndex = 5;
             // 
             // pnSendMess
@@ -349,10 +350,10 @@ namespace CARO_LTMCB.FORMS
             this.pnSendMess.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.pnSendMess.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.pnSendMess.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.pnSendMess.Location = new System.Drawing.Point(0, 5);
-            this.pnSendMess.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnSendMess.Location = new System.Drawing.Point(0, 6);
+            this.pnSendMess.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnSendMess.Name = "pnSendMess";
-            this.pnSendMess.Size = new System.Drawing.Size(405, 61);
+            this.pnSendMess.Size = new System.Drawing.Size(540, 75);
             this.pnSendMess.TabIndex = 3;
             // 
             // btnSend
@@ -364,10 +365,10 @@ namespace CARO_LTMCB.FORMS
             this.btnSend.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnSend.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSend.IconSize = 50;
-            this.btnSend.Location = new System.Drawing.Point(364, 15);
-            this.btnSend.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSend.Location = new System.Drawing.Point(485, 18);
+            this.btnSend.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(38, 34);
+            this.btnSend.Size = new System.Drawing.Size(51, 42);
             this.btnSend.TabIndex = 2;
             this.btnSend.UseVisualStyleBackColor = false;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
@@ -387,13 +388,13 @@ namespace CARO_LTMCB.FORMS
             this.tbxMess.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbxMess.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbxMess.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbxMess.Location = new System.Drawing.Point(46, 10);
-            this.tbxMess.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.tbxMess.Location = new System.Drawing.Point(61, 12);
+            this.tbxMess.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.tbxMess.Name = "tbxMess";
             this.tbxMess.PasswordChar = '\0';
             this.tbxMess.PlaceholderText = "";
             this.tbxMess.SelectedText = "";
-            this.tbxMess.Size = new System.Drawing.Size(316, 42);
+            this.tbxMess.Size = new System.Drawing.Size(421, 52);
             this.tbxMess.TabIndex = 1;
             this.tbxMess.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxMess_KeyDown);
             // 
@@ -406,10 +407,10 @@ namespace CARO_LTMCB.FORMS
             this.btnEmotion.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnEmotion.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEmotion.IconSize = 50;
-            this.btnEmotion.Location = new System.Drawing.Point(4, 15);
-            this.btnEmotion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEmotion.Location = new System.Drawing.Point(5, 18);
+            this.btnEmotion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEmotion.Name = "btnEmotion";
-            this.btnEmotion.Size = new System.Drawing.Size(38, 34);
+            this.btnEmotion.Size = new System.Drawing.Size(51, 42);
             this.btnEmotion.TabIndex = 0;
             this.btnEmotion.UseVisualStyleBackColor = false;
             this.btnEmotion.Click += new System.EventHandler(this.btnEmotion_Click);
@@ -418,15 +419,16 @@ namespace CARO_LTMCB.FORMS
             // 
             this.panel11.Controls.Add(this.pnToUsers);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel11.Location = new System.Drawing.Point(180, 4);
-            this.panel11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel11.Location = new System.Drawing.Point(240, 5);
+            this.panel11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(405, 56);
+            this.panel11.Size = new System.Drawing.Size(540, 69);
             this.panel11.TabIndex = 4;
             // 
             // pnToUsers
             // 
             this.pnToUsers.BorderRadius = 10;
+            this.pnToUsers.Controls.Add(this.picOnline);
             this.pnToUsers.Controls.Add(this.lbMessage);
             this.pnToUsers.Controls.Add(this.lbUserName);
             this.pnToUsers.Controls.Add(this.picUserAvatar);
@@ -434,10 +436,10 @@ namespace CARO_LTMCB.FORMS
             this.pnToUsers.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.pnToUsers.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.pnToUsers.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.pnToUsers.Location = new System.Drawing.Point(0, 4);
-            this.pnToUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnToUsers.Location = new System.Drawing.Point(0, 5);
+            this.pnToUsers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnToUsers.Name = "pnToUsers";
-            this.pnToUsers.Size = new System.Drawing.Size(405, 48);
+            this.pnToUsers.Size = new System.Drawing.Size(540, 59);
             this.pnToUsers.TabIndex = 4;
             // 
             // lbMessage
@@ -446,10 +448,9 @@ namespace CARO_LTMCB.FORMS
             this.lbMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.lbMessage.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lbMessage.Location = new System.Drawing.Point(123, 3);
-            this.lbMessage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbMessage.Location = new System.Drawing.Point(164, 4);
             this.lbMessage.Name = "lbMessage";
-            this.lbMessage.Size = new System.Drawing.Size(199, 40);
+            this.lbMessage.Size = new System.Drawing.Size(246, 49);
             this.lbMessage.TabIndex = 2;
             this.lbMessage.Text = "MESSAGE";
             // 
@@ -459,20 +460,19 @@ namespace CARO_LTMCB.FORMS
             this.lbUserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.lbUserName.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.lbUserName.Location = new System.Drawing.Point(72, 4);
-            this.lbUserName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbUserName.Location = new System.Drawing.Point(96, 5);
             this.lbUserName.Name = "lbUserName";
-            this.lbUserName.Size = new System.Drawing.Size(199, 40);
+            this.lbUserName.Size = new System.Drawing.Size(246, 49);
             this.lbUserName.TabIndex = 1;
             this.lbUserName.Text = "MESSAGE";
             // 
             // picUserAvatar
             // 
             this.picUserAvatar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.picUserAvatar.Location = new System.Drawing.Point(18, 2);
-            this.picUserAvatar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picUserAvatar.Location = new System.Drawing.Point(24, 3);
+            this.picUserAvatar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picUserAvatar.Name = "picUserAvatar";
-            this.picUserAvatar.Size = new System.Drawing.Size(42, 43);
+            this.picUserAvatar.Size = new System.Drawing.Size(56, 53);
             this.picUserAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picUserAvatar.TabIndex = 0;
             this.picUserAvatar.TabStop = false;
@@ -481,10 +481,10 @@ namespace CARO_LTMCB.FORMS
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel1.Location = new System.Drawing.Point(180, 0);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel1.Location = new System.Drawing.Point(240, 0);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(405, 4);
+            this.guna2Panel1.Size = new System.Drawing.Size(540, 5);
             this.guna2Panel1.TabIndex = 3;
             // 
             // contextmnFriend
@@ -494,7 +494,7 @@ namespace CARO_LTMCB.FORMS
             this.btnShowInfor_Friend,
             this.btnUnfriend});
             this.contextmnFriend.Name = "contextmnFriend";
-            this.contextmnFriend.Size = new System.Drawing.Size(157, 52);
+            this.contextmnFriend.Size = new System.Drawing.Size(177, 56);
             // 
             // btnShowInfor_Friend
             // 
@@ -503,7 +503,7 @@ namespace CARO_LTMCB.FORMS
             this.btnShowInfor_Friend.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.btnShowInfor_Friend.Margin = new System.Windows.Forms.Padding(1);
             this.btnShowInfor_Friend.Name = "btnShowInfor_Friend";
-            this.btnShowInfor_Friend.Size = new System.Drawing.Size(156, 22);
+            this.btnShowInfor_Friend.Size = new System.Drawing.Size(176, 24);
             this.btnShowInfor_Friend.Text = "Show Infor";
             this.btnShowInfor_Friend.Click += new System.EventHandler(this.btnShowInfor_Friend_Click);
             // 
@@ -514,7 +514,7 @@ namespace CARO_LTMCB.FORMS
             this.btnUnfriend.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.btnUnfriend.Margin = new System.Windows.Forms.Padding(1);
             this.btnUnfriend.Name = "btnUnfriend";
-            this.btnUnfriend.Size = new System.Drawing.Size(156, 22);
+            this.btnUnfriend.Size = new System.Drawing.Size(176, 24);
             this.btnUnfriend.Text = "Unfriend";
             this.btnUnfriend.Click += new System.EventHandler(this.btnUnfriend_Click);
             // 
@@ -525,7 +525,7 @@ namespace CARO_LTMCB.FORMS
             this.btnShowInfor_NotFriend,
             this.btnAddFriend});
             this.contextmnNotFriend.Name = "contextmnNotFriend";
-            this.contextmnNotFriend.Size = new System.Drawing.Size(157, 52);
+            this.contextmnNotFriend.Size = new System.Drawing.Size(177, 56);
             // 
             // btnShowInfor_NotFriend
             // 
@@ -534,7 +534,7 @@ namespace CARO_LTMCB.FORMS
             this.btnShowInfor_NotFriend.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.btnShowInfor_NotFriend.Margin = new System.Windows.Forms.Padding(1);
             this.btnShowInfor_NotFriend.Name = "btnShowInfor_NotFriend";
-            this.btnShowInfor_NotFriend.Size = new System.Drawing.Size(156, 22);
+            this.btnShowInfor_NotFriend.Size = new System.Drawing.Size(176, 24);
             this.btnShowInfor_NotFriend.Text = "Show Infor";
             this.btnShowInfor_NotFriend.Click += new System.EventHandler(this.btnShowInfor_NotFriend_Click);
             // 
@@ -545,7 +545,7 @@ namespace CARO_LTMCB.FORMS
             this.btnAddFriend.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.btnAddFriend.Margin = new System.Windows.Forms.Padding(1);
             this.btnAddFriend.Name = "btnAddFriend";
-            this.btnAddFriend.Size = new System.Drawing.Size(156, 22);
+            this.btnAddFriend.Size = new System.Drawing.Size(176, 24);
             this.btnAddFriend.Text = "Add Friend";
             this.btnAddFriend.Click += new System.EventHandler(this.btnAddFriend_Click);
             // 
@@ -555,7 +555,7 @@ namespace CARO_LTMCB.FORMS
             this.contextmnRequests.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnShowInfor_Requests});
             this.contextmnRequests.Name = "contextmnRequests";
-            this.contextmnRequests.Size = new System.Drawing.Size(157, 28);
+            this.contextmnRequests.Size = new System.Drawing.Size(177, 30);
             // 
             // btnShowInfor_Requests
             // 
@@ -564,7 +564,7 @@ namespace CARO_LTMCB.FORMS
             this.btnShowInfor_Requests.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.btnShowInfor_Requests.Margin = new System.Windows.Forms.Padding(1);
             this.btnShowInfor_Requests.Name = "btnShowInfor_Requests";
-            this.btnShowInfor_Requests.Size = new System.Drawing.Size(156, 22);
+            this.btnShowInfor_Requests.Size = new System.Drawing.Size(176, 24);
             this.btnShowInfor_Requests.Text = "Show Infor";
             this.btnShowInfor_Requests.Click += new System.EventHandler(this.btnShowInfor_Requests_Click);
             // 
@@ -573,15 +573,29 @@ namespace CARO_LTMCB.FORMS
             this.timmerLoadTN.Interval = 200;
             this.timmerLoadTN.Tick += new System.EventHandler(this.timmerLoadTN_Tick);
             // 
+            // picOnline
+            // 
+            this.picOnline.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.picOnline.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.picOnline.IconChar = FontAwesome.Sharp.IconChar.FacebookMessenger;
+            this.picOnline.IconColor = System.Drawing.Color.LightSeaGreen;
+            this.picOnline.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.picOnline.IconSize = 40;
+            this.picOnline.Location = new System.Drawing.Point(474, 11);
+            this.picOnline.Name = "picOnline";
+            this.picOnline.Size = new System.Drawing.Size(40, 40);
+            this.picOnline.TabIndex = 3;
+            this.picOnline.TabStop = false;
+            // 
             // MessageForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(765, 605);
+            this.ClientSize = new System.Drawing.Size(1020, 745);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MessageForm";
             this.Text = "MessageForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MessageForm_FormClosed);
@@ -601,6 +615,7 @@ namespace CARO_LTMCB.FORMS
             this.contextmnFriend.ResumeLayout(false);
             this.contextmnNotFriend.ResumeLayout(false);
             this.contextmnRequests.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picOnline)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -646,5 +661,6 @@ namespace CARO_LTMCB.FORMS
         private System.Windows.Forms.ToolStripMenuItem btnShowInfor_Requests;
         private System.Windows.Forms.Panel pnShowMess;
         private System.Windows.Forms.Timer timmerLoadTN;
+        private FontAwesome.Sharp.IconPictureBox picOnline;
     }
 }

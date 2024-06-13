@@ -20,6 +20,7 @@ namespace CARO_LTMCB.FORMS
         public MessageForm()
         {
             InitializeComponent();
+            picOnline.Hide();
         }
 
         #region TextBox Change
@@ -185,6 +186,24 @@ namespace CARO_LTMCB.FORMS
             btnCurrentFriend = btn;
             if (e.Button == MouseButtons.Left)
             {
+                User friend = new User();
+                try
+                {
+                    friend = DTBase.GetUserUID(Convert.ToInt32(btn.Tag));
+                    if(friend.isOnline == 1)
+                    {
+                        picOnline.IconColor = Color.FromArgb(32, 178, 170);
+                    }
+                    else
+                    {
+                        picOnline.IconColor = Color.FromArgb(180, 180, 180);
+                    }
+                }
+                catch
+                {
+
+                }
+                picOnline.Show();
                 pnShowMess.Tag = btn.Tag;
                 lbUserName.Text = btn.Text;
                 lbUserName.ForeColor = Color.FromArgb(255, 128, 128);
@@ -333,13 +352,13 @@ namespace CARO_LTMCB.FORMS
 
         private void btnShowInfor_Friend_Click(object sender, EventArgs e)
         {
-            InforUserForm inforForm = new InforUserForm() { Tag = contextmnFriend.Tag };
+            InforUserForm inforForm = new InforUserForm(Convert.ToInt32(contextmnFriend.Tag));
             inforForm.ShowDialog();
         }
 
         private void btnShowInfor_NotFriend_Click(object sender, EventArgs e)
         {
-            InforUserForm inforForm = new InforUserForm() { Tag = contextmnNotFriend.Tag };
+            InforUserForm inforForm = new InforUserForm(Convert.ToInt32(contextmnNotFriend.Tag));
             inforForm.ShowDialog();
         }
 
@@ -348,7 +367,7 @@ namespace CARO_LTMCB.FORMS
 
             try
             {
-                DTBase.SendFriendRequest(Convert.ToInt32(contextmnNotFriend.Tag));
+                DTBase.SendFriendRequest(Convert.ToInt32(contextmnRequests.Tag));
             }
             catch
             {
@@ -358,7 +377,7 @@ namespace CARO_LTMCB.FORMS
 
         private void btnShowInfor_Requests_Click(object sender, EventArgs e)
         {
-            InforUserForm inforForm = new InforUserForm() { Tag = contextmnRequests.Tag };
+            InforUserForm inforForm = new InforUserForm(Convert.ToInt32(contextmnRequests.Tag));
             inforForm.ShowDialog();
         }
         #endregion

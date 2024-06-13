@@ -208,7 +208,8 @@ namespace CARO_LTMCB
                         else
                         {
                             DTBase.AddNewUser(tbxUsername.Text, tbxPass.Text, tbxMail.Text);
-                            MessageBox.Show("Register successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            NotifyForm nf = new NotifyForm("Register successfully!", "Notification", NotifyForm.BoxBtn.Ok);
+                            nf.ShowDialog();
                             LoginForm lgf = new LoginForm();
                             lgf.Show();
                             lgf.Location = new Point(this.Location.X, this.Location.Y);
@@ -218,7 +219,8 @@ namespace CARO_LTMCB
                 }
                 catch
                 {
-                    MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    NotifyForm nf = new NotifyForm("Error connect to Database", "Error Message", NotifyForm.BoxBtn.Error);
+                    nf.ShowDialog();
                 }
             }
         }

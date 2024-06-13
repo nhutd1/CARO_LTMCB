@@ -19,7 +19,8 @@ namespace CARO_LTMCB.FORMS
         List<List<Button>> matrix;
         int currentPlayer = 1;
         int myTurn;
-        bool isReady = true; //Sẵn sàng bắt đầu ván cờ mới
+        public static bool isReady = true; //Sẵn sàng bắt đầu ván cờ mới
+        int countChesss = 0;
         int gameMode = 1;
         //Chế độ chơi :
         //    1 - Tự chơi
@@ -35,6 +36,7 @@ namespace CARO_LTMCB.FORMS
         {
             InitializeComponent();
             btnBack.Hide();
+            pnMessage.Hide();
             pnChessBoard.Enabled = false;
             pnAnotherUser.Hide();
             if (MyUser.user != null)
@@ -50,6 +52,7 @@ namespace CARO_LTMCB.FORMS
         {
             currentPlayer = 1;
             pnChessBoard.Controls.Clear();
+            countChesss = 0;
             matrix = new List<List<Button>>();
             currentChess = new Button();
             prcbPlayer1.Value = 0;
@@ -136,6 +139,7 @@ namespace CARO_LTMCB.FORMS
             else //==========================================
             {
                 PutChess(point);
+                countChesss++;
                 prcbPlayer1.Value = 0;
                 prcbPlayer2.Value = 0;
                 tmCoolDown.Start();
@@ -156,7 +160,9 @@ namespace CARO_LTMCB.FORMS
                     isReady = true;
                     EndGame();
                     //pnChessBoard.Enabled = false;
-                    //DTBase.AddMatch()
+                    DTBase.AddMatch(anotherUser.userID);
+                    NotifyForm nf = new NotifyForm("You win!", "Notification", NotifyForm.BoxBtn.Ok);
+                    nf.ShowDialog();
                     DrawChessBoard();
                 }
             }
@@ -168,6 +174,7 @@ namespace CARO_LTMCB.FORMS
             pnChessBoard.Enabled = true;
 
             PutChess(point);
+            countChesss++;
             prcbPlayer1.Value = 0;
             prcbPlayer2.Value = 0;
             tmCoolDown.Start();
@@ -177,6 +184,8 @@ namespace CARO_LTMCB.FORMS
                 isReady = true;
                 EndGame();
                 //pnChessBoard.Enabled = false;
+                NotifyForm nf = new NotifyForm("You lost!", "Notification", NotifyForm.BoxBtn.Ok);
+                nf.ShowDialog();
                 DrawChessBoard();
             }
         }
@@ -916,6 +925,27 @@ namespace CARO_LTMCB.FORMS
         {
             if (gameMode == 3)
             {
+                //socket.Send(new SocketData((int)SocketCommand.SEND_POINT, "", point));
+                if (!isReady && countChesss != 0)
+                {
+                    NotifyForm nf = new NotifyForm("If quit, you will lost!", "Notification", NotifyForm.BoxBtn.OkCancel);
+                    nf.ShowDialog();
+                    if (nf.isOk)
+                    {
+                        try
+                        {
+                            socket.Send(new SocketData((int)SocketCommand.QUIT, "", new Point()));
+                            Listen();
+                        }
+                        catch
+                        {
+                        }
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
                 if (socket.isServer)
                 {
                     socket.client.Close();
@@ -931,6 +961,7 @@ namespace CARO_LTMCB.FORMS
                 picMyUser.Image = Image.FromFile($"Resources\\{MyUser.user.avatar}.png");
             pnAnotherUser.Hide();
             btnBack.Hide();
+            pnMessage.Hide();
             pnChessBoard.Enabled = false;
             pnButtons.Show();
             DrawChessBoard();
@@ -985,6 +1016,7 @@ namespace CARO_LTMCB.FORMS
         {
             gameMode = 3;
             pnButtons.Hide();
+            pnMessage.Show();
             btnBack.Text = btnPvP.Text;
             btnBack.Show();
             pnAnotherUser.Show();
@@ -1006,6 +1038,7 @@ namespace CARO_LTMCB.FORMS
             }
             else
             {
+                isReady = false;
                 socket.isServer = false;
                 pnChessBoard.Enabled = false;
                 //if (MyUser.user != null)
@@ -1045,19 +1078,9 @@ namespace CARO_LTMCB.FORMS
                         picAnotherUser.Tag = anotherUser.userID;
                     }));
                     break;
-                case (int)SocketCommand.SENDBACK_USERINFO:
-                    this.Invoke((MethodInvoker)(() =>
-                    {
-                        anotherUser = new User();
-                        int id = Convert.ToInt32(data.Message);
-                        anotherUser = DTBase.GetUserUID(id);
-                        picAnotherUser.Image = Image.FromFile($"Resources\\{anotherUser.avatar}.png");
-                        picAnotherUser.Tag = anotherUser.userID;
-                    }));
-                    break;
 
                 case (int)SocketCommand.SEND_MESS:
-                    MessageBox.Show(data.Message);
+                    rtbxCurMess.Text += $"{anotherUser.userName}: " + data.Message + "\n";
                     break;
 
                 case (int)SocketCommand.NEW_GAME:
@@ -1075,6 +1098,34 @@ namespace CARO_LTMCB.FORMS
                     break;
 
                 case (int)SocketCommand.QUIT:
+                    if (gameMode == 3)
+                    {
+                        if (socket.isServer)
+                        {
+                            socket.client.Close();
+                            socket.server.Close();
+                        }
+                        else
+                        {
+                            socket.client.Close();
+                        }
+                    }
+                    this.Invoke((MethodInvoker)(() =>
+                    {
+                        NotifyForm nf = new NotifyForm("The player has exited. You win!", "Notification", NotifyForm.BoxBtn.Ok);
+                        DTBase.AddMatch(anotherUser.userID);
+                        nf.ShowDialog();
+                        tmCoolDown.Stop();
+                        anotherUser = null;
+                        if (MyUser.user != null)
+                            picMyUser.Image = Image.FromFile($"Resources\\{MyUser.user.avatar}.png");
+                        pnAnotherUser.Hide();
+                        pnMessage.Hide();
+                        btnBack.Hide();
+                        pnChessBoard.Enabled = false;
+                        pnButtons.Show();
+                        DrawChessBoard();
+                    }));
                     break;
 
                 default:
@@ -1115,5 +1166,38 @@ namespace CARO_LTMCB.FORMS
                 }
             }
         }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            if(tbxMess.Text != string.Empty)
+            {
+                try
+                {
+                    socket.Send(new SocketData((int)SocketCommand.SEND_MESS, tbxMess.Text, new Point()));
+                    Listen();
+                    this.Invoke((MethodInvoker)(() =>
+                    {
+                        rtbxCurMess.Text += "Me: " + tbxMess.Text + "\n";
+                        tbxMess.Text = string.Empty;
+                    }));
+
+                }
+                catch
+                {
+
+                }
+            }
+        }
+
+        private void picAnotherUser_Click(object sender, EventArgs e)
+        {
+            if (anotherUser != null)
+            {
+                FORMS.InforUserForm info = new FORMS.InforUserForm(anotherUser.userID);
+                info.ShowDialog();
+            }
+        }
+
+        
     }
 }

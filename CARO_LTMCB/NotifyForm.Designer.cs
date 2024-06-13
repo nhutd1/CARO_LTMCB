@@ -43,15 +43,18 @@ namespace CARO_LTMCB
             this.btnNo = new System.Windows.Forms.Button();
             this.pic = new FontAwesome.Sharp.IconPictureBox();
             this.pnYesNo = new System.Windows.Forms.Panel();
+            this.pnOk = new System.Windows.Forms.Panel();
+            this.btnOk2 = new System.Windows.Forms.Button();
             this.pn1 = new System.Windows.Forms.Panel();
-            this.pnOK = new System.Windows.Forms.Panel();
+            this.pnOkCancel = new System.Windows.Forms.Panel();
             this.lbMess = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             this.pnYesNo.SuspendLayout();
+            this.pnOk.SuspendLayout();
             this.pn1.SuspendLayout();
-            this.pnOK.SuspendLayout();
+            this.pnOkCancel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel4
@@ -71,6 +74,7 @@ namespace CARO_LTMCB
             this.lbSub.Size = new System.Drawing.Size(101, 32);
             this.lbSub.TabIndex = 17;
             this.lbSub.Text = "label2";
+            this.lbSub.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbSub_MouseDown);
             // 
             // btnExit
             // 
@@ -209,12 +213,33 @@ namespace CARO_LTMCB
             this.pnYesNo.Size = new System.Drawing.Size(343, 44);
             this.pnYesNo.TabIndex = 20;
             // 
+            // pnOk
+            // 
+            this.pnOk.Controls.Add(this.btnOk2);
+            this.pnOk.Location = new System.Drawing.Point(142, 117);
+            this.pnOk.Name = "pnOk";
+            this.pnOk.Size = new System.Drawing.Size(131, 56);
+            this.pnOk.TabIndex = 23;
+            // 
+            // btnOk2
+            // 
+            this.btnOk2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnOk2.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOk2.Location = new System.Drawing.Point(23, 13);
+            this.btnOk2.Name = "btnOk2";
+            this.btnOk2.Size = new System.Drawing.Size(85, 35);
+            this.btnOk2.TabIndex = 3;
+            this.btnOk2.Text = "Ok";
+            this.btnOk2.UseVisualStyleBackColor = false;
+            this.btnOk2.Click += new System.EventHandler(this.btnOk2_Click);
+            // 
             // pn1
             // 
             this.pn1.BackColor = System.Drawing.Color.MistyRose;
+            this.pn1.Controls.Add(this.pnOk);
             this.pn1.Controls.Add(this.pic);
             this.pn1.Controls.Add(this.pnYesNo);
-            this.pn1.Controls.Add(this.pnOK);
+            this.pn1.Controls.Add(this.pnOkCancel);
             this.pn1.Controls.Add(this.lbMess);
             this.pn1.Controls.Add(this.lbSub);
             this.pn1.Controls.Add(this.btnExit);
@@ -227,15 +252,16 @@ namespace CARO_LTMCB
             this.pn1.Name = "pn1";
             this.pn1.Size = new System.Drawing.Size(430, 185);
             this.pn1.TabIndex = 1;
+            this.pn1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pn1_MouseDown);
             // 
-            // pnOK
+            // pnOkCancel
             // 
-            this.pnOK.Controls.Add(this.btnCancel);
-            this.pnOK.Controls.Add(this.btnOk);
-            this.pnOK.Location = new System.Drawing.Point(78, 125);
-            this.pnOK.Name = "pnOK";
-            this.pnOK.Size = new System.Drawing.Size(276, 44);
-            this.pnOK.TabIndex = 19;
+            this.pnOkCancel.Controls.Add(this.btnCancel);
+            this.pnOkCancel.Controls.Add(this.btnOk);
+            this.pnOkCancel.Location = new System.Drawing.Point(78, 125);
+            this.pnOkCancel.Name = "pnOkCancel";
+            this.pnOkCancel.Size = new System.Drawing.Size(276, 44);
+            this.pnOkCancel.TabIndex = 19;
             // 
             // lbMess
             // 
@@ -250,6 +276,7 @@ namespace CARO_LTMCB
             this.lbMess.TabIndex = 18;
             this.lbMess.Text = "INFOMATION";
             this.lbMess.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbMess.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbMess_MouseDown);
             // 
             // NotifyForm
             // 
@@ -259,14 +286,16 @@ namespace CARO_LTMCB
             this.Controls.Add(this.pn1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "NotifyForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NotifyForm";
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
             this.pnYesNo.ResumeLayout(false);
+            this.pnOk.ResumeLayout(false);
             this.pn1.ResumeLayout(false);
             this.pn1.PerformLayout();
-            this.pnOK.ResumeLayout(false);
+            this.pnOkCancel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -288,7 +317,9 @@ namespace CARO_LTMCB
         private FontAwesome.Sharp.IconPictureBox pic;
         private System.Windows.Forms.Panel pnYesNo;
         private System.Windows.Forms.Panel pn1;
-        private System.Windows.Forms.Panel pnOK;
+        private System.Windows.Forms.Panel pnOkCancel;
         private System.Windows.Forms.Label lbMess;
+        private System.Windows.Forms.Panel pnOk;
+        private System.Windows.Forms.Button btnOk2;
     }
 }

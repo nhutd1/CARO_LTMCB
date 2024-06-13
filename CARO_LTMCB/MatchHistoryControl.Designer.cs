@@ -51,7 +51,7 @@ namespace CARO_LTMCB
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cooper Black", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.label2.Location = new System.Drawing.Point(273, 31);
+            this.label2.Location = new System.Drawing.Point(261, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 27);
             this.label2.TabIndex = 1;
@@ -62,7 +62,7 @@ namespace CARO_LTMCB
             this.lbTime.AutoSize = true;
             this.lbTime.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTime.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.lbTime.Location = new System.Drawing.Point(702, 24);
+            this.lbTime.Location = new System.Drawing.Point(685, 24);
             this.lbTime.Name = "lbTime";
             this.lbTime.Size = new System.Drawing.Size(216, 32);
             this.lbTime.TabIndex = 2;
@@ -73,7 +73,7 @@ namespace CARO_LTMCB
             this.lbUserName.AutoSize = true;
             this.lbUserName.Font = new System.Drawing.Font("Cooper Black", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUserName.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.lbUserName.Location = new System.Drawing.Point(410, 15);
+            this.lbUserName.Location = new System.Drawing.Point(398, 15);
             this.lbUserName.Name = "lbUserName";
             this.lbUserName.Size = new System.Drawing.Size(224, 46);
             this.lbUserName.TabIndex = 3;

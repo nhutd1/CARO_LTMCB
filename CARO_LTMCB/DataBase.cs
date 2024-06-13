@@ -113,6 +113,16 @@ namespace CARO_LTMCB
             MyUser.user.userPass = newPass;
             FirebaseResponse rep = await client.UpdateAsync("USER/" + MyUser.user.userID.ToString(), MyUser.user);
         }
+        static public async void UserOnline()
+        {
+            MyUser.user.isOnline = 1;
+            FirebaseResponse rep = await client.UpdateAsync("USER/" + MyUser.user.userID.ToString(), MyUser.user);
+        }
+        static public async void UserOffline()
+        {
+            MyUser.user.isOnline = 0;
+            FirebaseResponse rep = await client.UpdateAsync("USER/" + MyUser.user.userID.ToString(), MyUser.user);
+        }
         static public async void ChangeAvatar(int index)
         {
             MyUser.user.avatar = index;

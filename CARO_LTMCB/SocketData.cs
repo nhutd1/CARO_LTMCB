@@ -44,9 +44,9 @@ namespace CARO_LTMCB
     public enum SocketCommand
     {
         SEND_USERINFO,
-        SENDBACK_USERINFO,
         SEND_POINT,
         SEND_MESS,
+        SEND_EMOJI,
         NEW_GAME,
         END_GAME,
         QUIT

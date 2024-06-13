@@ -185,21 +185,24 @@ namespace CARO_LTMCB
                             try
                             {
                                 smtp.Send(message);
-                                MessageBox.Show("Code send successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                NotifyForm nf = new NotifyForm("Code send successfully!", "Notification", NotifyForm.BoxBtn.Ok);
+                                nf.ShowDialog();
                                 btnConfirmcode.Enabled = true;
                                 lbFill1.Hide();
                                 lbFill2.Hide();
                                 lbWrong1.Hide();
                                 lbWrong2.Hide();
                             }
-                            catch (Exception ex)
+                            catch
                             {
-                                MessageBox.Show("Error to send code: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                NotifyForm nf = new NotifyForm("Error to send code!", "Error Message", NotifyForm.BoxBtn.Error);
+                                nf.ShowDialog();
                             }
                         }
-                        catch (Exception ex)
+                        catch
                         {
-                            MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            NotifyForm nf = new NotifyForm("Error to send code!", "Error Message", NotifyForm.BoxBtn.Error);
+                            nf.ShowDialog();
                         }
                     }
                     else
@@ -212,7 +215,8 @@ namespace CARO_LTMCB
                 }
                 catch
                 {
-                    MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    NotifyForm nf = new NotifyForm("Error connect to Database!", "Error Message", NotifyForm.BoxBtn.Error);
+                    nf.ShowDialog();
                 }
             }
             else
@@ -238,11 +242,13 @@ namespace CARO_LTMCB
                 btnChangepass.Enabled = true;
                 btnConfirmcode.Enabled = false;
                 DTBase.GetUserUName(tbxUsername.Text);
-                MessageBox.Show("Confirm successfully! You need to change your password below.", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                NotifyForm nf = new NotifyForm("Confirm successfully!", "Notification", NotifyForm.BoxBtn.Ok);
+                nf.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Wrong code!", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                NotifyForm nf = new NotifyForm("Wrong code!", "Error Message", NotifyForm.BoxBtn.Error);
+                nf.ShowDialog();
             }
         }
 
@@ -266,7 +272,8 @@ namespace CARO_LTMCB
                     }
                     catch
                     {
-                        MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        NotifyForm nf = new NotifyForm("Error connect to Database", "Error Message", NotifyForm.BoxBtn.Error);
+                        nf.ShowDialog();
                     }
                 }
                 else

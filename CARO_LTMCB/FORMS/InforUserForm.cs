@@ -14,10 +14,22 @@ namespace CARO_LTMCB.FORMS
     public partial class InforUserForm : Form
     {
         User user;
-        public InforUserForm()
+        public InforUserForm(int userId)
         {
             InitializeComponent();
-
+            try
+            {
+                user = DTBase.GetUserUID(userId);
+                picAvatar.Image = Image.FromFile($"Resources\\{user.avatar}.png");
+                lbID.Text = user.userID.ToString();
+                lbUsername.Text = user.userName;
+                lbWinRate.Text = user.winRate.ToString() + " %";
+                lbScore.Text = user.score.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -25,26 +37,7 @@ namespace CARO_LTMCB.FORMS
             this.Close();
         }
 
-        private void InforUserForm_Load(object sender, EventArgs e)
-        {
-            if (this.Tag != null)
-            {
-                int id = Convert.ToInt32(this.Tag);
-                try
-                {
-                    user = DTBase.GetUserUID(id);
-                    picAvatar.Image = Image.FromFile($"Resources\\{user.avatar}.png");
-                    lbID.Text = user.userID.ToString();
-                    lbUsername.Text = user.userName;
-                    lbWinRate.Text = user.winRate.ToString() + " %";
-                    lbScore.Text = user.score.ToString();
-                }
-                catch
-                {
-                    MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
+
 
         #region Kéo form 
 

@@ -149,8 +149,8 @@ namespace CARO_LTMCB
                 {
                     if (DTBase.CheckLogin(tbxUsername.Text, tbxPass.Text))
                     {
-                        MessageBox.Show("Login successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         DTBase.GetUserUName(tbxUsername.Text);
+                        DTBase.UserOnline();
                         MenuForm mnf = new MenuForm();
                         mnf.Show();
                         this.Hide();
@@ -163,7 +163,8 @@ namespace CARO_LTMCB
                 }
                 catch
                 {
-                    MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    NotifyForm nf = new NotifyForm("Error connect to Database", "Error Message", NotifyForm.BoxBtn.Error);
+                    nf.ShowDialog();
                 }
             }
             else

@@ -246,7 +246,6 @@ namespace CARO_LTMCB.FORMS
             this.Name = "InforUserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InforUserForm";
-            this.Load += new System.EventHandler(this.InforUserForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

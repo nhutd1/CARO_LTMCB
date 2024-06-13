@@ -113,8 +113,6 @@ namespace CARO_LTMCB.FORMS
                 {
                     isReady = true;
                     EndGame();
-                    //pnChessBoard.Enabled = false;
-                    DrawChessBoard();
                 }
             }
             else if (gameMode == 2)
@@ -124,7 +122,6 @@ namespace CARO_LTMCB.FORMS
                 {
                     isReady = true;
                     EndGame();
-                    DrawChessBoard();
                     return;
                 }
 
@@ -133,10 +130,9 @@ namespace CARO_LTMCB.FORMS
                 {
                     isReady = true;
                     EndGame();
-                    DrawChessBoard();
                 }
             }
-            else //==========================================
+            else
             {
                 PutChess(point);
                 countChesss++;
@@ -157,8 +153,8 @@ namespace CARO_LTMCB.FORMS
 
                 if (IsEndGame(currentChess))
                 {
+                    tmCoolDown.Stop();
                     isReady = true;
-                    EndGame();
                     //pnChessBoard.Enabled = false;
                     DTBase.AddMatch(anotherUser.userID);
                     NotifyForm nf = new NotifyForm("You win!", "Notification", NotifyForm.BoxBtn.Ok);
@@ -181,8 +177,8 @@ namespace CARO_LTMCB.FORMS
 
             if (IsEndGame(currentChess))
             {
+                tmCoolDown.Stop();
                 isReady = true;
-                EndGame();
                 //pnChessBoard.Enabled = false;
                 NotifyForm nf = new NotifyForm("You lost!", "Notification", NotifyForm.BoxBtn.Ok);
                 nf.ShowDialog();
@@ -253,10 +249,27 @@ namespace CARO_LTMCB.FORMS
                     f.ShowDialog();
                 }
             }
-            else //======================================
+            else if (gameMode == 3)
             {
-
+                if (prcbPlayer1.Value >= prcbPlayer1.Maximum)
+                {
+                    NotifyForm f = new NotifyForm("Time out! You lost!", "Notification", NotifyForm.BoxBtn.Ok);
+                    f.ShowDialog();
+                }
+                else if(prcbPlayer2.Value >= prcbPlayer2.Maximum)
+                {
+                    try
+                    {
+                        DTBase.AddMatch(anotherUser.userID);
+                    }
+                    catch
+                    {
+                    }
+                    NotifyForm f = new NotifyForm("Time out! You win!", "Notification", NotifyForm.BoxBtn.Ok);
+                    f.ShowDialog();
+                }
             }
+            DrawChessBoard();
         }
         #endregion
 
@@ -991,22 +1004,44 @@ namespace CARO_LTMCB.FORMS
 
         private void tmCoolDown_Tick(object sender, EventArgs e)
         {
-            if (currentPlayer == 1)
+            if(gameMode == 1)
             {
-                prcbPlayer1.PerformStep();
-                if (prcbPlayer1.Value >= prcbPlayer1.Maximum)
+                if (currentPlayer == 1)
                 {
-                    EndGame();
-                    DrawChessBoard();
+                    prcbPlayer1.PerformStep();
+                    if (prcbPlayer1.Value >= prcbPlayer1.Maximum)
+                    {
+                        EndGame();
+                        DrawChessBoard();
+                    }
+                }
+                else
+                {
+                    prcbPlayer2.PerformStep();
+                    if (prcbPlayer2.Value >= prcbPlayer2.Maximum)
+                    {
+                        EndGame();
+                        DrawChessBoard();
+                    }
                 }
             }
-            else
+            else if(gameMode == 3 && anotherUser!=null)
             {
-                prcbPlayer2.PerformStep();
-                if (prcbPlayer2.Value >= prcbPlayer2.Maximum)
+                if (pnChessBoard.Enabled)
                 {
-                    EndGame();
-                    DrawChessBoard();
+                    prcbPlayer1.PerformStep();
+                    if (prcbPlayer1.Value >= prcbPlayer1.Maximum)
+                    {
+                        EndGame();
+                    }
+                }
+                else
+                {
+                    prcbPlayer2.PerformStep();
+                    if (prcbPlayer2.Value >= prcbPlayer2.Maximum)
+                    {
+                        EndGame();
+                    }
                 }
             }
         }
@@ -1134,23 +1169,6 @@ namespace CARO_LTMCB.FORMS
 
             Listen();
         }
-
-        //private void button4_Click(object sender, EventArgs e)
-        //{
-        //    if(gameMode == 3)
-        //    {
-        //        try
-        //        {
-        //            socket.Send(new SocketData((int)SocketCommand.SEND_MESS, textBox1.Text, new Point()));
-        //            Listen();
-        //        }
-        //        catch
-        //        {
-
-        //        }
-        //    }
-        //}
-
         private void HomeForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (gameMode == 3)
@@ -1198,6 +1216,9 @@ namespace CARO_LTMCB.FORMS
             }
         }
 
-        
+        private void btnEmotion_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

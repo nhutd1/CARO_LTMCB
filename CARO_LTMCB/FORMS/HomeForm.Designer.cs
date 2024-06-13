@@ -172,6 +172,7 @@ namespace CARO_LTMCB.FORMS
             this.btnEmotion.Size = new System.Drawing.Size(40, 40);
             this.btnEmotion.TabIndex = 3;
             this.btnEmotion.UseVisualStyleBackColor = false;
+            this.btnEmotion.Click += new System.EventHandler(this.btnEmotion_Click);
             // 
             // pnButtons
             // 

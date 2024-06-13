@@ -302,6 +302,8 @@ namespace CARO_LTMCB
         }
         static public async void AddMatch(int idUser)
         {
+            SetScore_Winrate(idUser);
+
             FirebaseResponse rep = client.Get("MatchIdentity/");
             MatchIdentity id = rep.ResultAs<MatchIdentity>();
             DateTime date = DateTime.Now;
@@ -317,19 +319,17 @@ namespace CARO_LTMCB
             FirebaseResponse rep1 = await client.SetAsync("MATCH/" + id.ID.ToString(), match);
             id.ID += 1;
             FirebaseResponse rep2 = await client.SetAsync("MatchIdentity/", id);
-
-            DTBase.SetScore_Winrate(idUser);
         }
         static public async void SetScore_Winrate(int idUser)
         {
-            MyUser.user.score += 1;
-            MyUser.user.slMatch += 1;
+            MyUser.user.score ++;
+            MyUser.user.slMatch ++;
             double rate = ((double)MyUser.user.score * 100) / (double)MyUser.user.slMatch;
             MyUser.user.winRate = Math.Round(rate, 3);
             FirebaseResponse rep = await client.UpdateAsync("USER/" + MyUser.user.userID.ToString(), MyUser.user);
 
             User anotherUser = DTBase.GetUserUID(idUser);
-            anotherUser.slMatch += 1;
+            anotherUser.slMatch ++;
             double rate1 = ((double)anotherUser.score * 100) / (double)anotherUser.slMatch;
             anotherUser.winRate = Math.Round(rate1, 3);
             FirebaseResponse rep1 = await client.UpdateAsync("USER/" + idUser.ToString(), anotherUser);
@@ -350,6 +350,7 @@ namespace CARO_LTMCB
                     }
                 }
             }
+            myMatch.Reverse();
             return myMatch;
         }
     }
@@ -357,6 +358,5 @@ namespace CARO_LTMCB
     static public class MyUser
     {
         static public User user;
-
     }
 }

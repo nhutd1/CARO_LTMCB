@@ -60,7 +60,6 @@ namespace CARO_LTMCB.FORMS
             this.picOnline = new FontAwesome.Sharp.IconPictureBox();
             this.lbMessage = new System.Windows.Forms.Label();
             this.lbUserName = new System.Windows.Forms.Label();
-            this.picUserAvatar = new System.Windows.Forms.PictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.contextmnFriend = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnShowInfor_Friend = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,6 +70,7 @@ namespace CARO_LTMCB.FORMS
             this.contextmnRequests = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnShowInfor_Requests = new System.Windows.Forms.ToolStripMenuItem();
             this.timmerLoadTN = new System.Windows.Forms.Timer(this.components);
+            this.picUserAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.pn5.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pn6.SuspendLayout();
@@ -81,10 +81,10 @@ namespace CARO_LTMCB.FORMS
             this.panel11.SuspendLayout();
             this.pnToUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picOnline)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picUserAvatar)).BeginInit();
             this.contextmnFriend.SuspendLayout();
             this.contextmnNotFriend.SuspendLayout();
             this.contextmnRequests.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picUserAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // pn5
@@ -429,10 +429,10 @@ namespace CARO_LTMCB.FORMS
             // 
             this.pnToUsers.BackColor = System.Drawing.Color.MistyRose;
             this.pnToUsers.BorderRadius = 10;
+            this.pnToUsers.Controls.Add(this.picUserAvatar);
             this.pnToUsers.Controls.Add(this.picOnline);
             this.pnToUsers.Controls.Add(this.lbMessage);
             this.pnToUsers.Controls.Add(this.lbUserName);
-            this.pnToUsers.Controls.Add(this.picUserAvatar);
             this.pnToUsers.FillColor = System.Drawing.Color.MistyRose;
             this.pnToUsers.FillColor2 = System.Drawing.Color.MistyRose;
             this.pnToUsers.FillColor3 = System.Drawing.Color.MistyRose;
@@ -450,10 +450,10 @@ namespace CARO_LTMCB.FORMS
             this.picOnline.IconChar = FontAwesome.Sharp.IconChar.FacebookMessenger;
             this.picOnline.IconColor = System.Drawing.Color.LightSeaGreen;
             this.picOnline.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.picOnline.IconSize = 40;
-            this.picOnline.Location = new System.Drawing.Point(474, 11);
+            this.picOnline.IconSize = 55;
+            this.picOnline.Location = new System.Drawing.Point(463, 7);
             this.picOnline.Name = "picOnline";
-            this.picOnline.Size = new System.Drawing.Size(40, 40);
+            this.picOnline.Size = new System.Drawing.Size(50, 50);
             this.picOnline.TabIndex = 3;
             this.picOnline.TabStop = false;
             // 
@@ -463,7 +463,7 @@ namespace CARO_LTMCB.FORMS
             this.lbMessage.BackColor = System.Drawing.Color.MistyRose;
             this.lbMessage.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lbMessage.Location = new System.Drawing.Point(164, 4);
+            this.lbMessage.Location = new System.Drawing.Point(164, 6);
             this.lbMessage.Name = "lbMessage";
             this.lbMessage.Size = new System.Drawing.Size(246, 49);
             this.lbMessage.TabIndex = 2;
@@ -480,17 +480,6 @@ namespace CARO_LTMCB.FORMS
             this.lbUserName.Size = new System.Drawing.Size(246, 49);
             this.lbUserName.TabIndex = 1;
             this.lbUserName.Text = "MESSAGE";
-            // 
-            // picUserAvatar
-            // 
-            this.picUserAvatar.BackColor = System.Drawing.Color.MistyRose;
-            this.picUserAvatar.Location = new System.Drawing.Point(24, 3);
-            this.picUserAvatar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.picUserAvatar.Name = "picUserAvatar";
-            this.picUserAvatar.Size = new System.Drawing.Size(56, 53);
-            this.picUserAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picUserAvatar.TabIndex = 0;
-            this.picUserAvatar.TabStop = false;
             // 
             // guna2Panel1
             // 
@@ -588,6 +577,18 @@ namespace CARO_LTMCB.FORMS
             this.timmerLoadTN.Interval = 200;
             this.timmerLoadTN.Tick += new System.EventHandler(this.timmerLoadTN_Tick);
             // 
+            // picUserAvatar
+            // 
+            this.picUserAvatar.FillColor = System.Drawing.Color.MistyRose;
+            this.picUserAvatar.ImageRotate = 0F;
+            this.picUserAvatar.Location = new System.Drawing.Point(24, 3);
+            this.picUserAvatar.Name = "picUserAvatar";
+            this.picUserAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.picUserAvatar.Size = new System.Drawing.Size(53, 53);
+            this.picUserAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picUserAvatar.TabIndex = 0;
+            this.picUserAvatar.TabStop = false;
+            // 
             // MessageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -613,10 +614,10 @@ namespace CARO_LTMCB.FORMS
             this.pnToUsers.ResumeLayout(false);
             this.pnToUsers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picOnline)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picUserAvatar)).EndInit();
             this.contextmnFriend.ResumeLayout(false);
             this.contextmnNotFriend.ResumeLayout(false);
             this.contextmnRequests.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picUserAvatar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -644,7 +645,6 @@ namespace CARO_LTMCB.FORMS
         private System.Windows.Forms.Panel panel7;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnToUsers;
         private System.Windows.Forms.Label lbUserName;
-        private System.Windows.Forms.PictureBox picUserAvatar;
         private System.Windows.Forms.Label lbMessage;
         private System.Windows.Forms.Panel pnNotFriend;
         private System.Windows.Forms.Label label1;
@@ -663,5 +663,6 @@ namespace CARO_LTMCB.FORMS
         private System.Windows.Forms.Panel pnShowMess;
         private System.Windows.Forms.Timer timmerLoadTN;
         private FontAwesome.Sharp.IconPictureBox picOnline;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox picUserAvatar;
     }
 }

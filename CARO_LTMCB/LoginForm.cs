@@ -40,7 +40,13 @@ namespace CARO_LTMCB
             {
                 Effect.PlayEffect("effect");
             }
-            Application.Exit();
+            try
+            {
+                Application.Exit();
+            }
+            catch
+            {
+            }
         }
 
         private void btnMinisize_Click(object sender, EventArgs e)

@@ -99,6 +99,7 @@ namespace CARO_LTMCB.FORMS
         Thread friend;
         Thread notFriend;
         Thread requests;
+        Thread threadLoadingMess;
 
         User user;
         private void MessageForm_Load(object sender, EventArgs e)
@@ -118,9 +119,18 @@ namespace CARO_LTMCB.FORMS
                 {
                     LoadRequests();
                 });
+                threadLoadingMess = new Thread(() =>
+                {
+                    LoadingMessage();
+                });
+                friend.IsBackground = true;
+                notFriend.IsBackground = true;
+                requests.IsBackground = true;
+                threadLoadingMess.IsBackground = true;
                 friend.Start();
                 notFriend.Start();
                 requests.Start();
+                threadLoadingMess.Start();
 
                 //timmerLoadTN.Start();
             }
@@ -131,6 +141,7 @@ namespace CARO_LTMCB.FORMS
             friend.Abort();
             notFriend.Abort();
             requests.Abort();
+            threadLoadingMess.Abort();
         }
         private void MessageForm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -416,7 +427,6 @@ namespace CARO_LTMCB.FORMS
                 tn.Location = new Point(120, curentTinNhan.Bottom + 10);
             }
             pnShowMess.Controls.Add(tn);
-
             pnShowMess.VerticalScroll.Value = pnShowMess.VerticalScroll.Maximum;
 
             curentTinNhan = tn;
@@ -525,6 +535,47 @@ namespace CARO_LTMCB.FORMS
                 }
             }
         }
+        private void LoadingMessage()
+        {
+            while (true)
+            {
+                if (pnShowMess.Tag != null)
+                {
+                    int idUser = Convert.ToInt32(pnShowMess.Tag);
+                    try
+                    {
+                        List<Message> list = new List<Message>();
+                        list = DTBase.ListMessWith(idUser);
+                        if (slTinNhan != list.Count)
+                        {
+                            for (int i = slTinNhan; i < list.Count; i++)
+                            {
+                                if (list[i].idSend == user.userID)
+                                {
+                                    this.Invoke((MethodInvoker)(() =>
+                                    {
+                                        AddOutMess(list[i].content, list[i].ngayMess);
+                                    }));
+                                }
+                                else
+                                {
+                                    AddInMess(list[i].content, list[i].ngayMess);
+                                    this.Invoke((MethodInvoker)(() =>
+                                    {
+                                        AddInMess(list[i].content, list[i].ngayMess);
+                                    }));
+                                }
+                                slTinNhan++;
+                            }
+                        }
+                    }
+                    catch
+                    {
+                    }
+                }
+            }
+        }
+        
         #endregion
         private void btnEmotion_Click(object sender, EventArgs e)
         {

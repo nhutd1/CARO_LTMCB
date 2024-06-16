@@ -16,6 +16,9 @@ namespace CARO_LTMCB.FORMS
         public SettingForm()
         {
             InitializeComponent();
+
+            OpenForm(new FORMS.General());
+            currentBtn = btnGeneral;
         }
 
         private Form currentForm;

@@ -17,21 +17,7 @@ namespace CARO_LTMCB.FORMS
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Button12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Button6_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();

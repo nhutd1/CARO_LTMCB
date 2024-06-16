@@ -61,7 +61,8 @@ namespace CARO_LTMCB.FORMS
                 }
                 else
                 {
-                    MessageBox.Show("No changes to save.");
+                    NotifyForm nf = new NotifyForm("No changes to save!", "Notification", NotifyForm.BoxBtn.Ok);
+                    nf.ShowDialog();
                 }
             }
 
@@ -76,7 +77,8 @@ namespace CARO_LTMCB.FORMS
             }
             else
             {
-                MessageBox.Show("No text selected to copy.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                NotifyForm nf = new NotifyForm("No text selected to copy!", "Error", NotifyForm.BoxBtn.Ok);
+                nf.ShowDialog();
             }
         }
 

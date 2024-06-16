@@ -15,6 +15,9 @@ namespace CARO_LTMCB.FORMS
         public HelpForm()
         {
             InitializeComponent();
+
+            OpenForm(new FORMS.ReportForm());
+            currentBtn = btnReport;
         }
         private Form currentForm;
         private void OpenForm(Form childForm)

@@ -34,6 +34,7 @@ namespace CARO_LTMCB.FORMS
                 picProfile.Image = Image.FromFile($"Resources\\{user.avatar.ToString()}.png");
 
                 historyThread = new Thread(LoadHistoryMatch);
+                historyThread.IsBackground = true;
                 historyThread.Start();
             }
         }

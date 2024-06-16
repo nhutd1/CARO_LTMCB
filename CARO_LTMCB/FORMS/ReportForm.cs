@@ -57,19 +57,21 @@ namespace CARO_LTMCB.FORMS
                     richTextBox1.Text = string.Empty;
                     listPathFile = null;
                     btnFile.Text = "Attached File";
-                    MessageBox.Show("Phản hồi của bạn đã được gửi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    NotifyForm nf = new NotifyForm("Phản hồi của bạn đã được gửi thành công!", "Notification", NotifyForm.BoxBtn.Ok);
+                    nf.ShowDialog();
                 }
-                catch(Exception ex)
+                catch
                 {
-                    MessageBox.Show($"Phản hồi của bạn gửi không thành công!\nError: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    NotifyForm nf = new NotifyForm("Phản hồi của bạn gửi không thành công!", "Error", NotifyForm.BoxBtn.Error);
+                    nf.ShowDialog();
                 }
 
             }
-            catch (Exception ex)
+            catch
             {
                 // Hiển thị thông báo lỗi nếu việc gửi email thất bại
-                MessageBox.Show("Có lỗi xảy ra khi gửi tin nhắn: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                NotifyForm nf = new NotifyForm("Có lỗi xảy ra khi gửi tin nhắn!", "Error", NotifyForm.BoxBtn.Error);
+                nf.ShowDialog();
             }
         }
 

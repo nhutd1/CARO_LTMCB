@@ -20,9 +20,18 @@ namespace CARO_LTMCB
         public TinNhan(string mess, DateTime date, mstype messtype)
         {
             InitializeComponent();
-            lbMess.Text = mess;
-            lbTime.Text = $"{date.Day}/{date.Month}/{date.Year} - {date.Hour}:{date.Minute}";
+            if(mess == "1")
+            {
+                pictureBox1.Image = Image.FromFile("Resources\\1.png");
+                lbMess.Hide();
+            }
+            else
+            {
+                lbMess.Text = mess;
+                lbTime.Text = $"{date.Day}/{date.Month}/{date.Year} - {date.Hour}:{date.Minute}";
 
+                SetHeight();
+            }
             if (messtype == mstype.In)
             {
                 this.BackColor = Color.FromArgb(32, 178, 170);
@@ -33,8 +42,6 @@ namespace CARO_LTMCB
                 this.BackColor = Color.FromArgb(255, 128, 128);
                 lbMess.BackColor = Color.FromArgb(255, 128, 128);
             }
-
-            SetHeight();
         }
 
         void SetHeight()
@@ -52,6 +59,7 @@ namespace CARO_LTMCB
         {
             SetHeight();
         }
+
     }
     public enum mstype
     {

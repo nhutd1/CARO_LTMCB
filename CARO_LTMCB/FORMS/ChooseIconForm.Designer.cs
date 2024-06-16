@@ -77,7 +77,6 @@ namespace CARO_LTMCB.FORMS
             this.label1.Size = new System.Drawing.Size(92, 32);
             this.label1.TabIndex = 19;
             this.label1.Text = "ICON";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel6
             // 
@@ -269,7 +268,6 @@ namespace CARO_LTMCB.FORMS
             this.guna2Button6.Name = "guna2Button6";
             this.guna2Button6.Size = new System.Drawing.Size(86, 61);
             this.guna2Button6.TabIndex = 20;
-            this.guna2Button6.Click += new System.EventHandler(this.guna2Button6_Click);
             // 
             // guna2Button12
             // 
@@ -287,7 +285,6 @@ namespace CARO_LTMCB.FORMS
             this.guna2Button12.Name = "guna2Button12";
             this.guna2Button12.Size = new System.Drawing.Size(88, 73);
             this.guna2Button12.TabIndex = 19;
-            this.guna2Button12.Click += new System.EventHandler(this.guna2Button12_Click);
             // 
             // guna2Button2
             // 

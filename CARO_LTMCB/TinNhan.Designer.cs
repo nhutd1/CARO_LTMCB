@@ -33,6 +33,8 @@ namespace CARO_LTMCB
             this.lbMess = new System.Windows.Forms.Label();
             this.lbTime = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbMess
@@ -44,9 +46,10 @@ namespace CARO_LTMCB
             this.lbMess.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbMess.Location = new System.Drawing.Point(14, 14);
             this.lbMess.Name = "lbMess";
-            this.lbMess.Size = new System.Drawing.Size(361, 83);
+            this.lbMess.Size = new System.Drawing.Size(361, 107);
             this.lbMess.TabIndex = 0;
-            this.lbMess.Text = "Xin chaooooooo, he loooooo";
+            this.lbMess.Text = "Xin chaooooooo, he loooooo\r\nXin chaooooooo, he loooooo\r\nXin chaooooooo, he looooo" +
+    "o\r\nXin chaooooooo, he loooooo\r\n\r\n\r\n\r\n";
             this.lbMess.Resize += new System.EventHandler(this.lbMess_Resize);
             // 
             // lbTime
@@ -54,7 +57,7 @@ namespace CARO_LTMCB
             this.lbTime.AutoSize = true;
             this.lbTime.Font = new System.Drawing.Font("Book Antiqua", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTime.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbTime.Location = new System.Drawing.Point(14, 100);
+            this.lbTime.Location = new System.Drawing.Point(14, 122);
             this.lbTime.Name = "lbTime";
             this.lbTime.Size = new System.Drawing.Size(128, 22);
             this.lbTime.TabIndex = 1;
@@ -64,6 +67,15 @@ namespace CARO_LTMCB
             // 
             this.guna2Elipse1.TargetControl = this;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(182, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(140, 140);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // TinNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -71,8 +83,10 @@ namespace CARO_LTMCB
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(148)))), ((int)(((byte)(148)))));
             this.Controls.Add(this.lbTime);
             this.Controls.Add(this.lbMess);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "TinNhan";
-            this.Size = new System.Drawing.Size(390, 126);
+            this.Size = new System.Drawing.Size(390, 149);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -83,5 +97,6 @@ namespace CARO_LTMCB
         private System.Windows.Forms.Label lbMess;
         private System.Windows.Forms.Label lbTime;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

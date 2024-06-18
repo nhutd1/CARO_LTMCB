@@ -20,18 +20,18 @@ namespace CARO_LTMCB
         public TinNhan(string mess, DateTime date, mstype messtype)
         {
             InitializeComponent();
-            if(mess == "1")
+            if(mess.Contains("=icon="))
             {
-                pictureBox1.Image = Image.FromFile("Resources\\1.png");
+                pictureBox1.Image = Image.FromFile($"Resources\\{mess}.png");
                 lbMess.Hide();
             }
             else
             {
                 lbMess.Text = mess;
-                lbTime.Text = $"{date.Day}/{date.Month}/{date.Year} - {date.Hour}:{date.Minute}";
-
                 SetHeight();
             }
+            lbTime.Text = $"{date.Day}/{date.Month}/{date.Year} - {date.Hour}:{date.Minute}";
+
             if (messtype == mstype.In)
             {
                 this.BackColor = Color.FromArgb(32, 178, 170);

@@ -330,13 +330,14 @@ namespace CARO_LTMCB.FORMS
             {
                 try
                 {
-                    DialogResult result = MessageBox.Show("Acept this friend request?", "Notification", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-                    if (result == DialogResult.Yes)
+                    NotifyForm nf = new NotifyForm("Acept this friend request?", "Notification", NotifyForm.BoxBtn.YesNo);
+                    nf.ShowDialog();
+                    if (nf.isYes)
                     {
                         DTBase.AcceptFriendRequest(Convert.ToInt32(btn.Tag));
                         pnFriendRequests.Controls.Remove(btnCurrentRequest);
                     }
-                    else if (result == DialogResult.No)
+                    else if (nf.isNo)
                     {
                         DTBase.RejectFriendRequest(Convert.ToInt32(btn.Tag));
                         pnFriendRequests.Controls.Remove(btnCurrentRequest);
@@ -382,7 +383,8 @@ namespace CARO_LTMCB.FORMS
             }
             catch
             {
-                MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                NotifyForm nf = new NotifyForm("Error connect to Database", "Error", NotifyForm.BoxBtn.Error);
+                nf.ShowDialog();
             }
         }
 
@@ -451,7 +453,8 @@ namespace CARO_LTMCB.FORMS
                 }
                 catch
                 {
-                    MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    NotifyForm nf = new NotifyForm("Error connect to Database", "Error", NotifyForm.BoxBtn.Error);
+                    nf.ShowDialog();
                 }
             }
         }
@@ -472,7 +475,8 @@ namespace CARO_LTMCB.FORMS
                     }
                     catch
                     {
-                        MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        NotifyForm nf = new NotifyForm("Error connect to Database", "Error", NotifyForm.BoxBtn.Error);
+                        nf.ShowDialog();
                     }
                 }
             }
@@ -501,7 +505,8 @@ namespace CARO_LTMCB.FORMS
             }
             catch
             {
-                MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                NotifyForm nf = new NotifyForm("Error connect to Database", "Error", NotifyForm.BoxBtn.Error);
+                nf.ShowDialog();
             }
         }
         private void timmerLoadTN_Tick(object sender, EventArgs e)
@@ -531,7 +536,8 @@ namespace CARO_LTMCB.FORMS
                 }
                 catch
                 {
-                    MessageBox.Show("Error connect to Database", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    NotifyForm nf = new NotifyForm("Error connect to Database", "Error", NotifyForm.BoxBtn.Error);
+                    nf.ShowDialog();
                 }
             }
         }
@@ -583,8 +589,25 @@ namespace CARO_LTMCB.FORMS
             {
                 Effect.PlayEffect("effect");
             }
-            FORMS.ChooseIconForm avtf = new FORMS.ChooseIconForm();
-            avtf.ShowDialog();
+            if (pnShowMess.Tag != null)
+            {
+                FORMS.ChooseIconForm avtf = new FORMS.ChooseIconForm();
+                avtf.ShowDialog();
+                if (avtf.icon != "=icon=")
+                {
+                    try
+                    {
+                        int idReceive = Convert.ToInt32(pnShowMess.Tag);
+                        DTBase.SendMessTo(idReceive, avtf.icon);
+                    }
+                    catch
+                    {
+                        NotifyForm nf = new NotifyForm("Error connect to Database", "Error", NotifyForm.BoxBtn.Error);
+                        nf.ShowDialog();
+                    }
+                }
+            }
+            
         }
     }
 }

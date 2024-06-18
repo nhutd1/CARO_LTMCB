@@ -24,6 +24,12 @@ namespace CARO_LTMCB.FORMS
             {
                 Effect.PlayEffect("effect");
             }
+            if(tbxPass.Text == "password" || tbxNewPass.Text == "password" || tbxConfirmPass.Text == "password")
+            {
+                NotifyForm nf = new NotifyForm("Fill all the blank!", "Notification", NotifyForm.BoxBtn.Ok);
+                nf.ShowDialog();
+                return;
+            }
             if (MyUser.user != null)
             {
 
@@ -32,16 +38,19 @@ namespace CARO_LTMCB.FORMS
                     if (tbxNewPass.Text == tbxConfirmPass.Text)
                     {
                         DTBase.ChangePass(tbxNewPass.Text);
-                        MessageBox.Show("Đổi mật khẩu thành công.");
+                        NotifyForm nf = new NotifyForm("Changed successfully!", "Notification", NotifyForm.BoxBtn.Ok);
+                        nf.ShowDialog();
                     }
                     else
                     {
-                        MessageBox.Show("Mật khẩu mới và mật khẩu xác nhận không khớp.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        NotifyForm nf = new NotifyForm("Incorrect confirm new password!", "Notification", NotifyForm.BoxBtn.Error);
+                        nf.ShowDialog();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Mật khẩu hiện tại không đúng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    NotifyForm nf = new NotifyForm("Incorrect password!", "Notification", NotifyForm.BoxBtn.Error);
+                    nf.ShowDialog();
                 }
             }
         }

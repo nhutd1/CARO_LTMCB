@@ -110,6 +110,7 @@ namespace CARO_LTMCB.FORMS
             // btnSend
             // 
             this.btnSend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnSend.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btnSend.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
             this.btnSend.FlatAppearance.BorderSize = 4;
             this.btnSend.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
@@ -123,7 +124,6 @@ namespace CARO_LTMCB.FORMS
             this.btnSend.TabIndex = 68;
             this.btnSend.Text = "SEND";
             this.btnSend.UseVisualStyleBackColor = false;
-            this.btnSend.UseWaitCursor = true;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // panel4
@@ -158,13 +158,20 @@ namespace CARO_LTMCB.FORMS
             // 
             // btnFile
             // 
-            this.btnFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFile.Location = new System.Drawing.Point(588, 595);
+            this.btnFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnFile.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnFile.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.btnFile.FlatAppearance.BorderSize = 2;
+            this.btnFile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnFile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFile.Font = new System.Drawing.Font("Cooper Black", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFile.Location = new System.Drawing.Point(588, 599);
             this.btnFile.Name = "btnFile";
             this.btnFile.Size = new System.Drawing.Size(178, 39);
             this.btnFile.TabIndex = 84;
             this.btnFile.Text = "Attached File";
-            this.btnFile.UseVisualStyleBackColor = true;
+            this.btnFile.UseVisualStyleBackColor = false;
             this.btnFile.Click += new System.EventHandler(this.btnFile_Click);
             // 
             // ReportForm

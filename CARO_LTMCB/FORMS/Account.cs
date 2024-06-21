@@ -43,6 +43,10 @@ namespace CARO_LTMCB.FORMS
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if(EffectManager.IsEffectEnabled())
+            {
+                Effect.PlayEffect("effect");
+            }
             if (MyUser.user != null)
             {
                 string newUsername = tbxUsername.Text;
@@ -70,10 +74,15 @@ namespace CARO_LTMCB.FORMS
 
         private void iconCopy_Click(object sender, EventArgs e)
         {
-            
+            if(EffectManager.IsEffectEnabled())
+            {
+                Effect.PlayEffect("effect");
+            }
             if (!string.IsNullOrEmpty(tbxID.Text))
             {
                 Clipboard.SetText(tbxID.Text);
+                NotifyForm nf = new NotifyForm("Copied!", "Notification", NotifyForm.BoxBtn.Ok);
+                nf.ShowDialog();
             }
             else
             {
@@ -89,6 +98,10 @@ namespace CARO_LTMCB.FORMS
 
         private void picBoxOnMale_Click(object sender, EventArgs e)
         {
+            if (EffectManager.IsEffectEnabled())
+            {
+                Effect.PlayEffect("effect");
+            }
             picBoxOffMale.BringToFront();
             picBoxOnFemale.BringToFront();
             Gender = "female";
@@ -96,6 +109,10 @@ namespace CARO_LTMCB.FORMS
 
         private void picBoxOffMale_Click(object sender, EventArgs e)
         {
+            if (EffectManager.IsEffectEnabled())
+            {
+                Effect.PlayEffect("effect");
+            }
             picBoxOnMale.BringToFront();
             picBoxOffFemale.BringToFront();
             Gender = "male";
@@ -108,6 +125,10 @@ namespace CARO_LTMCB.FORMS
 
         private void picBoxOnFemale_Click(object sender, EventArgs e)
         {
+            if(EffectManager.IsEffectEnabled())
+            {
+                Effect.PlayEffect("effect");
+            }
             picBoxOnMale.BringToFront();
             picBoxOffFemale.BringToFront();
             Gender = "male";
@@ -115,6 +136,10 @@ namespace CARO_LTMCB.FORMS
 
         private void picBoxOffFemale_Click(object sender, EventArgs e)
         {
+            if (EffectManager.IsEffectEnabled())
+            {
+                Effect.PlayEffect("effect");
+            }
             picBoxOffMale.BringToFront();
             picBoxOnFemale.BringToFront();
             Gender = "female";

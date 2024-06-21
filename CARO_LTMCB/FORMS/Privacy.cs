@@ -43,7 +43,7 @@ namespace CARO_LTMCB.FORMS
                     }
                     else
                     {
-                        NotifyForm nf = new NotifyForm("Incorrect confirm new password!", "Notification", NotifyForm.BoxBtn.Error);
+                        NotifyForm nf = new NotifyForm("Passwords are not match!", "Notification", NotifyForm.BoxBtn.Error);
                         nf.ShowDialog();
                     }
                 }

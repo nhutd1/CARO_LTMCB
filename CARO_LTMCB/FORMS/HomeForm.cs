@@ -14,6 +14,22 @@ namespace CARO_LTMCB.FORMS
 {
     public partial class HomeForm : Form
     {
+        public HomeForm()
+        {
+            InitializeComponent();
+            btnBack.Hide();
+            pnMessage.Hide();
+            pnPvP.Hide();
+            pnChessBoard.Enabled = false;
+            pnAnotherUser.Hide();
+            btnReady.Hide();
+            if (MyUser.user != null)
+                picMyUser.Image = Image.FromFile($"Resources\\{MyUser.user.avatar}.png");
+
+            socket = new SocketManager();
+            DrawChessBoard();
+        }
+
         #region Thuộc tính 
 
         List<List<Button>> matrix;
@@ -33,22 +49,7 @@ namespace CARO_LTMCB.FORMS
         User anotherUser;
         #endregion
 
-        public HomeForm()
-        {
-            InitializeComponent();
-            btnBack.Hide();
-            pnMessage.Hide();
-            pnPvP.Hide();
-            pnChessBoard.Enabled = false;
-            pnAnotherUser.Hide();
-            if (MyUser.user != null)
-                picMyUser.Image = Image.FromFile($"Resources\\{MyUser.user.avatar}.png");
-
-            socket = new SocketManager();
-            DrawChessBoard();
-        }
-
-        #region Tạo bàn cờ 
+        #region Tạo bàn cờ, xử lý nước đi
         Button curentBtn = null;
         private void DrawChessBoard()
         {
@@ -155,13 +156,15 @@ namespace CARO_LTMCB.FORMS
 
                 if (IsEndGame(currentChess))
                 {
+                    myTurn = 2;
                     tmCoolDown.Stop();
                     isReady = true;
                     //pnChessBoard.Enabled = false;
                     DTBase.AddMatch(anotherUser.userID);
                     NotifyForm nf = new NotifyForm("You win!", "Notification", NotifyForm.BoxBtn.Ok);
                     nf.ShowDialog();
-                    DrawChessBoard();
+                    pnChessBoard.Enabled = false;
+                    btnReady.Show();
                 }
             }
         }
@@ -179,12 +182,14 @@ namespace CARO_LTMCB.FORMS
 
             if (IsEndGame(currentChess))
             {
+                myTurn = 1;
                 tmCoolDown.Stop();
                 isReady = true;
                 //pnChessBoard.Enabled = false;
                 NotifyForm nf = new NotifyForm("You lost!", "Notification", NotifyForm.BoxBtn.Ok);
                 nf.ShowDialog();
-                DrawChessBoard();
+                pnChessBoard.Enabled = false;
+                btnReady.Show();
             }
         }
         private void PutChess(Point point)
@@ -204,77 +209,8 @@ namespace CARO_LTMCB.FORMS
 
             currentChess = matrix[point.Y][point.X];
         }
-        private void PvP()
-        {
-            isReady = true;
-            currentPlayer = 1;
-            gameMode = 1;
-        }
-        private void PvCom()
-        {
-            isReady = true;
-            currentPlayer = 1;
-            gameMode = 2;
-        }
-        private void PvP_LAN()
-        {
-            isReady = true;
-            currentPlayer = 1;
-            gameMode = 3;
-        }
-        private void EndGame()
-        {
-            tmCoolDown.Stop();
-            if (gameMode == 1)
-            {
-                if (currentChess.Tag.ToString() == "1")
-                {
-                    NotifyForm f = new NotifyForm("Player X win", "Notification", NotifyForm.BoxBtn.Ok);
-                    f.ShowDialog();
-                }
-                else
-                {
-                    NotifyForm f = new NotifyForm("Player O win", "Notification", NotifyForm.BoxBtn.Ok);
-                    f.ShowDialog();
-                }
-            }
-            else if (gameMode == 2)
-            {
-                if (currentChess.Tag.ToString() == "1")
-                {
-                    NotifyForm f = new NotifyForm("Player win", "Notification", NotifyForm.BoxBtn.Ok);
-                    f.ShowDialog();
-                }
-                else
-                {
-                    NotifyForm f = new NotifyForm("Bot win", "Notification", NotifyForm.BoxBtn.Ok);
-                    f.ShowDialog();
-                }
-            }
-            else if (gameMode == 3)
-            {
-                if (prcbPlayer1.Value >= prcbPlayer1.Maximum)
-                {
-                    NotifyForm f = new NotifyForm("Time out! You lost!", "Notification", NotifyForm.BoxBtn.Ok);
-                    f.ShowDialog();
-                }
-                else if(prcbPlayer2.Value >= prcbPlayer2.Maximum)
-                {
-                    try
-                    {
-                        DTBase.AddMatch(anotherUser.userID);
-                    }
-                    catch
-                    {
-                    }
-                    NotifyForm f = new NotifyForm("Time out! You win!", "Notification", NotifyForm.BoxBtn.Ok);
-                    f.ShowDialog();
-                }
-            }
-            DrawChessBoard();
-        }
         #endregion
-
+        
         #region Check Game
         //Đánh cờ tại vị trí (x,y) , lưu quân của người chơi vào tag 
 
@@ -991,7 +927,9 @@ namespace CARO_LTMCB.FORMS
                 {
                     socket.client.Close();
                 }
+                DrawChessBoard();
             }
+            btnReady.Hide();
             anotherUser = null;
             if (MyUser.user != null)
                 picMyUser.Image = Image.FromFile($"Resources\\{MyUser.user.avatar}.png");
@@ -1003,7 +941,6 @@ namespace CARO_LTMCB.FORMS
             pnPvP.Hide();
             pnChessBoard.Enabled = false;
             pnButtons.Show();
-            DrawChessBoard();
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -1128,133 +1065,7 @@ namespace CARO_LTMCB.FORMS
             Listen();
             
         }
-        #endregion
 
-        void Listen()
-        {
-            Thread listenThread = new Thread(() =>
-            {
-                try
-                {
-                    SocketData data = (SocketData)socket.Receive();
-
-                    ProcessData(data);
-                }
-                catch
-                {
-
-                }
-            });
-            listenThread.IsBackground = true;
-            listenThread.Start();
-        }
-        private void ProcessData(SocketData data)
-        {
-            switch (data.Command)
-            {
-                case (int)SocketCommand.SEND_USERINFO:
-                    this.Invoke((MethodInvoker)(() =>
-                    {
-                        anotherUser = new User();
-                        int id = Convert.ToInt32(data.Message);
-                        anotherUser = DTBase.GetUserUID(id);
-                        picAnotherUser.Image = Image.FromFile($"Resources\\{anotherUser.avatar}.png");
-                        picAnotherUser.Tag = anotherUser.userID;
-                    }));
-                    break;
-
-                case (int)SocketCommand.SEND_MESS:
-                    rtbxCurMess.Text += $"{anotherUser.userName}: " + data.Message + "\n";
-                    break;
-
-                case (int)SocketCommand.SEND_EMOJI:
-                    this.Invoke((MethodInvoker)(() =>
-                    {
-                        picIcon2.Image = Image.FromFile($"Resources\\{data.Message}.png");
-                        tmCD_Icon2.Start();
-                    }));
-                    break;
-
-                case (int)SocketCommand.NEW_GAME:
-                    break;
-
-                case (int)SocketCommand.SEND_POINT:
-                    this.Invoke((MethodInvoker)(() =>
-                    {
-                        pnChessBoard.Enabled = true;
-                        OrtherBtnClick(data.Point);
-                    }));
-                    break;
-
-                case (int)SocketCommand.END_GAME:
-                    if (gameMode == 3)
-                    {
-                        if (socket.isServer)
-                        {
-                            socket.client.Close();
-                            socket.server.Close();
-                        }
-                        else
-                        {
-                            socket.client.Close();
-                        }
-                    }
-                    this.Invoke((MethodInvoker)(() =>
-                    {
-                        NotifyForm nf = new NotifyForm("The player has exited!", "Notification", NotifyForm.BoxBtn.Ok);
-                        nf.ShowDialog();
-                        tmCoolDown.Stop();
-                        anotherUser = null;
-                        if (MyUser.user != null)
-                            picMyUser.Image = Image.FromFile($"Resources\\{MyUser.user.avatar}.png");
-                        picAnotherUser.Image = Image.FromFile("Resources\\O.png");
-                        pnAnotherUser.Hide();
-                        pnMessage.Hide();
-                        btnBack.Hide();
-                        pnChessBoard.Enabled = false;
-                        pnButtons.Show();
-                        DrawChessBoard();
-                    }));
-                    break;
-
-                case (int)SocketCommand.QUIT:
-                    if (gameMode == 3)
-                    {
-                        if (socket.isServer)
-                        {
-                            socket.client.Close();
-                            socket.server.Close();
-                        }
-                        else
-                        {
-                            socket.client.Close();
-                        }
-                    }
-                    this.Invoke((MethodInvoker)(() =>
-                    {
-                        NotifyForm nf = new NotifyForm("The player has exited. You win!", "Notification", NotifyForm.BoxBtn.Ok);
-                        DTBase.AddMatch(anotherUser.userID);
-                        nf.ShowDialog();
-                        tmCoolDown.Stop();
-                        anotherUser = null;
-                        if (MyUser.user != null)
-                            picMyUser.Image = Image.FromFile($"Resources\\{MyUser.user.avatar}.png");
-                        picAnotherUser.Image = Image.FromFile("Resources\\O.png");
-                        pnAnotherUser.Hide();
-                        pnMessage.Hide();
-                        btnBack.Hide();
-                        pnChessBoard.Enabled = false;
-                        pnButtons.Show();
-                        DrawChessBoard();
-                    }));
-                    break;
-
-                default:
-                    break;
-            }
-
-            Listen();
-        }
         private void HomeForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (gameMode == 3 && played == 1)
@@ -1334,7 +1145,309 @@ namespace CARO_LTMCB.FORMS
             picIcon1.Image = null;
             tmCD_Icon1.Stop();
         }
+        private void btnReady_Click(object sender, EventArgs e)
+        {
+            btnReady.Hide();
+            try
+            {
+                socket.Send(new SocketData((int)SocketCommand.NEW_GAME, "new", new Point()));
+                Listen();
+            }
+            catch
+            {
+            }
+        }
+        #endregion
+
+        #region Functions
+        private void PvP()
+        {
+            isReady = true;
+            currentPlayer = 1;
+            gameMode = 1;
+        }
+        private void PvCom()
+        {
+            isReady = true;
+            currentPlayer = 1;
+            gameMode = 2;
+        }
+        private void PvP_LAN()
+        {
+            isReady = true;
+            currentPlayer = 1;
+            gameMode = 3;
+        }
+        private void EndGame()
+        {
+            tmCoolDown.Stop();
+            if (gameMode == 1)
+            {
+                if (currentChess.Tag.ToString() == "1")
+                {
+                    NotifyForm f = new NotifyForm("Player X win", "Notification", NotifyForm.BoxBtn.Ok);
+                    f.ShowDialog();
+                }
+                else
+                {
+                    NotifyForm f = new NotifyForm("Player O win", "Notification", NotifyForm.BoxBtn.Ok);
+                    f.ShowDialog();
+                }
+                DrawChessBoard();
+            }
+            else if (gameMode == 2)
+            {
+                if (currentChess.Tag.ToString() == "1")
+                {
+                    NotifyForm f = new NotifyForm("Player win", "Notification", NotifyForm.BoxBtn.Ok);
+                    f.ShowDialog();
+                }
+                else
+                {
+                    NotifyForm f = new NotifyForm("Bot win", "Notification", NotifyForm.BoxBtn.Ok);
+                    f.ShowDialog();
+                }
+                DrawChessBoard();
+            }
+            else if (gameMode == 3)
+            {
+                if (prcbPlayer1.Value >= prcbPlayer1.Maximum)
+                {
+                    myTurn = 1;
+                    NotifyForm f = new NotifyForm("Time out! You lost!", "Notification", NotifyForm.BoxBtn.Ok);
+                    f.ShowDialog();
+                    btnReady.Show();
+                }
+                else if (prcbPlayer2.Value >= prcbPlayer2.Maximum)
+                {
+                    try
+                    {
+                        DTBase.AddMatch(anotherUser.userID);
+                    }
+                    catch
+                    {
+                    }
+                    myTurn = 2;
+                    NotifyForm f = new NotifyForm("Time out! You win!", "Notification", NotifyForm.BoxBtn.Ok);
+                    f.ShowDialog();
+                    btnReady.Show();
+                }
+                pnChessBoard.Enabled = false;
+            }
+        }
+        void Listen()
+        {
+            Thread listenThread = new Thread(() =>
+            {
+                try
+                {
+                    SocketData data = (SocketData)socket.Receive();
+
+                    ProcessData(data);
+                }
+                catch
+                {
+
+                }
+            });
+            listenThread.IsBackground = true;
+            listenThread.Start();
+        }
+        private void ProcessData(SocketData data)
+        {
+            switch (data.Command)
+            {
+                case (int)SocketCommand.SEND_USERINFO:
+                    this.Invoke((MethodInvoker)(() =>
+                    {
+                        anotherUser = new User();
+                        int id = Convert.ToInt32(data.Message);
+                        anotherUser = DTBase.GetUserUID(id);
+                        picAnotherUser.Image = Image.FromFile($"Resources\\{anotherUser.avatar}.png");
+                        picAnotherUser.Tag = anotherUser.userID;
+                    }));
+                    break;
+
+                case (int)SocketCommand.SEND_MESS:
+                    rtbxCurMess.Text += $"{anotherUser.userName}: " + data.Message + "\n";
+                    break;
+
+                case (int)SocketCommand.SEND_EMOJI:
+                    this.Invoke((MethodInvoker)(() =>
+                    {
+                        picIcon2.Image = Image.FromFile($"Resources\\{data.Message}.png");
+                        tmCD_Icon2.Start();
+                    }));
+                    break;
+
+                case (int)SocketCommand.NEW_GAME:
+                    this.Invoke((MethodInvoker)(() =>
+                    {
+                        if(data.Message == "new")
+                        {
+                            NotifyForm nf = new NotifyForm("Play new game?", "Notification", NotifyForm.BoxBtn.OkCancel);
+                            nf.ShowDialog();
+                            if (nf.isOk)
+                            {
+                                try
+                                {
+                                    socket.Send(new SocketData((int)SocketCommand.NEW_GAME, "yes", new Point()));
+                                    Listen();
+                                    if (myTurn == 1)
+                                        pnChessBoard.Enabled = true;
+                                    else
+                                        pnChessBoard.Enabled = false;
+                                    DrawChessBoard();
+                                }
+                                catch
+                                {
+                                }
+                            }
+                            else
+                            {
+                                try
+                                {
+                                    socket.Send(new SocketData((int)SocketCommand.NEW_GAME, "no", new Point()));
+                                    Listen();
+                                    if (socket.isServer)
+                                    {
+                                        socket.client.Close();
+                                        socket.server.Close();
+                                    }
+                                    else
+                                    {
+                                        socket.client.Close();
+                                    }
+                                    tmCoolDown.Stop();
+                                    anotherUser = null;
+                                    if (MyUser.user != null)
+                                        picMyUser.Image = Image.FromFile($"Resources\\{MyUser.user.avatar}.png");
+                                    picAnotherUser.Image = Image.FromFile("Resources\\O.png");
+                                    pnAnotherUser.Hide();
+                                    pnMessage.Hide();
+                                    btnBack.Hide();
+                                    pnChessBoard.Enabled = false;
+                                    pnButtons.Show();
+                                    DrawChessBoard();
+                                }
+                                catch
+                                {
+                                }
+                            }
+                        }
+                        else if(data.Message == "yes")
+                        {
+                            if (myTurn == 1)
+                                pnChessBoard.Enabled = true;
+                            else
+                                pnChessBoard.Enabled = false;
+                            DrawChessBoard();
+                        }
+                        else
+                        {
+                            NotifyForm nf = new NotifyForm("The player has exited!", "Notification", NotifyForm.BoxBtn.OkCancel);
+                            nf.ShowDialog();
+                            if (socket.isServer)
+                            {
+                                socket.client.Close();
+                                socket.server.Close();
+                            }
+                            else
+                            {
+                                socket.client.Close();
+                            }
+                            tmCoolDown.Stop();
+                            anotherUser = null;
+                            if (MyUser.user != null)
+                                picMyUser.Image = Image.FromFile($"Resources\\{MyUser.user.avatar}.png");
+                            picAnotherUser.Image = Image.FromFile("Resources\\O.png");
+                            pnAnotherUser.Hide();
+                            pnMessage.Hide();
+                            btnBack.Hide();
+                            pnChessBoard.Enabled = false;
+                            pnButtons.Show();
+                            DrawChessBoard();
+                        }
+                    }));
+                    break;
+
+                case (int)SocketCommand.SEND_POINT:
+                    this.Invoke((MethodInvoker)(() =>
+                    {
+                        pnChessBoard.Enabled = true;
+                        OrtherBtnClick(data.Point);
+                    }));
+                    break;
+
+                case (int)SocketCommand.END_GAME:
+                    if (gameMode == 3)
+                    {
+                        if (socket.isServer)
+                        {
+                            socket.client.Close();
+                            socket.server.Close();
+                        }
+                        else
+                        {
+                            socket.client.Close();
+                        }
+                    }
+                    this.Invoke((MethodInvoker)(() =>
+                    {
+                        NotifyForm nf = new NotifyForm("The player has exited!", "Notification", NotifyForm.BoxBtn.Ok);
+                        nf.ShowDialog();
+                        tmCoolDown.Stop();
+                        anotherUser = null;
+                        if (MyUser.user != null)
+                            picMyUser.Image = Image.FromFile($"Resources\\{MyUser.user.avatar}.png");
+                        picAnotherUser.Image = Image.FromFile("Resources\\O.png");
+                        pnAnotherUser.Hide();
+                        pnMessage.Hide();
+                        btnBack.Hide();
+                        pnChessBoard.Enabled = false;
+                        pnButtons.Show();
+                        DrawChessBoard();
+                    }));
+                    break;
+
+                case (int)SocketCommand.QUIT:
+                    if (gameMode == 3)
+                    {
+                        if (socket.isServer)
+                        {
+                            socket.client.Close();
+                            socket.server.Close();
+                        }
+                        else
+                        {
+                            socket.client.Close();
+                        }
+                    }
+                    this.Invoke((MethodInvoker)(() =>
+                    {
+                        NotifyForm nf = new NotifyForm("The player has exited. You win!", "Notification", NotifyForm.BoxBtn.Ok);
+                        DTBase.AddMatch(anotherUser.userID);
+                        nf.ShowDialog();
+                        tmCoolDown.Stop();
+                        anotherUser = null;
+                        if (MyUser.user != null)
+                            picMyUser.Image = Image.FromFile($"Resources\\{MyUser.user.avatar}.png");
+                        picAnotherUser.Image = Image.FromFile("Resources\\O.png");
+                        pnAnotherUser.Hide();
+                        pnMessage.Hide();
+                        btnBack.Hide();
+                        pnChessBoard.Enabled = false;
+                        pnButtons.Show();
+                        DrawChessBoard();
+                    }));
+                    break;
+
+                default:
+                    break;
+            }
+
+            Listen();
+        }
+        #endregion
     }
 }
-// pnmessage 29, 641
-// pnbtn 144, 653

@@ -34,6 +34,10 @@ namespace CARO_LTMCB.FORMS
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnPvP = new System.Windows.Forms.Panel();
+            this.btnCreateRoom = new System.Windows.Forms.Button();
+            this.btnFindMatch = new System.Windows.Forms.Button();
+            this.picIcon1 = new System.Windows.Forms.PictureBox();
             this.pnMessage = new System.Windows.Forms.Panel();
             this.rtbxCurMess = new System.Windows.Forms.RichTextBox();
             this.btnSend = new FontAwesome.Sharp.IconButton();
@@ -45,28 +49,25 @@ namespace CARO_LTMCB.FORMS
             this.btnPvBot = new System.Windows.Forms.Button();
             this.btnBack = new Guna.UI2.WinForms.Guna2Button();
             this.pnAnotherUser = new System.Windows.Forms.Panel();
+            this.picIcon2 = new System.Windows.Forms.PictureBox();
             this.picAnotherUser = new System.Windows.Forms.PictureBox();
             this.prcbPlayer2 = new System.Windows.Forms.ProgressBar();
             this.prcbPlayer1 = new System.Windows.Forms.ProgressBar();
             this.picMyUser = new System.Windows.Forms.PictureBox();
             this.pnChessBoard = new System.Windows.Forms.Panel();
             this.tmCoolDown = new System.Windows.Forms.Timer(this.components);
-            this.picIcon1 = new System.Windows.Forms.PictureBox();
-            this.picIcon2 = new System.Windows.Forms.PictureBox();
             this.tmCD_Icon1 = new System.Windows.Forms.Timer(this.components);
             this.tmCD_Icon2 = new System.Windows.Forms.Timer(this.components);
-            this.pnPvP = new System.Windows.Forms.Panel();
-            this.btnFindMatch = new System.Windows.Forms.Button();
-            this.btnCreateRoom = new System.Windows.Forms.Button();
+            this.btnReady = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
+            this.pnPvP.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picIcon1)).BeginInit();
             this.pnMessage.SuspendLayout();
             this.pnButtons.SuspendLayout();
             this.pnAnotherUser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picIcon2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAnotherUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMyUser)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picIcon1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picIcon2)).BeginInit();
-            this.pnPvP.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -107,8 +108,53 @@ namespace CARO_LTMCB.FORMS
             this.panel1.Size = new System.Drawing.Size(1020, 745);
             this.panel1.TabIndex = 0;
             // 
+            // pnPvP
+            // 
+            this.pnPvP.Controls.Add(this.btnCreateRoom);
+            this.pnPvP.Controls.Add(this.btnFindMatch);
+            this.pnPvP.Location = new System.Drawing.Point(238, 649);
+            this.pnPvP.Name = "pnPvP";
+            this.pnPvP.Size = new System.Drawing.Size(541, 93);
+            this.pnPvP.TabIndex = 0;
+            // 
+            // btnCreateRoom
+            // 
+            this.btnCreateRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnCreateRoom.Font = new System.Drawing.Font("Cooper Black", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateRoom.ForeColor = System.Drawing.Color.LightCyan;
+            this.btnCreateRoom.Location = new System.Drawing.Point(346, 14);
+            this.btnCreateRoom.Name = "btnCreateRoom";
+            this.btnCreateRoom.Size = new System.Drawing.Size(149, 59);
+            this.btnCreateRoom.TabIndex = 6;
+            this.btnCreateRoom.Text = "Create";
+            this.btnCreateRoom.UseVisualStyleBackColor = false;
+            this.btnCreateRoom.Click += new System.EventHandler(this.btnCreateRoom_Click);
+            // 
+            // btnFindMatch
+            // 
+            this.btnFindMatch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnFindMatch.Font = new System.Drawing.Font("Cooper Black", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFindMatch.ForeColor = System.Drawing.Color.LightCyan;
+            this.btnFindMatch.Location = new System.Drawing.Point(48, 14);
+            this.btnFindMatch.Name = "btnFindMatch";
+            this.btnFindMatch.Size = new System.Drawing.Size(149, 59);
+            this.btnFindMatch.TabIndex = 5;
+            this.btnFindMatch.Text = "Play";
+            this.btnFindMatch.UseVisualStyleBackColor = false;
+            this.btnFindMatch.Click += new System.EventHandler(this.btnPlay_Click);
+            // 
+            // picIcon1
+            // 
+            this.picIcon1.Location = new System.Drawing.Point(29, 161);
+            this.picIcon1.Name = "picIcon1";
+            this.picIcon1.Size = new System.Drawing.Size(100, 100);
+            this.picIcon1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picIcon1.TabIndex = 6;
+            this.picIcon1.TabStop = false;
+            // 
             // pnMessage
             // 
+            this.pnMessage.Controls.Add(this.btnReady);
             this.pnMessage.Controls.Add(this.rtbxCurMess);
             this.pnMessage.Controls.Add(this.btnSend);
             this.pnMessage.Controls.Add(this.tbxMess);
@@ -265,6 +311,15 @@ namespace CARO_LTMCB.FORMS
             this.pnAnotherUser.Size = new System.Drawing.Size(152, 359);
             this.pnAnotherUser.TabIndex = 12;
             // 
+            // picIcon2
+            // 
+            this.picIcon2.Location = new System.Drawing.Point(27, 60);
+            this.picIcon2.Name = "picIcon2";
+            this.picIcon2.Size = new System.Drawing.Size(100, 100);
+            this.picIcon2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picIcon2.TabIndex = 6;
+            this.picIcon2.TabStop = false;
+            // 
             // picAnotherUser
             // 
             this.picAnotherUser.Image = ((System.Drawing.Image)(resources.GetObject("picAnotherUser.Image")));
@@ -317,24 +372,6 @@ namespace CARO_LTMCB.FORMS
             // 
             this.tmCoolDown.Tick += new System.EventHandler(this.tmCoolDown_Tick);
             // 
-            // picIcon1
-            // 
-            this.picIcon1.Location = new System.Drawing.Point(29, 161);
-            this.picIcon1.Name = "picIcon1";
-            this.picIcon1.Size = new System.Drawing.Size(100, 100);
-            this.picIcon1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picIcon1.TabIndex = 6;
-            this.picIcon1.TabStop = false;
-            // 
-            // picIcon2
-            // 
-            this.picIcon2.Location = new System.Drawing.Point(27, 60);
-            this.picIcon2.Name = "picIcon2";
-            this.picIcon2.Size = new System.Drawing.Size(100, 100);
-            this.picIcon2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picIcon2.TabIndex = 6;
-            this.picIcon2.TabStop = false;
-            // 
             // tmCD_Icon1
             // 
             this.tmCD_Icon1.Interval = 3000;
@@ -345,40 +382,23 @@ namespace CARO_LTMCB.FORMS
             this.tmCD_Icon2.Interval = 3000;
             this.tmCD_Icon2.Tick += new System.EventHandler(this.tmCD_Icon2_Tick);
             // 
-            // pnPvP
+            // btnReady
             // 
-            this.pnPvP.Controls.Add(this.btnCreateRoom);
-            this.pnPvP.Controls.Add(this.btnFindMatch);
-            this.pnPvP.Location = new System.Drawing.Point(238, 649);
-            this.pnPvP.Name = "pnPvP";
-            this.pnPvP.Size = new System.Drawing.Size(541, 93);
-            this.pnPvP.TabIndex = 0;
-            // 
-            // btnFindMatch
-            // 
-            this.btnFindMatch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnFindMatch.Font = new System.Drawing.Font("Cooper Black", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFindMatch.ForeColor = System.Drawing.Color.LightCyan;
-            this.btnFindMatch.Location = new System.Drawing.Point(48, 14);
-            this.btnFindMatch.Name = "btnFindMatch";
-            this.btnFindMatch.Size = new System.Drawing.Size(149, 59);
-            this.btnFindMatch.TabIndex = 5;
-            this.btnFindMatch.Text = "Play";
-            this.btnFindMatch.UseVisualStyleBackColor = false;
-            this.btnFindMatch.Click += new System.EventHandler(this.btnPlay_Click);
-            // 
-            // btnCreateRoom
-            // 
-            this.btnCreateRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnCreateRoom.Font = new System.Drawing.Font("Cooper Black", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateRoom.ForeColor = System.Drawing.Color.LightCyan;
-            this.btnCreateRoom.Location = new System.Drawing.Point(346, 14);
-            this.btnCreateRoom.Name = "btnCreateRoom";
-            this.btnCreateRoom.Size = new System.Drawing.Size(149, 59);
-            this.btnCreateRoom.TabIndex = 6;
-            this.btnCreateRoom.Text = "Create";
-            this.btnCreateRoom.UseVisualStyleBackColor = false;
-            this.btnCreateRoom.Click += new System.EventHandler(this.btnCreateRoom_Click);
+            this.btnReady.BorderRadius = 10;
+            this.btnReady.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnReady.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnReady.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnReady.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnReady.FillColor = System.Drawing.Color.LightSeaGreen;
+            this.btnReady.Font = new System.Drawing.Font("Cooper Black", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReady.ForeColor = System.Drawing.Color.LightCyan;
+            this.btnReady.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnReady.Location = new System.Drawing.Point(822, 25);
+            this.btnReady.Name = "btnReady";
+            this.btnReady.Size = new System.Drawing.Size(137, 56);
+            this.btnReady.TabIndex = 14;
+            this.btnReady.Text = "Ready?";
+            this.btnReady.Click += new System.EventHandler(this.btnReady_Click);
             // 
             // HomeForm
             // 
@@ -392,14 +412,14 @@ namespace CARO_LTMCB.FORMS
             this.Text = "HomeForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HomeForm_FormClosing);
             this.panel1.ResumeLayout(false);
+            this.pnPvP.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picIcon1)).EndInit();
             this.pnMessage.ResumeLayout(false);
             this.pnButtons.ResumeLayout(false);
             this.pnAnotherUser.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picIcon2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAnotherUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMyUser)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picIcon1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picIcon2)).EndInit();
-            this.pnPvP.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -433,5 +453,6 @@ namespace CARO_LTMCB.FORMS
         private System.Windows.Forms.Panel pnPvP;
         private System.Windows.Forms.Button btnCreateRoom;
         private System.Windows.Forms.Button btnFindMatch;
+        private Guna.UI2.WinForms.Guna2Button btnReady;
     }
 }

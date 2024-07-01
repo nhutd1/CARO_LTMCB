@@ -19,6 +19,7 @@ namespace CARO_LTMCB.FORMS
         List<List<Button>> matrix;
         int currentPlayer = 1;
         int myTurn;
+        int played = 0;
         public static bool isReady = true; //Sẵn sàng bắt đầu ván cờ mới
         int countChesss = 0;
         int gameMode = 1;
@@ -37,6 +38,7 @@ namespace CARO_LTMCB.FORMS
             InitializeComponent();
             btnBack.Hide();
             pnMessage.Hide();
+            pnPvP.Hide();
             pnChessBoard.Enabled = false;
             pnAnotherUser.Hide();
             if (MyUser.user != null)
@@ -936,12 +938,11 @@ namespace CARO_LTMCB.FORMS
         #region Events
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            if (gameMode == 3)
+            if (gameMode == 3 && played == 1)
             {
-                //socket.Send(new SocketData((int)SocketCommand.SEND_POINT, "", point));
                 if (!isReady && countChesss != 0)
                 {
-                    NotifyForm nf = new NotifyForm("If quit, you will lost!", "Notification", NotifyForm.BoxBtn.OkCancel);
+                    NotifyForm nf = new NotifyForm("If quit, you will loss!", "Notification", NotifyForm.BoxBtn.OkCancel);
                     nf.ShowDialog();
                     if (nf.isOk)
                     {
@@ -959,6 +960,28 @@ namespace CARO_LTMCB.FORMS
                         return;
                     }
                 }
+                else
+                {
+                    NotifyForm nf = new NotifyForm("Do you want to quit?", "Notification", NotifyForm.BoxBtn.OkCancel);
+                    nf.ShowDialog();
+                    if (nf.isOk)
+                    {
+                        try
+                        {
+                            socket.Send(new SocketData((int)SocketCommand.END_GAME, "", new Point()));
+                            Listen();
+                        }
+                        catch
+                        {
+                        }
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+
+                played = 0;
                 if (socket.isServer)
                 {
                     socket.client.Close();
@@ -972,9 +995,12 @@ namespace CARO_LTMCB.FORMS
             anotherUser = null;
             if (MyUser.user != null)
                 picMyUser.Image = Image.FromFile($"Resources\\{MyUser.user.avatar}.png");
+            picAnotherUser.Image = Image.FromFile("Resources\\O.png");
+            rtbxCurMess.Text = string.Empty;
             pnAnotherUser.Hide();
             btnBack.Hide();
             pnMessage.Hide();
+            pnPvP.Hide();
             pnChessBoard.Enabled = false;
             pnButtons.Show();
             DrawChessBoard();
@@ -1045,16 +1071,20 @@ namespace CARO_LTMCB.FORMS
                 }
             }
         }
-        #endregion
-
         private void button3_Click(object sender, EventArgs e)
         {
             gameMode = 3;
             pnButtons.Hide();
-            pnMessage.Show();
             btnBack.Text = btnPvP.Text;
             btnBack.Show();
             pnAnotherUser.Show();
+            pnPvP.Show();
+        }
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            played = 1;
+            pnMessage.Show();
+            pnPvP.Hide();
             string ip = socket.GetLocalIPv4(NetworkInterfaceType.Wireless80211);
 
             if (string.IsNullOrEmpty(ip))
@@ -1076,11 +1106,30 @@ namespace CARO_LTMCB.FORMS
                 isReady = false;
                 socket.isServer = false;
                 pnChessBoard.Enabled = false;
-                //if (MyUser.user != null)
-                //    socket.Send(new SocketData((int)SocketCommand.SEND_USERINFO, MyUser.user.userID.ToString(), new Point()));
                 Listen();
             }
         }
+        private void btnCreateRoom_Click(object sender, EventArgs e)
+        {
+            played = 1;
+            pnMessage.Show();
+            pnPvP.Hide();
+            string ip = socket.GetLocalIPv4(NetworkInterfaceType.Wireless80211);
+
+            if (string.IsNullOrEmpty(ip))
+            {
+                ip = socket.GetLocalIPv4(NetworkInterfaceType.Ethernet);
+            }
+
+            socket.IP = ip;
+            socket.isServer = true;
+            pnChessBoard.Enabled = true;
+            socket.CreateServer2();
+            Listen();
+            
+        }
+        #endregion
+
         void Listen()
         {
             Thread listenThread = new Thread(() =>
@@ -1118,6 +1167,14 @@ namespace CARO_LTMCB.FORMS
                     rtbxCurMess.Text += $"{anotherUser.userName}: " + data.Message + "\n";
                     break;
 
+                case (int)SocketCommand.SEND_EMOJI:
+                    this.Invoke((MethodInvoker)(() =>
+                    {
+                        picIcon2.Image = Image.FromFile($"Resources\\{data.Message}.png");
+                        tmCD_Icon2.Start();
+                    }));
+                    break;
+
                 case (int)SocketCommand.NEW_GAME:
                     break;
 
@@ -1130,6 +1187,34 @@ namespace CARO_LTMCB.FORMS
                     break;
 
                 case (int)SocketCommand.END_GAME:
+                    if (gameMode == 3)
+                    {
+                        if (socket.isServer)
+                        {
+                            socket.client.Close();
+                            socket.server.Close();
+                        }
+                        else
+                        {
+                            socket.client.Close();
+                        }
+                    }
+                    this.Invoke((MethodInvoker)(() =>
+                    {
+                        NotifyForm nf = new NotifyForm("The player has exited!", "Notification", NotifyForm.BoxBtn.Ok);
+                        nf.ShowDialog();
+                        tmCoolDown.Stop();
+                        anotherUser = null;
+                        if (MyUser.user != null)
+                            picMyUser.Image = Image.FromFile($"Resources\\{MyUser.user.avatar}.png");
+                        picAnotherUser.Image = Image.FromFile("Resources\\O.png");
+                        pnAnotherUser.Hide();
+                        pnMessage.Hide();
+                        btnBack.Hide();
+                        pnChessBoard.Enabled = false;
+                        pnButtons.Show();
+                        DrawChessBoard();
+                    }));
                     break;
 
                 case (int)SocketCommand.QUIT:
@@ -1154,6 +1239,7 @@ namespace CARO_LTMCB.FORMS
                         anotherUser = null;
                         if (MyUser.user != null)
                             picMyUser.Image = Image.FromFile($"Resources\\{MyUser.user.avatar}.png");
+                        picAnotherUser.Image = Image.FromFile("Resources\\O.png");
                         pnAnotherUser.Hide();
                         pnMessage.Hide();
                         btnBack.Hide();
@@ -1171,7 +1257,7 @@ namespace CARO_LTMCB.FORMS
         }
         private void HomeForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (gameMode == 3)
+            if (gameMode == 3 && played == 1)
             {
                 if (socket.isServer)
                 {
@@ -1197,6 +1283,7 @@ namespace CARO_LTMCB.FORMS
                     {
                         rtbxCurMess.Text += "Me: " + tbxMess.Text + "\n";
                         tbxMess.Text = string.Empty;
+                        tbxMess.VerticalScroll.Value = tbxMess.VerticalScroll.Maximum;
                     }));
 
                 }
@@ -1218,7 +1305,36 @@ namespace CARO_LTMCB.FORMS
 
         private void btnEmotion_Click(object sender, EventArgs e)
         {
+            FORMS.ChooseIconForm iconF = new FORMS.ChooseIconForm();
+            iconF.ShowDialog();
+            if (iconF.icon != "=icon=")
+            {
+                try
+                {
+                    picIcon1.Image = Image.FromFile($"Resources\\{iconF.icon}.png");
+                    tmCD_Icon1.Start();
 
+                    socket.Send(new SocketData((int)SocketCommand.SEND_EMOJI, iconF.icon, new Point()));
+                    Listen();
+                }
+                catch
+                {
+                }
+            }
+        }
+
+        private void tmCD_Icon2_Tick(object sender, EventArgs e)
+        {
+            picIcon2.Image = null;
+            tmCD_Icon2.Stop();
+        }
+
+        private void tmCD_Icon1_Tick(object sender, EventArgs e)
+        {
+            picIcon1.Image = null;
+            tmCD_Icon1.Stop();
         }
     }
 }
+// pnmessage 29, 641
+// pnbtn 144, 653

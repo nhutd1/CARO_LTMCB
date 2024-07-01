@@ -49,7 +49,7 @@ namespace CARO_LTMCB
         SEND_EMOJI,
         NEW_GAME,
         END_GAME,
-        QUIT
+        QUIT,
     }
 
 }

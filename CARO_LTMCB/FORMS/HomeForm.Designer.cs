@@ -51,12 +51,22 @@ namespace CARO_LTMCB.FORMS
             this.picMyUser = new System.Windows.Forms.PictureBox();
             this.pnChessBoard = new System.Windows.Forms.Panel();
             this.tmCoolDown = new System.Windows.Forms.Timer(this.components);
+            this.picIcon1 = new System.Windows.Forms.PictureBox();
+            this.picIcon2 = new System.Windows.Forms.PictureBox();
+            this.tmCD_Icon1 = new System.Windows.Forms.Timer(this.components);
+            this.tmCD_Icon2 = new System.Windows.Forms.Timer(this.components);
+            this.pnPvP = new System.Windows.Forms.Panel();
+            this.btnFindMatch = new System.Windows.Forms.Button();
+            this.btnCreateRoom = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnMessage.SuspendLayout();
             this.pnButtons.SuspendLayout();
             this.pnAnotherUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAnotherUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMyUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picIcon1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picIcon2)).BeginInit();
+            this.pnPvP.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -80,6 +90,8 @@ namespace CARO_LTMCB.FORMS
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightCyan;
+            this.panel1.Controls.Add(this.pnPvP);
+            this.panel1.Controls.Add(this.picIcon1);
             this.panel1.Controls.Add(this.pnMessage);
             this.panel1.Controls.Add(this.pnButtons);
             this.panel1.Controls.Add(this.btnBack);
@@ -245,17 +257,18 @@ namespace CARO_LTMCB.FORMS
             // 
             // pnAnotherUser
             // 
+            this.pnAnotherUser.Controls.Add(this.picIcon2);
             this.pnAnotherUser.Controls.Add(this.picAnotherUser);
             this.pnAnotherUser.Controls.Add(this.prcbPlayer2);
-            this.pnAnotherUser.Location = new System.Drawing.Point(861, 166);
+            this.pnAnotherUser.Location = new System.Drawing.Point(861, 101);
             this.pnAnotherUser.Name = "pnAnotherUser";
-            this.pnAnotherUser.Size = new System.Drawing.Size(152, 319);
+            this.pnAnotherUser.Size = new System.Drawing.Size(152, 359);
             this.pnAnotherUser.TabIndex = 12;
             // 
             // picAnotherUser
             // 
             this.picAnotherUser.Image = ((System.Drawing.Image)(resources.GetObject("picAnotherUser.Image")));
-            this.picAnotherUser.Location = new System.Drawing.Point(12, 33);
+            this.picAnotherUser.Location = new System.Drawing.Point(12, 170);
             this.picAnotherUser.Name = "picAnotherUser";
             this.picAnotherUser.Size = new System.Drawing.Size(128, 118);
             this.picAnotherUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -265,7 +278,7 @@ namespace CARO_LTMCB.FORMS
             // 
             // prcbPlayer2
             // 
-            this.prcbPlayer2.Location = new System.Drawing.Point(27, 157);
+            this.prcbPlayer2.Location = new System.Drawing.Point(27, 294);
             this.prcbPlayer2.Maximum = 10000;
             this.prcbPlayer2.Name = "prcbPlayer2";
             this.prcbPlayer2.Size = new System.Drawing.Size(100, 20);
@@ -274,7 +287,7 @@ namespace CARO_LTMCB.FORMS
             // 
             // prcbPlayer1
             // 
-            this.prcbPlayer1.Location = new System.Drawing.Point(29, 323);
+            this.prcbPlayer1.Location = new System.Drawing.Point(29, 395);
             this.prcbPlayer1.Maximum = 10000;
             this.prcbPlayer1.Name = "prcbPlayer1";
             this.prcbPlayer1.Size = new System.Drawing.Size(100, 20);
@@ -284,7 +297,7 @@ namespace CARO_LTMCB.FORMS
             // picMyUser
             // 
             this.picMyUser.Image = ((System.Drawing.Image)(resources.GetObject("picMyUser.Image")));
-            this.picMyUser.Location = new System.Drawing.Point(15, 199);
+            this.picMyUser.Location = new System.Drawing.Point(15, 271);
             this.picMyUser.Name = "picMyUser";
             this.picMyUser.Size = new System.Drawing.Size(128, 118);
             this.picMyUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -304,6 +317,69 @@ namespace CARO_LTMCB.FORMS
             // 
             this.tmCoolDown.Tick += new System.EventHandler(this.tmCoolDown_Tick);
             // 
+            // picIcon1
+            // 
+            this.picIcon1.Location = new System.Drawing.Point(29, 161);
+            this.picIcon1.Name = "picIcon1";
+            this.picIcon1.Size = new System.Drawing.Size(100, 100);
+            this.picIcon1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picIcon1.TabIndex = 6;
+            this.picIcon1.TabStop = false;
+            // 
+            // picIcon2
+            // 
+            this.picIcon2.Location = new System.Drawing.Point(27, 60);
+            this.picIcon2.Name = "picIcon2";
+            this.picIcon2.Size = new System.Drawing.Size(100, 100);
+            this.picIcon2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picIcon2.TabIndex = 6;
+            this.picIcon2.TabStop = false;
+            // 
+            // tmCD_Icon1
+            // 
+            this.tmCD_Icon1.Interval = 3000;
+            this.tmCD_Icon1.Tick += new System.EventHandler(this.tmCD_Icon1_Tick);
+            // 
+            // tmCD_Icon2
+            // 
+            this.tmCD_Icon2.Interval = 3000;
+            this.tmCD_Icon2.Tick += new System.EventHandler(this.tmCD_Icon2_Tick);
+            // 
+            // pnPvP
+            // 
+            this.pnPvP.Controls.Add(this.btnCreateRoom);
+            this.pnPvP.Controls.Add(this.btnFindMatch);
+            this.pnPvP.Location = new System.Drawing.Point(238, 649);
+            this.pnPvP.Name = "pnPvP";
+            this.pnPvP.Size = new System.Drawing.Size(541, 93);
+            this.pnPvP.TabIndex = 0;
+            // 
+            // btnFindMatch
+            // 
+            this.btnFindMatch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnFindMatch.Font = new System.Drawing.Font("Cooper Black", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFindMatch.ForeColor = System.Drawing.Color.LightCyan;
+            this.btnFindMatch.Location = new System.Drawing.Point(48, 14);
+            this.btnFindMatch.Name = "btnFindMatch";
+            this.btnFindMatch.Size = new System.Drawing.Size(149, 59);
+            this.btnFindMatch.TabIndex = 5;
+            this.btnFindMatch.Text = "Play";
+            this.btnFindMatch.UseVisualStyleBackColor = false;
+            this.btnFindMatch.Click += new System.EventHandler(this.btnPlay_Click);
+            // 
+            // btnCreateRoom
+            // 
+            this.btnCreateRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnCreateRoom.Font = new System.Drawing.Font("Cooper Black", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateRoom.ForeColor = System.Drawing.Color.LightCyan;
+            this.btnCreateRoom.Location = new System.Drawing.Point(346, 14);
+            this.btnCreateRoom.Name = "btnCreateRoom";
+            this.btnCreateRoom.Size = new System.Drawing.Size(149, 59);
+            this.btnCreateRoom.TabIndex = 6;
+            this.btnCreateRoom.Text = "Create";
+            this.btnCreateRoom.UseVisualStyleBackColor = false;
+            this.btnCreateRoom.Click += new System.EventHandler(this.btnCreateRoom_Click);
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -321,6 +397,9 @@ namespace CARO_LTMCB.FORMS
             this.pnAnotherUser.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picAnotherUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMyUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picIcon1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picIcon2)).EndInit();
+            this.pnPvP.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -347,5 +426,12 @@ namespace CARO_LTMCB.FORMS
         private Guna.UI2.WinForms.Guna2TextBox tbxMess;
         private FontAwesome.Sharp.IconButton btnEmotion;
         private System.Windows.Forms.RichTextBox rtbxCurMess;
+        private System.Windows.Forms.PictureBox picIcon1;
+        private System.Windows.Forms.PictureBox picIcon2;
+        private System.Windows.Forms.Timer tmCD_Icon1;
+        private System.Windows.Forms.Timer tmCD_Icon2;
+        private System.Windows.Forms.Panel pnPvP;
+        private System.Windows.Forms.Button btnCreateRoom;
+        private System.Windows.Forms.Button btnFindMatch;
     }
 }

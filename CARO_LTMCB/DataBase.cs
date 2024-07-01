@@ -128,7 +128,6 @@ namespace CARO_LTMCB
             MyUser.user.avatar = index;
             FirebaseResponse rep = await client.UpdateAsync("USER/" + MyUser.user.userID.ToString(), MyUser.user);
         }
-
         static public async void UpdateUserInfo(int userId, string newUsername, string newEmail, string newGender)
         {
             
@@ -143,7 +142,6 @@ namespace CARO_LTMCB
             // Lưu lại thông tin người dùng đã cập nhật vào cơ sở dữ liệu
             FirebaseResponse updateResponse = await client.UpdateAsync("USER/" + userId.ToString(), user);
         }
-
         static public async void SendFriendRequest(int idRcv)
         {
             FirebaseResponse rep = client.Get("AddinviteIdentity/");
@@ -205,6 +203,22 @@ namespace CARO_LTMCB
                 }
             }
         }
+        static public async void UnFriend(int idUser)
+        {
+            FirebaseResponse rep = await client.GetAsync("FRIEND/");
+            List<Friend> getFriend = rep.ResultAs<List<Friend>>();
+            foreach (var friend in getFriend)
+            {
+                if (friend != null)
+                {
+                    if ((friend.idUser1 == idUser && friend.idUser2 == MyUser.user.userID)
+                      || (friend.idUser1 == MyUser.user.userID && friend.idUser2 == idUser))
+                    {
+                        FirebaseResponse rep2 = await client.DeleteAsync("FRIEND/" + friend.idFriend.ToString());
+                    }
+                }
+            }
+        }
         static public List<int> ListRequests()
         {
             List<int> listRequests = new List<int>();
@@ -255,7 +269,7 @@ namespace CARO_LTMCB
 
             foreach (var user in getUser)
             {
-                if (!listFriends.Contains(user.Value.userID))
+                if (!listFriends.Contains(user.Value.userID) && user.Value.userID != MyUser.user.userID)
                 {
                     list.Add(user.Value.userID);
                 }

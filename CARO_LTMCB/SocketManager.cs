@@ -19,7 +19,23 @@ namespace CARO_LTMCB
         public Socket client;
         public bool ConnectServer()
         {
-            IPEndPoint iep = new IPEndPoint(IPAddress.Parse(IP), PORT);
+            IPEndPoint iep = new IPEndPoint(IPAddress.Parse(IP), 9999);
+            client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
+            try
+            {
+                client.Connect(iep);
+                Send(new SocketData((int)SocketCommand.SEND_USERINFO, MyUser.user.userID.ToString(), new Point()));
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool ConnectServer2()
+        {
+            IPEndPoint iep = new IPEndPoint(IPAddress.Parse(IP), 8888);
             client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
             try
@@ -39,7 +55,32 @@ namespace CARO_LTMCB
         public Socket server;
         public void CreateServer()
         {
-            IPEndPoint iep = new IPEndPoint(IPAddress.Any, PORT);
+            IPEndPoint iep = new IPEndPoint(IPAddress.Any, 9999);
+            server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
+            server.Bind(iep);
+            server.Listen(10);
+
+            Thread acceptClient = new Thread(() =>
+            {
+                try
+                {
+                    client = server.Accept();
+                    FORMS.HomeForm.isReady = false;
+                    Send(new SocketData((int)SocketCommand.SEND_USERINFO, MyUser.user.userID.ToString(), new Point()));
+                }
+                catch
+                {
+
+                }
+
+            });
+            acceptClient.IsBackground = true;
+            acceptClient.Start();
+        }
+        public void CreateServer2()
+        {
+            IPEndPoint iep = new IPEndPoint(IPAddress.Any, 8888);
             server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
             server.Bind(iep);
@@ -66,7 +107,6 @@ namespace CARO_LTMCB
 
         #region both
         public string IP = "127.0.0.1";
-        public int PORT = 9999;
         public const int BUFFER = 1024;
         public bool isServer = true;
 

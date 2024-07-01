@@ -336,6 +336,27 @@ namespace CARO_LTMCB.FORMS
                     {
                         DTBase.AcceptFriendRequest(Convert.ToInt32(btn.Tag));
                         pnFriendRequests.Controls.Remove(btnCurrentRequest);
+                        Guna2Button newFr = new Guna2Button()
+                        {
+                            Tag = btnCurrentRequest.Tag,
+                            Image = btnCurrentRequest.Image,
+                            ImageAlign = HorizontalAlignment.Left,
+                            ImageOffset = new Point(10, 0),
+                            ImageSize = new Size(50, 50),
+                            BorderColor = Color.LightCyan,
+                            BorderThickness = 3,
+                            FillColor = Color.FromArgb(255, 128, 128),
+                            Dock = DockStyle.Top,
+                            ForeColor = Color.White,
+                            Font = new Font("Cooper Black", 12),
+                            Size = new Size(230, 70),
+                            Text = btnCurrentRequest.Text,
+                            TextAlign = HorizontalAlignment.Left,
+                            TextOffset = new Point(20, 0),
+                            ContextMenuStrip = contextmnFriend,
+                        };
+                        newFr.MouseDown += Btn_MouseDown;
+                        pnFriend.Controls.Add(newFr);
                     }
                     else if (nf.isNo)
                     {
@@ -359,7 +380,14 @@ namespace CARO_LTMCB.FORMS
         #region Context menustrip button
         private void btnUnfriend_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                DTBase.UnFriend(Convert.ToInt32(contextmnFriend.Tag));
+                pnFriend.Controls.Remove(btnCurrentFriend);
+            }
+            catch
+            {
+            }
         }
 
         private void btnShowInfor_Friend_Click(object sender, EventArgs e)
@@ -376,10 +404,9 @@ namespace CARO_LTMCB.FORMS
 
         private void btnAddFriend_Click(object sender, EventArgs e)
         {
-
             try
             {
-                DTBase.SendFriendRequest(Convert.ToInt32(contextmnRequests.Tag));
+                DTBase.SendFriendRequest(Convert.ToInt32(contextmnNotFriend.Tag));
             }
             catch
             {
@@ -607,7 +634,6 @@ namespace CARO_LTMCB.FORMS
                     }
                 }
             }
-            
         }
     }
 }

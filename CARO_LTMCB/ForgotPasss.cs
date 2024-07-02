@@ -124,6 +124,65 @@ namespace CARO_LTMCB
             lgf.Location = new Point(this.Location.X, this.Location.Y);
             this.Hide();
         }
+        private void btnConfirmcode_Click_1(object sender, EventArgs e)
+        {
+            if (EffectManager.IsEffectEnabled())
+            {
+                Effect.PlayEffect("effect");
+            }
+            if (tbxConfirmcode.Text == randomcode)
+            {
+                tbxNewpass.Enabled = true;
+                tbxConfirmpass.Enabled = true;
+                btnChangepass.Enabled = true;
+                btnConfirmcode.Enabled = false;
+                DTBase.GetUserUName(tbxUsername.Text);
+                NotifyForm nf = new NotifyForm("Confirm successfully!", "Notification", NotifyForm.BoxBtn.Ok);
+                nf.ShowDialog();
+            }
+            else
+            {
+                NotifyForm nf = new NotifyForm("Wrong code!", "Error Message", NotifyForm.BoxBtn.Error);
+                nf.ShowDialog();
+            }
+        }
+
+        private void btnChangepass_Click(object sender, EventArgs e)
+        {
+            if (EffectManager.IsEffectEnabled())
+            {
+                Effect.PlayEffect("effect");
+            }
+            if (tbxNewpass.Text != "" && tbxConfirmpass.Text != "")
+            {
+                if (tbxNewpass.Text == tbxConfirmpass.Text)
+                {
+                    try
+                    {
+                        DTBase.ChangePass(tbxConfirmpass.Text);
+                        LoginForm lgf = new LoginForm();
+                        lgf.Show();
+                        lgf.Location = new Point(this.Location.X, this.Location.Y);
+                        this.Hide();
+                    }
+                    catch
+                    {
+                        NotifyForm nf = new NotifyForm("Error connect to Database", "Error Message", NotifyForm.BoxBtn.Error);
+                        nf.ShowDialog();
+                    }
+                }
+                else
+                {
+                    lbEnter.Hide();
+                    lbConfirm.Show();
+                }
+            }
+            else
+            {
+                lbConfirm.Hide();
+                lbEnter.Show();
+            }
+        }
         #endregion
 
         #region Kéo form 
@@ -229,64 +288,6 @@ namespace CARO_LTMCB
         }
         #endregion
 
-        private void btnConfirmcode_Click_1(object sender, EventArgs e)
-        {
-            if (EffectManager.IsEffectEnabled())
-            {
-                Effect.PlayEffect("effect");
-            }
-            if (tbxConfirmcode.Text == randomcode)
-            {
-                tbxNewpass.Enabled = true;
-                tbxConfirmpass.Enabled = true;
-                btnChangepass.Enabled = true;
-                btnConfirmcode.Enabled = false;
-                DTBase.GetUserUName(tbxUsername.Text);
-                NotifyForm nf = new NotifyForm("Confirm successfully!", "Notification", NotifyForm.BoxBtn.Ok);
-                nf.ShowDialog();
-            }
-            else
-            {
-                NotifyForm nf = new NotifyForm("Wrong code!", "Error Message", NotifyForm.BoxBtn.Error);
-                nf.ShowDialog();
-            }
-        }
-
-        private void btnChangepass_Click(object sender, EventArgs e)
-        {
-            if (EffectManager.IsEffectEnabled())
-            {
-                Effect.PlayEffect("effect");
-            }
-            if (tbxNewpass.Text != "" && tbxConfirmpass.Text != "")
-            {
-                if (tbxNewpass.Text == tbxConfirmpass.Text)
-                {
-                    try
-                    {
-                        DTBase.ChangePass(tbxConfirmpass.Text);
-                        LoginForm lgf = new LoginForm();
-                        lgf.Show();
-                        lgf.Location = new Point(this.Location.X, this.Location.Y);
-                        this.Hide();
-                    }
-                    catch
-                    {
-                        NotifyForm nf = new NotifyForm("Error connect to Database", "Error Message", NotifyForm.BoxBtn.Error);
-                        nf.ShowDialog();
-                    }
-                }
-                else
-                {
-                    lbEnter.Hide();
-                    lbConfirm.Show();
-                }
-            }
-            else
-            {
-                lbConfirm.Hide();
-                lbEnter.Show();
-            }
-        }
+        
     }
 }

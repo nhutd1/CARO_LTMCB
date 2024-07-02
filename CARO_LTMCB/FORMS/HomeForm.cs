@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,12 +18,16 @@ namespace CARO_LTMCB.FORMS
         public HomeForm()
         {
             InitializeComponent();
+            pnPvP.Parent = panel1;
             btnBack.Hide();
             pnMessage.Hide();
-            pnPvP.Hide();
             pnChessBoard.Enabled = false;
             pnAnotherUser.Hide();
             btnReady.Hide();
+            btnInvite.Hide();
+            btnRequest.Hide();
+            pnPvP.Hide();
+            pnBox.Hide();
             if (MyUser.user != null)
                 picMyUser.Image = Image.FromFile($"Resources\\{MyUser.user.avatar}.png");
 
@@ -31,7 +36,6 @@ namespace CARO_LTMCB.FORMS
         }
 
         #region Thuộc tính 
-
         List<List<Button>> matrix;
         int currentPlayer = 1;
         int myTurn;
@@ -918,14 +922,20 @@ namespace CARO_LTMCB.FORMS
                 }
 
                 played = 0;
-                if (socket.isServer)
+                try
                 {
-                    socket.client.Close();
-                    socket.server.Close();
+                    if (socket.isServer)
+                    {
+                        socket.client.Close();
+                        socket.server.Close();
+                    }
+                    else
+                    {
+                        socket.client.Close();
+                    }
                 }
-                else
+                catch
                 {
-                    socket.client.Close();
                 }
                 DrawChessBoard();
             }
@@ -941,6 +951,9 @@ namespace CARO_LTMCB.FORMS
             pnPvP.Hide();
             pnChessBoard.Enabled = false;
             pnButtons.Show();
+            btnRequest.Hide();
+            btnInvite.Hide();
+            pnBox.Hide();
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -1010,6 +1023,7 @@ namespace CARO_LTMCB.FORMS
         }
         private void button3_Click(object sender, EventArgs e)
         {
+            btnRequest.Show();
             gameMode = 3;
             pnButtons.Hide();
             btnBack.Text = btnPvP.Text;
@@ -1022,6 +1036,9 @@ namespace CARO_LTMCB.FORMS
             played = 1;
             pnMessage.Show();
             pnPvP.Hide();
+            btnInvite.Hide();
+            btnRequest.Hide();
+            pnBox.Hide();
             string ip = socket.GetLocalIPv4(NetworkInterfaceType.Wireless80211);
 
             if (string.IsNullOrEmpty(ip))
@@ -1049,8 +1066,11 @@ namespace CARO_LTMCB.FORMS
         private void btnCreateRoom_Click(object sender, EventArgs e)
         {
             played = 1;
+            btnInvite.Show();
             pnMessage.Show();
             pnPvP.Hide();
+            pnBox.Hide();
+            btnRequest.Hide();
             string ip = socket.GetLocalIPv4(NetworkInterfaceType.Wireless80211);
 
             if (string.IsNullOrEmpty(ip))
@@ -1063,21 +1083,26 @@ namespace CARO_LTMCB.FORMS
             pnChessBoard.Enabled = true;
             socket.CreateServer2();
             Listen();
-            
         }
 
         private void HomeForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (gameMode == 3 && played == 1)
             {
-                if (socket.isServer)
+                try
                 {
-                    socket.client.Close();
-                    socket.server.Close();
+                    if (socket.isServer)
+                    {
+                        socket.client.Close();
+                        socket.server.Close();
+                    }
+                    else
+                    {
+                        socket.client.Close();
+                    }
                 }
-                else
+                catch
                 {
-                    socket.client.Close();
                 }
             }
         }
@@ -1155,6 +1180,183 @@ namespace CARO_LTMCB.FORMS
             }
             catch
             {
+            }
+        }
+
+        Guna2Button currentItem;
+        private void btnInvite_Click(object sender, EventArgs e)
+        {
+            if(pnBox.Visible)
+            {
+                pnBox.Hide();
+                return;
+            }
+            else
+            {
+                pn_Invite_Request.Controls.Clear();
+                currentItem = null;
+                pnBox.Show();
+            }
+
+            List<int> listOnline = new List<int>();
+            try
+            {
+                listOnline = DTBase.ListFriendsOnline();
+                foreach (var item in listOnline)
+                {
+                    User friend = DTBase.GetUserUID(item);
+                    Guna2Button invite = new Guna2Button()
+                    {
+                        Tag = friend.userID,
+                        Size = new Size(155, 45),
+                        Text = friend.userName,
+                        Font = new Font("Cooper Black", 10),
+                        ForeColor = Color.White,
+                        TextAlign = HorizontalAlignment.Left,
+                        TextOffset = new Point(-5, 0),
+                        Image = Image.FromFile($"Resources\\{friend.avatar}.png"),
+                        ImageAlign = HorizontalAlignment.Left,
+                        ImageOffset = new Point(-3, 0),
+                        ImageSize = new Size(35, 35),
+                        FillColor = Color.FromArgb(255, 128, 128),
+                    };
+                    invite.Click += Invite_Click;
+                    if(currentItem == null)
+                    {
+                        invite.Location = new Point(5, 5);
+                    }
+                    else
+                    {
+                        invite.Location = new Point(5, currentItem.Bottom + 5);
+                    }
+
+                    pn_Invite_Request.Controls.Add(invite);
+                    currentItem = invite;
+                }
+            }
+            catch
+            {
+            }
+        }
+        private void Invite_Click(object sender, EventArgs e)
+        {
+            Guna2Button btn = sender as Guna2Button;
+            int id = Convert.ToInt32(btn.Tag.ToString());
+            string uname = btn.Text;
+            try
+            {
+                DTBase.SendRequest(id, socket.IP.ToString());
+                NotifyForm nf = new NotifyForm($"Invited user {uname}", "Notification", NotifyForm.BoxBtn.Ok);
+                nf.Show();
+            }
+            catch
+            {
+                NotifyForm nf = new NotifyForm("Error connect to database!", "Error", NotifyForm.BoxBtn.Error);
+                nf.ShowDialog();
+            }
+        }
+
+        private void btnRequest_Click(object sender, EventArgs e)
+        {
+            if (pnBox.Visible)
+            {
+                pnBox.Hide();
+                return;
+            }
+            else
+            {
+                pn_Invite_Request.Controls.Clear();
+                currentItem = null;
+                pnBox.Show();
+            }
+
+            List<Request> listRequest = new List<Request>();
+            try
+            {
+                listRequest = DTBase.GetRequest();
+                foreach (var item in listRequest)
+                {
+                    User req = DTBase.GetUserUID(item.idSend);
+                    Guna2Button request = new Guna2Button()
+                    {
+                        Tag = item.ipAddress,
+                        TabIndex = req.userID,
+                        Size = new Size(155, 45),
+                        Text = req.userName,
+                        Font = new Font("Cooper Black", 10),
+                        ForeColor = Color.White,
+                        TextAlign = HorizontalAlignment.Left,
+                        TextOffset = new Point(-5, 0),
+                        Image = Image.FromFile($"Resources\\{req.avatar}.png"),
+                        ImageAlign = HorizontalAlignment.Left,
+                        ImageOffset = new Point(-3, 0),
+                        ImageSize = new Size(35, 35),
+                        FillColor = Color.FromArgb(255, 128, 128),
+                    };
+                    request.Click += Request_Click;
+                    if (currentItem == null)
+                    {
+                        request.Location = new Point(5, 5);
+                    }
+                    else
+                    {
+                        request.Location = new Point(5, currentItem.Bottom + 5);
+                    }
+
+                    pn_Invite_Request.Controls.Add(request);
+                    currentItem = request;
+                }
+            }
+            catch
+            {
+                NotifyForm nf = new NotifyForm("Error connect to database", "Error", NotifyForm.BoxBtn.Error);
+                nf.ShowDialog();
+            }
+        }
+        private void Request_Click(object sender, EventArgs e)
+        {
+            Guna2Button btn = sender as Guna2Button;
+            int idSend = btn.TabIndex;
+            string ipAdd = btn.Tag.ToString();
+            string uname = btn.Text;
+            NotifyForm nf = new NotifyForm("Accept this request?", "Notification", NotifyForm.BoxBtn.YesNo);
+            nf.ShowDialog();
+            
+            try
+            {
+                if (nf.isYes)
+                {
+                    played = 1;
+                    pnMessage.Show();
+                    pnPvP.Hide();
+                    btnInvite.Hide();
+                    btnRequest.Hide();
+                    pnBox.Hide();
+
+                    if (!socket.ConnectServer2(ipAdd))
+                    {
+                        NotifyForm nf1 = new NotifyForm("This request is no longer available", "Notification", NotifyForm.BoxBtn.YesNo);
+                        nf1.ShowDialog();
+                    }
+                    else
+                    {
+                        isReady = false;
+                        socket.isServer = false;
+                        pnChessBoard.Enabled = false;
+                        Listen();
+                    }
+
+                    DTBase.DeleteRequest(idSend);
+                }
+                else if (nf.isNo)
+                {
+                    DTBase.DeleteRequest(idSend);
+                }
+            }
+            catch
+            {
+                NotifyForm nf1 = new NotifyForm("This request is no longer available", "Notification", NotifyForm.BoxBtn.YesNo);
+                nf1.ShowDialog();
             }
         }
         #endregion
@@ -1265,6 +1467,7 @@ namespace CARO_LTMCB.FORMS
                         anotherUser = DTBase.GetUserUID(id);
                         picAnotherUser.Image = Image.FromFile($"Resources\\{anotherUser.avatar}.png");
                         picAnotherUser.Tag = anotherUser.userID;
+                        btnInvite.Hide();
                     }));
                     break;
 
@@ -1448,6 +1651,8 @@ namespace CARO_LTMCB.FORMS
 
             Listen();
         }
+
         #endregion
+
     }
 }

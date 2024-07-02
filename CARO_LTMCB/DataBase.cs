@@ -276,6 +276,32 @@ namespace CARO_LTMCB
             }
             return list;
         }
+        static public List<int> ListFriendsOnline()
+        {
+            List<int> list = new List<int>();
+            FirebaseResponse rep = client.Get("FRIEND/");
+            List<Friend> getFriend = rep.ResultAs<List<Friend>>();
+            foreach (var friend in getFriend)
+            {
+                if (friend != null)
+                {
+                    User fr = new User();
+                    if (friend.idUser1 == MyUser.user.userID)
+                    {
+                        fr = DTBase.GetUserUID(friend.idUser2);
+                        if(fr.isOnline == 1)
+                            list.Add(friend.idUser2);
+                    }
+                    else if (friend.idUser2 == MyUser.user.userID)
+                    {
+                        fr = DTBase.GetUserUID(friend.idUser1);
+                        if (fr.isOnline == 1)
+                            list.Add(friend.idUser1);
+                    }
+                }
+            }
+            return list;
+        }
         static public async void SendMessTo(int uReceive, string content)
         {
             FirebaseResponse rep = client.Get("MessIdentity/");
@@ -366,6 +392,58 @@ namespace CARO_LTMCB
             }
             myMatch.Reverse();
             return myMatch;
+        }
+        static public async void SendRequest(int idUser, string ipadd)
+        {
+            FirebaseResponse rep = client.Get("RequestIdentity/");
+            RequestIdentity id = rep.ResultAs<RequestIdentity>();
+
+            var req = new Request()
+            {
+                idRequest = id.ID,
+                idReceive = idUser,
+                idSend = MyUser.user.userID,
+                ipAddress = ipadd
+            };
+
+            FirebaseResponse rep1 = await client.SetAsync("REQUEST/" + id.ID.ToString(), req);
+            id.ID += 1;
+            FirebaseResponse rep2 = await client.SetAsync("RequestIdentity/", id);
+        }
+        static public List<Request> GetRequest()
+        {
+            List<Request> list = new List<Request>();
+
+            FirebaseResponse rep = client.Get("REQUEST/");
+            List<Request> listReq = new List<Request>();
+            listReq = rep.ResultAs<List<Request>>();
+            foreach (var req in listReq)
+            {
+                if (req != null)
+                {
+                    if(req.idReceive == MyUser.user.userID)
+                    {
+                        list.Add(req);
+                    }
+                }
+            }
+            return list;
+        }
+        static public async void DeleteRequest(int idSend)
+        {
+            FirebaseResponse rep = await client.GetAsync("REQUEST/");
+            List<Request> listReq = new List<Request>();
+            listReq = rep.ResultAs<List<Request>>();
+            foreach (var req in listReq)
+            {
+                if (req != null)
+                {
+                    if(req.idSend == idSend && req.idReceive == MyUser.user.userID)
+                    {
+                        FirebaseResponse rep2 = await client.DeleteAsync("REQUEST/" + req.idRequest.ToString());
+                    }
+                }
+            }
         }
     }
 

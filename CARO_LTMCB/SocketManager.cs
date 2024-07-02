@@ -33,9 +33,9 @@ namespace CARO_LTMCB
                 return false;
             }
         }
-        public bool ConnectServer2()
+        public bool ConnectServer2(string ipAdd)
         {
-            IPEndPoint iep = new IPEndPoint(IPAddress.Parse(IP), 8888);
+            IPEndPoint iep = new IPEndPoint(IPAddress.Parse(ipAdd), 8888);
             client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
             try
@@ -82,11 +82,12 @@ namespace CARO_LTMCB
         {
             IPEndPoint iep = new IPEndPoint(IPAddress.Any, 8888);
             server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
             server.Bind(iep);
             server.Listen(10);
 
-            Thread acceptClient = new Thread(() =>
+            Thread acceptClient2 = new Thread(() =>
             {
                 try
                 {
@@ -100,8 +101,8 @@ namespace CARO_LTMCB
                 }
 
             });
-            acceptClient.IsBackground = true;
-            acceptClient.Start();
+            acceptClient2.IsBackground = true;
+            acceptClient2.Start();
         }
         #endregion
 

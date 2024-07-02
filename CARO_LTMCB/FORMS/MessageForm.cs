@@ -100,6 +100,7 @@ namespace CARO_LTMCB.FORMS
         Thread notFriend;
         Thread requests;
         Thread threadLoadingMess;
+        Thread threadUserOnline;
 
         User user;
         private void MessageForm_Load(object sender, EventArgs e)
@@ -123,25 +124,37 @@ namespace CARO_LTMCB.FORMS
                 {
                     LoadingMessage();
                 });
+                threadUserOnline = new Thread(() =>
+                {
+                    UserOnline();
+                });
+
                 friend.IsBackground = true;
                 notFriend.IsBackground = true;
                 requests.IsBackground = true;
                 threadLoadingMess.IsBackground = true;
+                threadUserOnline.IsBackground = true;
                 friend.Start();
                 notFriend.Start();
                 requests.Start();
                 threadLoadingMess.Start();
-
-                //timmerLoadTN.Start();
+                threadUserOnline.Start();
             }
         }
         [SecurityPermissionAttribute(SecurityAction.Demand, ControlThread = true)]
         private void KillTheThread()
         {
-            friend.Abort();
-            notFriend.Abort();
-            requests.Abort();
-            threadLoadingMess.Abort();
+            try
+            {
+                friend.Abort();
+                notFriend.Abort();
+                requests.Abort();
+                threadLoadingMess.Abort();
+                threadUserOnline.Abort();
+            }
+            catch
+            {
+            }
         }
         private void MessageForm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -536,38 +549,7 @@ namespace CARO_LTMCB.FORMS
                 nf.ShowDialog();
             }
         }
-        private void timmerLoadTN_Tick(object sender, EventArgs e)
-        {
-            if (pnShowMess.Tag != null)
-            {
-                int idUser = Convert.ToInt32(pnShowMess.Tag);
-                try
-                {
-                    List<Message> list = new List<Message>();
-                    list = DTBase.ListMessWith(idUser);
-                    if (slTinNhan != list.Count)
-                    {
-                        for (int i = slTinNhan; i < list.Count; i++)
-                        {
-                            if (list[i].idSend == user.userID)
-                            {
-                                AddOutMess(list[i].content, list[i].ngayMess);
-                            }
-                            else
-                            {
-                                AddInMess(list[i].content, list[i].ngayMess);
-                            }
-                            slTinNhan++;
-                        }
-                    }
-                }
-                catch
-                {
-                    NotifyForm nf = new NotifyForm("Error connect to Database", "Error", NotifyForm.BoxBtn.Error);
-                    nf.ShowDialog();
-                }
-            }
-        }
+        
         private void LoadingMessage()
         {
             while (true)
@@ -592,7 +574,6 @@ namespace CARO_LTMCB.FORMS
                                 }
                                 else
                                 {
-                                    AddInMess(list[i].content, list[i].ngayMess);
                                     this.Invoke((MethodInvoker)(() =>
                                     {
                                         AddInMess(list[i].content, list[i].ngayMess);
@@ -608,8 +589,6 @@ namespace CARO_LTMCB.FORMS
                 }
             }
         }
-        
-        #endregion
         private void btnEmotion_Click(object sender, EventArgs e)
         {
             if (EffectManager.IsEffectEnabled())
@@ -635,5 +614,37 @@ namespace CARO_LTMCB.FORMS
                 }
             }
         }
+        private void UserOnline()
+        {
+            while (true)
+            {
+                if(pnShowMess.Tag != null)
+                {
+                    try
+                    {
+                        int idUser = Convert.ToInt32(pnShowMess.Tag.ToString());
+                        User fr = DTBase.GetUserUID(idUser);
+                        if (fr.isOnline == 1)
+                        {
+                            this.Invoke((MethodInvoker)(() =>
+                            {
+                                picOnline.IconColor = Color.FromArgb(32, 178, 170);
+                            }));
+                        }
+                        else
+                        {
+                            this.Invoke((MethodInvoker)(() =>
+                            {
+                                picOnline.IconColor = Color.FromArgb(180, 180, 180);
+                            }));
+                        }
+                    }
+                    catch
+                    {
+                    }
+                }
+            }
+        }
+        #endregion
     }
 }

@@ -75,13 +75,28 @@ namespace CARO_LTMCB
     {
         public int ID { get; set; }
     }
+
     public class AddInvite
     {
         public int idAddInvite { get; set; }
         public int idReceive { get; set; }
         public int idSend { get; set; }
     }
+
     public class AddInviteIdentity
+    {
+        public int ID { get; set; }
+    }
+
+    public class Request
+    {
+        public int idRequest { get; set; }
+        public int idReceive { get; set; }
+        public int idSend { get; set; }
+        public string ipAddress { get; set; }
+    }
+
+    public class RequestIdentity
     {
         public int ID { get; set; }
     }

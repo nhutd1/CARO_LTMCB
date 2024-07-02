@@ -21,6 +21,24 @@ namespace CARO_LTMCB
             lbFill.Hide();
         }
 
+        #region Kéo form 
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        #endregion
+
         #region Buttons event
         private void btnSignup_Click(object sender, EventArgs e)
         {
@@ -123,26 +141,6 @@ namespace CARO_LTMCB
                 tbxPass.ForeColor = Color.FromArgb(180, 180, 180);
             }
         }
-        #endregion
-
-        #region Kéo form 
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
-        private void panel2_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-        #endregion
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (EffectManager.IsEffectEnabled())
@@ -179,5 +177,6 @@ namespace CARO_LTMCB
                 lbFill.Show();
             }
         }
+        #endregion
     }
 }

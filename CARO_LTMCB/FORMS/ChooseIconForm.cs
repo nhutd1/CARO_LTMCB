@@ -13,17 +13,12 @@ namespace CARO_LTMCB.FORMS
 {
     public partial class ChooseIconForm : Form
     {
-        public string icon = "=icon=";
         public ChooseIconForm()
         {
             InitializeComponent();
         }
 
-        
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        public string icon = "=icon=";
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -151,6 +146,10 @@ namespace CARO_LTMCB.FORMS
             this.Close();
         }
 
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         #region Kéo form 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();

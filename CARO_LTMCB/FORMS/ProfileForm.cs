@@ -77,11 +77,9 @@ namespace CARO_LTMCB.FORMS
                         {
                             matchControl.Location = new Point(25, curentMatch.Bottom + 10);
                         }
-
                         pnLSDau.Invoke((MethodInvoker)delegate {
                             pnLSDau.Controls.Add(matchControl);
                         });
-
                         curentMatch = matchControl;
                     }
                     else
@@ -99,7 +97,6 @@ namespace CARO_LTMCB.FORMS
                         pnLSDau.Invoke((MethodInvoker)delegate {
                             pnLSDau.Controls.Add(matchControl);
                         });
-
                         curentMatch = matchControl;
                     }
                 }

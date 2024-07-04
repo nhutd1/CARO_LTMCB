@@ -96,9 +96,11 @@ namespace CARO_LTMCB.FORMS
         #region Load danh sách
         private IEnumerable<Guna2Button> menuButtonFriend;
         private IEnumerable<Guna2Button> menuButtonNotFriend;
+
         Thread friend;
         Thread notFriend;
         Thread requests;
+
         Thread threadLoadingMess;
         Thread threadUserOnline;
 
@@ -108,6 +110,7 @@ namespace CARO_LTMCB.FORMS
             if (MyUser.user != null)
             {
                 user = MyUser.user;
+
                 friend = new Thread(() =>
                 {
                     LoadFriend();
@@ -120,6 +123,7 @@ namespace CARO_LTMCB.FORMS
                 {
                     LoadRequests();
                 });
+
                 threadLoadingMess = new Thread(() =>
                 {
                     LoadingMessage();
@@ -200,7 +204,6 @@ namespace CARO_LTMCB.FORMS
             }
             catch
             {
-
             }
         }
 
@@ -332,7 +335,6 @@ namespace CARO_LTMCB.FORMS
             }
             catch
             {
-
             }
         }
         private void BtnRequest_MouseDown(object sender, MouseEventArgs e)
@@ -400,6 +402,8 @@ namespace CARO_LTMCB.FORMS
             }
             catch
             {
+                NotifyForm nf = new NotifyForm("Error connect to Database", "Error", NotifyForm.BoxBtn.Error);
+                nf.ShowDialog();
             }
         }
 

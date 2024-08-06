@@ -40,6 +40,11 @@ namespace CARO_LTMCB
                 lbTime.ForeColor = Color.FromArgb(255, 128, 128);
             }
         }
+
+        private void lbTime_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     public enum result
     {

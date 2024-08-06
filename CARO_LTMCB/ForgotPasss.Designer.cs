@@ -166,6 +166,7 @@ namespace CARO_LTMCB
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(575, 615);
             this.panel2.TabIndex = 5;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
             // lbEnter
@@ -175,7 +176,7 @@ namespace CARO_LTMCB
             this.lbEnter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.lbEnter.Location = new System.Drawing.Point(141, 509);
             this.lbEnter.Name = "lbEnter";
-            this.lbEnter.Size = new System.Drawing.Size(316, 21);
+            this.lbEnter.Size = new System.Drawing.Size(305, 21);
             this.lbEnter.TabIndex = 52;
             this.lbEnter.Text = "Please enter the new password!";
             // 
@@ -186,7 +187,7 @@ namespace CARO_LTMCB
             this.lbConfirm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.lbConfirm.Location = new System.Drawing.Point(120, 509);
             this.lbConfirm.Name = "lbConfirm";
-            this.lbConfirm.Size = new System.Drawing.Size(369, 21);
+            this.lbConfirm.Size = new System.Drawing.Size(355, 21);
             this.lbConfirm.TabIndex = 51;
             this.lbConfirm.Text = "Please confirm the correct password!";
             // 
@@ -197,7 +198,7 @@ namespace CARO_LTMCB
             this.lbWrong2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.lbWrong2.Location = new System.Drawing.Point(173, 276);
             this.lbWrong2.Name = "lbWrong2";
-            this.lbWrong2.Size = new System.Drawing.Size(139, 21);
+            this.lbWrong2.Size = new System.Drawing.Size(135, 21);
             this.lbWrong2.TabIndex = 50;
             this.lbWrong2.Text = "or Username!";
             // 
@@ -208,7 +209,7 @@ namespace CARO_LTMCB
             this.lbWrong1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.lbWrong1.Location = new System.Drawing.Point(176, 253);
             this.lbWrong1.Name = "lbWrong1";
-            this.lbWrong1.Size = new System.Drawing.Size(136, 21);
+            this.lbWrong1.Size = new System.Drawing.Size(129, 21);
             this.lbWrong1.TabIndex = 49;
             this.lbWrong1.Text = "Wrong Email";
             // 
@@ -219,7 +220,7 @@ namespace CARO_LTMCB
             this.lbFill2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.lbFill2.Location = new System.Drawing.Point(158, 276);
             this.lbFill2.Name = "lbFill2";
-            this.lbFill2.Size = new System.Drawing.Size(176, 21);
+            this.lbFill2.Size = new System.Drawing.Size(167, 21);
             this.lbFill2.TabIndex = 47;
             this.lbFill2.Text = " the information!";
             // 
@@ -230,7 +231,7 @@ namespace CARO_LTMCB
             this.lbFill1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.lbFill1.Location = new System.Drawing.Point(175, 253);
             this.lbFill1.Name = "lbFill1";
-            this.lbFill1.Size = new System.Drawing.Size(134, 21);
+            this.lbFill1.Size = new System.Drawing.Size(130, 21);
             this.lbFill1.TabIndex = 48;
             this.lbFill1.Text = "Please fill all";
             // 
@@ -519,7 +520,7 @@ namespace CARO_LTMCB
             this.label1.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(37, 207);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(226, 32);
+            this.label1.Size = new System.Drawing.Size(225, 32);
             this.label1.TabIndex = 12;
             this.label1.Text = "CARO ONLINE";
             // 

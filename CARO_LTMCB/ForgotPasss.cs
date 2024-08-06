@@ -286,8 +286,12 @@ namespace CARO_LTMCB
                 lbFill2.Show();
             }
         }
+
         #endregion
 
-        
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

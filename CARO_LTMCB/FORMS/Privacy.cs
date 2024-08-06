@@ -131,5 +131,10 @@ namespace CARO_LTMCB.FORMS
         {
             SetDefaultText(tbxConfirmPass, "password");
         }
+
+        private void tbxPass_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

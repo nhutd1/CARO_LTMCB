@@ -1,0 +1,172 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "Z:\\Courses\\2023-2024\\HK4\\NT106.O22.ANTT\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{703D888D-220B-437B-9BED-8A27223FC6DF}|CARO_LTMCB\\CARO_LTMCB.csproj|z:\\courses\\2023-2024\\hk4\\nt106.o22.antt\\caro_ltmcb\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{703D888D-220B-437B-9BED-8A27223FC6DF}|CARO_LTMCB\\CARO_LTMCB.csproj|solutionrelative:caro_ltmcb\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{703D888D-220B-437B-9BED-8A27223FC6DF}|CARO_LTMCB\\CARO_LTMCB.csproj|z:\\courses\\2023-2024\\hk4\\nt106.o22.antt\\caro_ltmcb\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{703D888D-220B-437B-9BED-8A27223FC6DF}|CARO_LTMCB\\CARO_LTMCB.csproj|solutionrelative:caro_ltmcb\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{703D888D-220B-437B-9BED-8A27223FC6DF}|CARO_LTMCB\\CARO_LTMCB.csproj|z:\\courses\\2023-2024\\hk4\\nt106.o22.antt\\caro_ltmcb\\forms\\homeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{703D888D-220B-437B-9BED-8A27223FC6DF}|CARO_LTMCB\\CARO_LTMCB.csproj|solutionrelative:caro_ltmcb\\forms\\homeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{703D888D-220B-437B-9BED-8A27223FC6DF}|CARO_LTMCB\\CARO_LTMCB.csproj|z:\\courses\\2023-2024\\hk4\\nt106.o22.antt\\caro_ltmcb\\forgotpasss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{703D888D-220B-437B-9BED-8A27223FC6DF}|CARO_LTMCB\\CARO_LTMCB.csproj|solutionrelative:caro_ltmcb\\forgotpasss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{703D888D-220B-437B-9BED-8A27223FC6DF}|CARO_LTMCB\\CARO_LTMCB.csproj|z:\\courses\\2023-2024\\hk4\\nt106.o22.antt\\caro_ltmcb\\matchhistorycontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{703D888D-220B-437B-9BED-8A27223FC6DF}|CARO_LTMCB\\CARO_LTMCB.csproj|solutionrelative:caro_ltmcb\\matchhistorycontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{703D888D-220B-437B-9BED-8A27223FC6DF}|CARO_LTMCB\\CARO_LTMCB.csproj|z:\\courses\\2023-2024\\hk4\\nt106.o22.antt\\caro_ltmcb\\forms\\privacy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{703D888D-220B-437B-9BED-8A27223FC6DF}|CARO_LTMCB\\CARO_LTMCB.csproj|solutionrelative:caro_ltmcb\\forms\\privacy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{703D888D-220B-437B-9BED-8A27223FC6DF}|CARO_LTMCB\\CARO_LTMCB.csproj|z:\\courses\\2023-2024\\hk4\\nt106.o22.antt\\caro_ltmcb\\forms\\profileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{703D888D-220B-437B-9BED-8A27223FC6DF}|CARO_LTMCB\\CARO_LTMCB.csproj|solutionrelative:caro_ltmcb\\forms\\profileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{703D888D-220B-437B-9BED-8A27223FC6DF}|CARO_LTMCB\\CARO_LTMCB.csproj|z:\\courses\\2023-2024\\hk4\\nt106.o22.antt\\caro_ltmcb\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{703D888D-220B-437B-9BED-8A27223FC6DF}|CARO_LTMCB\\CARO_LTMCB.csproj|solutionrelative:caro_ltmcb\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{703D888D-220B-437B-9BED-8A27223FC6DF}|CARO_LTMCB\\CARO_LTMCB.csproj|z:\\courses\\2023-2024\\hk4\\nt106.o22.antt\\caro_ltmcb\\forms\\chooseavatarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{703D888D-220B-437B-9BED-8A27223FC6DF}|CARO_LTMCB\\CARO_LTMCB.csproj|solutionrelative:caro_ltmcb\\forms\\chooseavatarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoginForm.cs",
+              "DocumentMoniker": "Z:\\Courses\\2023-2024\\HK4\\NT106.O22.ANTT\\CARO_LTMCB\\LoginForm.cs",
+              "RelativeDocumentMoniker": "CARO_LTMCB\\LoginForm.cs",
+              "ToolTip": "Z:\\Courses\\2023-2024\\HK4\\NT106.O22.ANTT\\CARO_LTMCB\\LoginForm.cs",
+              "RelativeToolTip": "CARO_LTMCB\\LoginForm.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T11:21:36.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginForm.cs [Design]",
+              "DocumentMoniker": "Z:\\Courses\\2023-2024\\HK4\\NT106.O22.ANTT\\CARO_LTMCB\\LoginForm.cs",
+              "RelativeDocumentMoniker": "CARO_LTMCB\\LoginForm.cs",
+              "ToolTip": "Z:\\Courses\\2023-2024\\HK4\\NT106.O22.ANTT\\CARO_LTMCB\\LoginForm.cs [Design]",
+              "RelativeToolTip": "CARO_LTMCB\\LoginForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T11:21:32.718Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProfileForm.cs",
+              "DocumentMoniker": "Z:\\Courses\\2023-2024\\HK4\\NT106.O22.ANTT\\CARO_LTMCB\\FORMS\\ProfileForm.cs",
+              "RelativeDocumentMoniker": "CARO_LTMCB\\FORMS\\ProfileForm.cs",
+              "ToolTip": "Z:\\Courses\\2023-2024\\HK4\\NT106.O22.ANTT\\CARO_LTMCB\\FORMS\\ProfileForm.cs",
+              "RelativeToolTip": "CARO_LTMCB\\FORMS\\ProfileForm.cs",
+              "ViewState": "AQIAADQAAAAAAAAAAAAAADUAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T08:26:41.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MatchHistoryControl.cs",
+              "DocumentMoniker": "Z:\\Courses\\2023-2024\\HK4\\NT106.O22.ANTT\\CARO_LTMCB\\MatchHistoryControl.cs",
+              "RelativeDocumentMoniker": "CARO_LTMCB\\MatchHistoryControl.cs",
+              "ToolTip": "Z:\\Courses\\2023-2024\\HK4\\NT106.O22.ANTT\\CARO_LTMCB\\MatchHistoryControl.cs",
+              "RelativeToolTip": "CARO_LTMCB\\MatchHistoryControl.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAA1wC0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T08:29:24.055Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Privacy.cs",
+              "DocumentMoniker": "Z:\\Courses\\2023-2024\\HK4\\NT106.O22.ANTT\\CARO_LTMCB\\FORMS\\Privacy.cs",
+              "RelativeDocumentMoniker": "CARO_LTMCB\\FORMS\\Privacy.cs",
+              "ToolTip": "Z:\\Courses\\2023-2024\\HK4\\NT106.O22.ANTT\\CARO_LTMCB\\FORMS\\Privacy.cs",
+              "RelativeToolTip": "CARO_LTMCB\\FORMS\\Privacy.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAYwIgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T08:22:59.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ForgotPasss.cs",
+              "DocumentMoniker": "Z:\\Courses\\2023-2024\\HK4\\NT106.O22.ANTT\\CARO_LTMCB\\ForgotPasss.cs",
+              "RelativeDocumentMoniker": "CARO_LTMCB\\ForgotPasss.cs",
+              "ToolTip": "Z:\\Courses\\2023-2024\\HK4\\NT106.O22.ANTT\\CARO_LTMCB\\ForgotPasss.cs",
+              "RelativeToolTip": "CARO_LTMCB\\ForgotPasss.cs",
+              "ViewState": "AQIAAP8AAAAAAAAAAAAYwM8AAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T08:16:13.232Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeForm.cs",
+              "DocumentMoniker": "Z:\\Courses\\2023-2024\\HK4\\NT106.O22.ANTT\\CARO_LTMCB\\FORMS\\HomeForm.cs",
+              "RelativeDocumentMoniker": "CARO_LTMCB\\FORMS\\HomeForm.cs",
+              "ToolTip": "Z:\\Courses\\2023-2024\\HK4\\NT106.O22.ANTT\\CARO_LTMCB\\FORMS\\HomeForm.cs",
+              "RelativeToolTip": "CARO_LTMCB\\FORMS\\HomeForm.cs",
+              "ViewState": "AQIAABgBAAAAAAAAAAAkwMEBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T08:13:03.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DataBase.cs",
+              "DocumentMoniker": "Z:\\Courses\\2023-2024\\HK4\\NT106.O22.ANTT\\CARO_LTMCB\\DataBase.cs",
+              "RelativeDocumentMoniker": "CARO_LTMCB\\DataBase.cs",
+              "ToolTip": "Z:\\Courses\\2023-2024\\HK4\\NT106.O22.ANTT\\CARO_LTMCB\\DataBase.cs",
+              "RelativeToolTip": "CARO_LTMCB\\DataBase.cs",
+              "ViewState": "AQIAAIMBAAAAAAAAAAAwwMIBAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T08:17:47.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ChooseAvatarForm.cs",
+              "DocumentMoniker": "Z:\\Courses\\2023-2024\\HK4\\NT106.O22.ANTT\\CARO_LTMCB\\FORMS\\ChooseAvatarForm.cs",
+              "RelativeDocumentMoniker": "CARO_LTMCB\\FORMS\\ChooseAvatarForm.cs",
+              "ToolTip": "Z:\\Courses\\2023-2024\\HK4\\NT106.O22.ANTT\\CARO_LTMCB\\FORMS\\ChooseAvatarForm.cs",
+              "RelativeToolTip": "CARO_LTMCB\\FORMS\\ChooseAvatarForm.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAYwGcAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T08:27:55.748Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

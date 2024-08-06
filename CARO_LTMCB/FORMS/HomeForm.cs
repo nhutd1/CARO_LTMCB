@@ -1681,5 +1681,10 @@ namespace CARO_LTMCB.FORMS
             Listen();
         }
         #endregion
+
+        private void pnChessBoard_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

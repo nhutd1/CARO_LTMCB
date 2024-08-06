@@ -116,5 +116,10 @@ namespace CARO_LTMCB.FORMS
                 }
             }
         }
+
+        private void pnLSDau_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
